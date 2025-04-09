@@ -229,7 +229,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col ml-6 justify-center">
-              <span className="text-xl font-semibold">Research</span>
+              <span className="text-xl font-semibold">Researches</span>
               <div className="group-hover:translate-x-2 transition-transform">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -249,7 +249,7 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col ml-6 justify-center">
-              <span className="text-xl font-semibold">Course</span>
+              <span className="text-xl font-semibold">Courses</span>
               <div className="group-hover:translate-x-2 transition-transform">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

@@ -8,8 +8,8 @@ import { useState } from 'react';
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Publications', path: '/publications' },
-  { name: 'Research', path: '/research' },
-  { name: 'Course', path: '/course' },
+  { name: 'Researches', path: '/researches' },
+  { name: 'Courses', path: '/courses' },
   { name: 'Team', path: '/team' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -116,4 +116,4 @@ export default function Navbar() {
       </div>
     </header>
   );
-} 
+}
