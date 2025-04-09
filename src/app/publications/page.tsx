@@ -7,20 +7,19 @@ export default function Publications() {
       {/* 渐变背景和标题部分 */}
       <div className="relative h-[240px] w-full">
         <div className="relative h-full max-w-[1920px] mx-auto flex items-start pt-8">
-          <div className="w-full">
-            <div className="bg-gradient-to-b from-blue-600 to-blue-800 rounded-[9999px] py-6 px-12 flex items-center">
+          <div className="inline-flex">
+            <div className="bg-blue-100 rounded-[9999px] py-4 px-10 flex items-center">
               <div className="flex items-center">
-                <div className="w-16 h-16 mr-6">
+                <div className="w-14 h-14 mr-5">
                   <Image
                     src="/icons/publications.svg"
                     alt="Publications"
-                    width={64}
-                    height={64}
+                    width={56}
+                    height={56}
                     className="w-full h-full"
-                    style={{ filter: 'brightness(0) invert(1)' }}
                   />
                 </div>
-                <h1 className="text-6xl font-bold text-white">Publications</h1>
+                <h1 className="text-5xl font-bold text-black">Publications</h1>
               </div>
             </div>
           </div>
