@@ -58,7 +58,7 @@ export default function Banner() {
             <div className="flex items-center justify-start h-full">
               <div className="relative" style={{ transform: 'translateY(-180px)' }}>
                 {/* 渲染四个位置的胶囊 */}
-                {currentPositions.map((pos, index) => {
+                {currentPositions.map((pos) => {
                   // 计算当前位置应该显示的图片索引
                   const imageIndex = (activeIndex + pos) % images.length;
                   const image = images[imageIndex];

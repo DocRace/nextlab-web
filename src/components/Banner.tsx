@@ -1,14 +1,13 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 
 export default function Banner() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [prevPositions, setPrevPositions] = useState([0, 1, 2, 3]);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  
+  const [isPaused] = useState(false);
+
   // 图片数据
   const images = [
     'https://picsum.photos/900/400?random=1',
@@ -25,29 +24,23 @@ export default function Banner() {
     { transform: 'translate(-100%, 0)', zIndex: 1, opacity: 0 }        // 移出层
   ];
   
-  // 过渡到下一张
-  const goToNext = () => {
-    // 保存当前位置状态
-    setPrevPositions([0, 1, 2, 3]);
-    setIsTransitioning(true);
-    
-    // 在过渡完成后更新活动索引
-    setTimeout(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-      setIsTransitioning(false);
-    }, 1000);
-  };
-  
+  const goToNext = useCallback(() => {
+    if (!isTransitioning && !isPaused) {
+      setIsTransitioning(true);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setTimeout(() => setIsTransitioning(false), 500);
+    }
+  }, [isTransitioning, isPaused, images.length]);
+
   useEffect(() => {
-    // 设置自动滚动
-    intervalRef.current = setInterval(goToNext, 4000);
-    
+    let interval: NodeJS.Timeout;
+    if (!isPaused) {
+      interval = setInterval(goToNext, 5000);
+    }
     return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
+      if (interval) clearInterval(interval);
     };
-  }, [images.length]);
+  }, [isPaused, goToNext]);
   
   // 计算当前显示的位置
   const currentPositions = [0, 1, 2, 3];
@@ -61,9 +54,9 @@ export default function Banner() {
             <div className="flex items-center justify-start h-full">
               <div className="relative" style={{ transform: 'translateY(-180px)' }}>
                 {/* 渲染四个位置的胶囊 */}
-                {currentPositions.map((pos, index) => {
+                {currentPositions.map((pos) => {
                   // 计算当前位置应该显示的图片索引
-                  const imageIndex = (activeIndex + pos) % images.length;
+                  const imageIndex = (currentIndex + pos) % images.length;
                   const image = images[imageIndex];
                   
                   // 根据位置和过渡状态设置样式

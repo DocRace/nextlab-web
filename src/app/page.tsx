@@ -126,7 +126,7 @@ export default function Home() {
                       </h3>
                       <p className="text-white text-sm mb-4">
                         Multimedia art installations combined with computer vision 
-                        technology to enhance the audience's interactive experience.
+                        technology to enhance the audience&#39;s interactive experience.
                       </p>
                       <Link 
                         href="/research/multimedia" 
@@ -166,7 +166,7 @@ export default function Home() {
                         Artbreeder
                       </h3>
                       <p className="text-white text-sm mb-4">
-                        Blending and Evolving Art with AI-powered Tools. An AI-enabled 
+                        Blending and Evolving Art with AI&apos;powered Tools. An AI-enabled 
                         tool for image blending and evolution, allowing users to create 
                         unique artistic images.
                       </p>
