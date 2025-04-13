@@ -209,9 +209,9 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col ml-6 justify-center">
-              <span className="text-xl font-semibold">Publications</span>
+              <span className="text-xl font-semibold group-hover:text-blue-600 transition-colors">Publications</span>
               <div className="group-hover:translate-x-2 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:text-blue-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
@@ -229,9 +229,9 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col ml-6 justify-center">
-              <span className="text-xl font-semibold">Researches</span>
+              <span className="text-xl font-semibold group-hover:text-green-600 transition-colors">Researches</span>
               <div className="group-hover:translate-x-2 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:text-green-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
@@ -249,9 +249,9 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col ml-6 justify-center">
-              <span className="text-xl font-semibold">Courses</span>
+              <span className="text-xl font-semibold group-hover:text-purple-600 transition-colors">Courses</span>
               <div className="group-hover:translate-x-2 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:text-purple-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
@@ -269,9 +269,9 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col ml-6 justify-center">
-              <span className="text-xl font-semibold">Team</span>
+              <span className="text-xl font-semibold group-hover:text-orange-600 transition-colors">Team</span>
               <div className="group-hover:translate-x-2 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:text-orange-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </div>
@@ -282,35 +282,40 @@ export default function Home() {
 
       {/* Social Media 和 Contact 部分 */}
       <section className="my-16 grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div>
-          <h2 className="text-3xl font-bold mb-8">Follow social media</h2>
-          <div className="flex gap-6">
-            <a href="https://wechat.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12">
-              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M8.2,13.3c-0.5,0-0.9-0.4-0.9-0.9c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9C9.1,12.9,8.7,13.3,8.2,13.3z M12.3,11.5c0.5,0,0.9,0.4,0.9,0.9c0,0.5-0.4,0.9-0.9,0.9c-0.5,0-0.9-0.4-0.9-0.9C11.4,11.9,11.8,11.5,12.3,11.5z M16.4,16.1c0.4,0,0.7,0.3,0.7,0.7c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7C15.7,16.4,16,16.1,16.4,16.1z M13.1,16.1c0.4,0,0.7,0.3,0.7,0.7c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7C12.4,16.4,12.7,16.1,13.1,16.1z M17.4,9.9c-3.2-3-8.3-3-11.4,0c-1.5,1.5-2.3,3.5-2.3,5.6c0,2.1,0.8,4.1,2.3,5.6c1.5,1.5,3.5,2.3,5.7,2.3c2.2,0,4.2-0.8,5.7-2.3c1.5-1.5,2.3-3.5,2.3-5.6C19.7,13.4,18.9,11.4,17.4,9.9z M9.7,7.8c0.9,0,1.6,0.7,1.6,1.6c0,0.9-0.7,1.6-1.6,1.6c-0.9,0-1.6-0.7-1.6-1.6C8.1,8.5,8.8,7.8,9.7,7.8z M14.8,7.8c0.9,0,1.6,0.7,1.6,1.6c0,0.9-0.7,1.6-1.6,1.6c-0.9,0-1.6-0.7-1.6-1.6C13.2,8.5,13.9,7.8,14.8,7.8z"/>
+        <div className="flex flex-col items-start">
+          <h3 className="text-2xl font-bold">Follow social media</h3>
+          <div className="flex gap-6 mt-4">
+            <Link href="https://linkedin.com" className="w-8 h-8 hover:opacity-70 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12">
-              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/>
+            </Link>
+            <Link href="https://github.com" className="w-8 h-8 hover:opacity-70 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
-            </a>
+            </Link>
+            <Link href="https://twitter.com" className="w-8 h-8 hover:opacity-70 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-black" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </Link>
           </div>
         </div>
         
-        <div>
-          <h2 className="text-3xl font-bold mb-8">Contact us</h2>
-          <div className="flex gap-6">
-            <a href="mailto:contact@nextlab.com" className="w-12 h-12">
-              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+        <div className="flex flex-col items-start">
+          <h3 className="text-2xl font-bold">Contact us</h3>
+          <div className="flex gap-6 mt-4">
+            <Link href="mailto:contact@example.com" className="w-8 h-8 hover:opacity-70 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-            </a>
-            <a href="https://github.com/nextlab" target="_blank" rel="noopener noreferrer" className="w-12 h-12">
-              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21C9.5 20.77 9.5 20.14 9.5 19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26C14.5 19.6 14.5 20.68 14.5 21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.48 17.52 2 12 2Z"/>
+            </Link>
+            <Link href="tel:+1234567890" className="w-8 h-8 hover:opacity-70 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
