@@ -28,32 +28,31 @@ export default function Courses() {
 
       {/* 内容部分 */}
       <div className="max-w-[1920px] mx-auto">
-        {/* AI & Machine Learning */}
+        {/* Integration of Audio Music and Computer */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative h-[400px] rounded-[36px] overflow-hidden">
             <Image
-              src="/images/course-ai.jpg"
-              alt="AI & Machine Learning"
+              src="/images/course-audio-music.png"
+              alt="Integration of Audio Music and Computer"
               fill
               className="object-cover"
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-4">AI & Machine Learning</h2>
+            <h2 className="text-3xl font-bold mb-4">Integration of Audio Music and Computer – Audio Music Technology</h2>
             <div className="flex items-center text-gray-500 mb-2">
-              <span className="mr-4">By Prof. John Smith, Dr. Sarah Johnson</span>
+              <span className="mr-4">Course • Jan 09, 2023</span>
             </div>
             <div className="flex gap-2 mb-6">
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Deep Learning</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Neural Networks</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Python</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Course</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
             </div>
             <p className="text-gray-600 mb-6 line-clamp-4">
-              Dive deep into the world of artificial intelligence and machine learning. This comprehensive course covers fundamental concepts to advanced applications, including neural networks, deep learning, and practical AI implementation.
+              This course focuses on the emerging interdisciplinary field of music technology, music artificial intelligence, and computer audition/AI acoustics. It covers the development of the field, talent cultivation, and the integration of academic theory and industrial application. The course is structured as a series of popular science reports, open to the public, providing a comprehensive overview of academic theories and industrial applications.
             </p>
             <div className="flex items-center">
               <Link 
-                href="/courses/ai-machine-learning" 
+                href="/courses/audio-music-technology" 
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{
                   backgroundColor: '#000000',
@@ -70,32 +69,32 @@ export default function Courses() {
           </div>
         </div>
 
-        {/* Computer Vision */}
+        {/* Introduction to Swift Innovation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative h-[400px] rounded-[36px] overflow-hidden">
             <Image
-              src="/images/course-vision.jpg"
-              alt="Computer Vision"
+              src="/images/course-swift.jpg"
+              alt="Introduction to Swift Innovation"
               fill
               className="object-cover"
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-4">Computer Vision</h2>
+            <h2 className="text-3xl font-bold mb-4">Introduction to Swift Innovation</h2>
             <div className="flex items-center text-gray-500 mb-2">
-              <span className="mr-4">By Dr. Michael Chen, Prof. Emily Davis</span>
+              <span className="mr-4">Course • Jan 09, 2023</span>
             </div>
             <div className="flex gap-2 mb-6">
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Image Processing</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Object Detection</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">OpenCV</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Course</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Swift</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
             </div>
             <p className="text-gray-600 mb-6 line-clamp-4">
-              Explore the fascinating field of computer vision. Learn how to process and analyze visual information using computers, from basic image processing to advanced object detection and recognition techniques.
+              This course systematically teaches Swift fundamentals, advanced topics, and practical knowledge, integrating typical applications such as AI, AR, Face ID, and Accessibility. It features sharing from WWDC Scholarship winners and top awardees, aiming to cultivate learners' development capabilities in the iOS ecosystem and enhance their innovation and entrepreneurship skills in mobile applications.
             </p>
             <div className="flex items-center">
               <Link 
-                href="/courses/computer-vision" 
+                href="/courses/swift-innovation" 
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{
                   backgroundColor: '#000000',
@@ -112,32 +111,32 @@ export default function Courses() {
           </div>
         </div>
 
-        {/* Interactive Computing */}
+        {/* Design Thinking and Innovative Design */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-[400px] rounded-[36px] overflow-hidden">
             <Image
-              src="/images/course-interactive.jpg"
-              alt="Interactive Computing"
+              src="/images/course-design-thinking.png"
+              alt="Design Thinking and Innovative Design"
               fill
               className="object-cover"
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-4">Interactive Computing</h2>
+            <h2 className="text-3xl font-bold mb-4">Design Thinking and Innovative Design</h2>
             <div className="flex items-center text-gray-500 mb-2">
-              <span className="mr-4">By Prof. Lisa Zhang, Dr. Robert Wilson</span>
+              <span className="mr-4">Course • Jan 08, 2023</span>
             </div>
             <div className="flex gap-2 mb-6">
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">UI/UX</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Web Development</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">JavaScript</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Course</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Design Group</span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
             </div>
             <p className="text-gray-600 mb-6 line-clamp-4">
-              Learn to create engaging interactive experiences through computing. This course covers user interface design, interaction principles, and the development of responsive and intuitive digital experiences.
+              This course integrates research achievements in China's innovative design field with global design thinking, building a knowledge system of "Innovative Design + Design Thinking + Entrepreneurial Practice". It focuses on design thinking, innovation, and entrepreneurship, emphasizing interdisciplinarity, cross-domain, and international perspectives.
             </p>
             <div className="flex items-center">
               <Link 
-                href="/courses/interactive-computing" 
+                href="/courses/design-thinking" 
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{
                   backgroundColor: '#000000',
@@ -154,6 +153,7 @@ export default function Courses() {
           </div>
         </div>
       </div>
+      <div className="mb-24" />
     </div>
   );
 } 

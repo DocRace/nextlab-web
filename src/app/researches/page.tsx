@@ -1,4 +1,32 @@
 import Image from "next/image";
+import Link from "next/link";
+
+const researches = [
+  {
+    id: "music",
+    title: "NEXT + Music | Creating New Horizons with Music",
+    date: "Jun 11, 2022",
+    tags: ["Music Group"],
+    image: "/images/research-music.png",
+    desc: "The MUSIC-AI (Intelligent Music Group) is dedicated to using music knowledge and AI technology to empower innovation in music art and design. We build an ecosystem for music generation, human-computer interaction, emotional computing, and multimodal recommendation, aiming to solve challenges in intelligent music production.",
+  },
+  {
+    id: "font",
+    title: "NEXT + Font | We Make Fonts, We Compute Fonts",
+    date: "Jun 10, 2022",
+    tags: ["Font Group"],
+    image: "/images/research-font.png",
+    desc: "The Intelligent Font Group focuses on calligraphy font generation and digital/intelligent seal carving, including database construction, font generation models, and interactive tools. We aim to make high-quality Chinese font creation easier and enrich creative tools for artists and designers.",
+  },
+  {
+    id: "design",
+    title: "NEXT + Design | Pioneering Design Science Education in China",
+    date: "Jun 09, 2022",
+    tags: ["Design Group"],
+    image: "/images/research-design.jpg",
+    desc: "DESIGN-Ed (Design Education Group) applies design thinking to business, technology, culture, and art, building a product system from design cognition to practice. We promote the development of design education in China and make design accessible and impactful in every industry.",
+  },
+];
 
 export default function Researches() {
   return (
@@ -27,175 +55,47 @@ export default function Researches() {
 
       {/* 内容部分 */}
       <div className="max-w-[1920px] mx-auto py-12 grid gap-8">
-        {/* AI Music 研究 */}
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-[36px] overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="relative w-full h-full min-h-[400px]">
-              <Image
-                src="/images/research-music.jpg"
-                alt="AI Music"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="p-8 md:p-12">
-              <h2 className="text-4xl font-bold mb-4">AI Music</h2>
-              <p className="text-gray-600 mb-6">
-                AI Music Generation Lab stands at the forefront of innovation, dedicated to exploring the limitless possibilities at the intersection of artificial intelligence and music. With a team of brilliant minds in computer science, music theory, and sound engineering, we are redefining the creative process of music production.
-              </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">AI</span>
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">Media</span>
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">Robotic</span>
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">Interactive</span>
+        {researches.map((item, idx) => {
+          let bg = "";
+          if (item.id === "music") bg = "from-purple-50 to-purple-100";
+          else if (item.id === "font") bg = "from-amber-50 to-amber-100";
+          else if (item.id === "design") bg = "from-red-50 to-red-100";
+          return (
+            <Link
+              key={item.id}
+              href={`/researches/${item.id}`}
+              className={`block bg-gradient-to-br ${bg} rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl`}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="relative w-full h-full min-h-[400px]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center">
+                  <h2 className="text-4xl font-bold mb-4">{item.title}</h2>
+                  <div className="flex gap-2 mb-2">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 bg-white text-black rounded-full text-xs font-medium">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="text-gray-500 text-sm mb-4">{item.date}</div>
+                  <p className="text-gray-600 mb-6 line-clamp-4">{item.desc}</p>
+                  <span className="inline-flex items-center px-6 py-2 rounded-full font-semibold text-white bg-black hover:bg-gray-800 transition-colors shadow w-fit">
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                <Image
-                  src="https://i.pravatar.cc/96?img=1"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=2"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=3"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=4"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=5"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* AI Vision 研究 */}
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-[36px] overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="relative w-full h-full min-h-[400px]">
-              <Image
-                src="/images/research-vision.jpg"
-                alt="AI Vision"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="p-8 md:p-12">
-              <h2 className="text-4xl font-bold mb-4">AI Vision</h2>
-              <p className="text-gray-600 mb-6">
-                Our AI Vision Lab pushes the boundaries of computer vision technology, developing cutting-edge solutions for visual recognition, scene understanding, and real-time analysis. We combine deep learning with innovative approaches to create systems that can see and understand the world in new ways.
-              </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">Computer Vision</span>
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">Deep Learning</span>
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">Neural Networks</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Image
-                  src="https://i.pravatar.cc/96?img=11"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=12"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=13"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=14"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Interactive Computing 研究 */}
-        <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-[36px] overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="relative w-full h-full min-h-[400px]">
-              <Image
-                src="/images/research-interactive.jpg"
-                alt="Interactive Computing"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="p-8 md:p-12">
-              <h2 className="text-4xl font-bold mb-4">Interactive Computing</h2>
-              <p className="text-gray-600 mb-6">
-                The Interactive Computing Lab focuses on creating seamless human-computer interactions through innovative interface design and intelligent response systems. We explore new paradigms in user experience and develop technologies that make computing more intuitive and accessible.
-              </p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">HCI</span>
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">UX Design</span>
-                <span className="px-4 py-2 bg-white rounded-full text-sm font-medium">Interaction</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Image
-                  src="https://i.pravatar.cc/96?img=21"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=22"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-                <Image
-                  src="https://i.pravatar.cc/96?img=23"
-                  alt="Team member"
-                  width={96}
-                  height={96}
-                  className="rounded-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+            </Link>
+          );
+        })}
       </div>
+      <div className="mb-24" />
     </div>
   );
 } 

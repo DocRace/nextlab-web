@@ -32,137 +32,30 @@ export default function Team() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Staff</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Staff Member 1 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
+            {/* Staff Members */}
+            {[
+              { name: 'Zhang Kejun', role: 'NEXT Lab Director', avatar: '/avatars/zhang-kejun.png' },
+              { name: 'Liu Yuxuan', role: 'NEXT Lab Research Assistant', avatar: '/avatars/liu-yuxuan.png' },
+              { name: 'Zhang Tieyao', role: 'Next Lab Research Assistant', avatar: '/avatars/zhang-tieyao.jpeg' },
+              { name: 'Liang Weiqi', role: 'Next Lab Teaching Assistant', avatar: '/avatars/liang-weiqi.jpg' },
+            ].map((member, idx) => (
+              <div className="flex items-start" key={member.name}>
+                <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
                 <Image
-                  src="https://i.pravatar.cc/300?img=1"
-                  alt="John Smith"
+                    src={member.avatar}
+                    alt={member.name}
                   fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
+                    className="rounded-full object-cover bg-gray-100"
+                    sizes="100px"
                   priority
                 />
               </div>
               <div className="ml-6">
-                <h3 className="text-2xl font-bold">John Smith</h3>
-                <p className="text-gray-500">Professor of Computer Science</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Leading researcher in artificial intelligence and machine learning with over 15 years of experience in the field.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:john.smith@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-gray-500">{member.role}</p>
                 </div>
               </div>
-            </div>
-
-            {/* Staff Member 2 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
-                <Image
-                  src="https://i.pravatar.cc/300?img=5"
-                  alt="David Wilson"
-                  fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
-                  priority
-                />
-              </div>
-              <div className="ml-6">
-                <h3 className="text-2xl font-bold">David Wilson</h3>
-                <p className="text-gray-500">Associate Professor</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Expert in computer vision and pattern recognition, with a focus on medical image analysis.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:david.wilson@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Staff Member 3 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
-                <Image
-                  src="https://i.pravatar.cc/300?img=6"
-                  alt="Lisa Brown"
-                  fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
-                  priority
-                />
-              </div>
-              <div className="ml-6">
-                <h3 className="text-2xl font-bold">Lisa Brown</h3>
-                <p className="text-gray-500">Assistant Professor</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Specializing in human-computer interaction and user experience design.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:lisa.brown@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Staff Member 4 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
-                <Image
-                  src="https://i.pravatar.cc/300?img=7"
-                  alt="Robert Taylor"
-                  fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
-                  priority
-                />
-              </div>
-              <div className="ml-6">
-                <h3 className="text-2xl font-bold">Robert Taylor</h3>
-                <p className="text-gray-500">Research Professor</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Focused on natural language processing and machine translation systems.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:robert.taylor@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -170,213 +63,115 @@ export default function Team() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Researchers</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Researcher 1 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
+            {/* Researcher Members */}
+            {[
+              { name: 'Zhang Lekai', role: '2012 Postdoctoral', avatar: '/avatars/zhang-lekai.jpg' },
+            ].map((member, idx) => (
+              <div className="flex items-start" key={member.name}>
+                <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
                 <Image
-                  src="https://i.pravatar.cc/300?img=2"
-                  alt="Sarah Johnson"
+                    src={member.avatar}
+                    alt={member.name}
                   fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
+                    className="rounded-full object-cover bg-gray-100"
+                    sizes="100px"
                   priority
                 />
               </div>
               <div className="ml-6">
-                <h3 className="text-2xl font-bold">Sarah Johnson</h3>
-                <p className="text-gray-500">Research Scientist</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Expert in computer vision and deep learning, focusing on real-world applications in autonomous systems.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:sarah.johnson@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-gray-500">{member.role}</p>
                 </div>
               </div>
-            </div>
-
-            {/* Researcher 2 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
-                <Image
-                  src="https://i.pravatar.cc/300?img=8"
-                  alt="James Wilson"
-                  fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
-                  priority
-                />
-              </div>
-              <div className="ml-6">
-                <h3 className="text-2xl font-bold">James Wilson</h3>
-                <p className="text-gray-500">Senior Researcher</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Specializing in reinforcement learning and robotics applications.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:james.wilson@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Researcher 3 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
-                <Image
-                  src="https://i.pravatar.cc/300?img=9"
-                  alt="Maria Garcia"
-                  fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
-                  priority
-                />
-              </div>
-              <div className="ml-6">
-                <h3 className="text-2xl font-bold">Maria Garcia</h3>
-                <p className="text-gray-500">Research Associate</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Working on machine learning applications in healthcare and medical imaging.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:maria.garcia@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Researcher 4 */}
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
-                <Image
-                  src="https://i.pravatar.cc/300?img=10"
-                  alt="Thomas Lee"
-                  fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
-                  priority
-                />
-              </div>
-              <div className="ml-6">
-                <h3 className="text-2xl font-bold">Thomas Lee</h3>
-                <p className="text-gray-500">Research Scientist</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Focused on natural language processing and knowledge representation.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:thomas.lee@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
         {/* Doctors Section */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Doctors</h2>
+          <h2 className="text-3xl font-bold mb-8">Doctoral Students</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
+            {[
+              { name: 'Zhang Rui', role: '2018 PhD', avatar: '/avatars/zhang-rui.jpg' },
+              { name: 'Wu Xinda', role: '2019 PhD', avatar: '/avatars/wu-xinda.jpg' },
+              { name: 'Wang Bolin', role: '2020 PhD', avatar: '/avatars/wang-bolin.jpg' },
+              { name: 'Zhang Xiaoran', role: '2020 PhD', avatar: '/avatars/zhang-xiaoyan.jpeg' },
+              { name: 'Wu Songruoyao', role: '2020 PhD', avatar: '/avatars/wusong-ruoyao.jpeg' },
+              { name: 'Wu Wenqi', role: '2021 PhD', avatar: '/avatars/wu-wenqi.jpeg' },
+              { name: 'Shen Xinyi', role: '2021 PhD', avatar: '/avatars/shen-xinyi.jpg' },
+              { name: 'Yang Yiheng', role: '2021 PhD', avatar: '/avatars/yang-yiheng.jpeg' },
+              { name: 'Wang Zihao', role: '2021 PhD', avatar: '/avatars/wang-zihao.jpg' },
+              { name: 'Yu Jiaxing', role: '2022 PhD', avatar: '/avatars/yu-jiaxing.jpg' },
+              { name: 'Ma Le', role: '2022 PhD', avatar: '/avatars/ma-le.jpeg' },
+            ].map((member, idx) => (
+              <div className="flex items-start" key={member.name}>
+                <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
                 <Image
-                  src="https://i.pravatar.cc/300?img=3"
-                  alt="Michael Chen"
+                    src={member.avatar}
+                    alt={member.name}
                   fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
+                    className="rounded-full object-cover bg-gray-100"
+                    sizes="100px"
                   priority
                 />
               </div>
               <div className="ml-6">
-                <h3 className="text-2xl font-bold">Michael Chen</h3>
-                <p className="text-gray-500">PhD Candidate</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Full-stack developer specializing in interactive computing and user experience design.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:michael.chen@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-gray-500">{member.role}</p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
         {/* Masters Section */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Masters</h2>
+          <h2 className="text-3xl font-bold mb-8">Master Students</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start">
-              <div className="relative flex-shrink-0" style={{ width: '160px', height: '160px', minWidth: '160px' }}>
+            {[
+              { name: 'Huang Qiaoqiao', role: '2020 Master', avatar: '/avatars/huang-qiaoqiao.jpg' },
+              { name: 'Zhang Chen', role: '2020 Master', avatar: '/avatars/zhang-chen.jpg' },
+              { name: 'Zhang You', role: '2020 Master', avatar: '/avatars/zhang-you.jpg' },
+              { name: 'Liu Mingyue', role: '2020 Master', avatar: '/avatars/liu-mingyue.jpg' },
+              { name: 'Du Dashuang', role: '2020 Master', avatar: '/avatars/du-dashuang.jpg' },
+              { name: 'Tang Ruiyuan', role: '2020 Master', avatar: '/avatars/tang-ruiyuan.jpg' },
+              { name: 'Pang Bo', role: '2020 Master', avatar: '/avatars/pang-bo.jpg' },
+              { name: 'Wu Qiuning', role: '2020 Master', avatar: '/avatars/wu-qiuning.jpg' },
+              { name: 'Lin Liangjie', role: '2020 Master', avatar: '/avatars/lin-liangjie.jpeg' },
+              { name: 'Chen Yitong', role: '2020 Master', avatar: '/avatars/chen-yitong.jpg' },
+              { name: 'Wang Jiaqi', role: '2021 Master', avatar: '/avatars/wang-jiaqi.png' },
+              { name: 'Jia Zhongyu', role: '2021 Master', avatar: '/avatars/jia-zhongyu.jpg' },
+              { name: 'Lin Han', role: '2021 Master', avatar: '/avatars/lin-han.jpeg' },
+              { name: 'Cai Shixuan', role: '2021 Master', avatar: '/avatars/cai-shixuan.png' },
+              { name: 'Zhong Chongjun', role: '2021 Master', avatar: '/avatars/zhong-chongjun.jpeg' },
+              { name: 'Chen Mingwei', role: '2022 Master', avatar: '/avatars/chen-mingwei.jpg' },
+              { name: 'Chen Zewen', role: '2021 Master', avatar: '/avatars/chen-zewen.jpeg' },
+              { name: 'Wang Wenjing', role: '2021 Master', avatar: '/avatars/wang-wenjing.jpeg' },
+              { name: 'Shen Lvkesheng', role: '2022 Master', avatar: '/avatars/shenlv-kecheng.jpg' },
+              { name: 'Zhang Qiyuan', role: '2022 Master', avatar: '/avatars/zhang-qiyuan.png' },
+              { name: 'Huang Ouying', role: '2022 Master', avatar: '/avatars/huang-ouying.jpg' },
+              { name: 'Duan Xuan', role: '2022 Master', avatar: '/avatars/duan-xuan.jpg' },
+              { name: 'Hong Zizhen', role: '2022 Master', avatar: '/avatars/hong-zizhen.jpeg' },
+              { name: 'Feng Yuan', role: '2022 Master', avatar: '/avatars/feng-yuan.jpeg' },
+              { name: 'Shen Hanshu', role: '2022 Master', avatar: '/avatars/shen-hanshu.jpg' },
+            ].map((member, idx) => (
+              <div className="flex items-start" key={member.name}>
+                <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
                 <Image
-                  src="https://i.pravatar.cc/300?img=4"
-                  alt="Emily Davis"
+                    src={member.avatar}
+                    alt={member.name}
                   fill
-                  className="rounded-full object-cover"
-                  sizes="160px"
+                    className="rounded-full object-cover bg-gray-100"
+                    sizes="100px"
                   priority
                 />
               </div>
               <div className="ml-6">
-                <h3 className="text-2xl font-bold">Emily Davis</h3>
-                <p className="text-gray-500">Master Student</p>
-                <p className="text-gray-600 line-clamp-3">
-                  Creative designer with expertise in user interface design and human-computer interaction.
-                </p>
-                <div className="flex gap-4 mt-4">
-                  <Link href="mailto:emily.davis@example.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </Link>
-                  <Link href="https://linkedin.com" className="text-purple-600 hover:text-purple-800">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </Link>
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-gray-500">{member.role}</p>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -384,7 +179,26 @@ export default function Team() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Undergraduates</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Add undergraduate students here */}
+            {[
+              { name: 'Huang Zhijie', role: '2019 Undergraduate', avatar: '/avatars/huang-zhijie.png' },
+            ].map((member, idx) => (
+              <div className="flex items-start" key={member.name}>
+                <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
+                  <Image
+                    src={member.avatar}
+                    alt={member.name}
+                    fill
+                    className="rounded-full object-cover bg-gray-100"
+                    sizes="100px"
+                    priority
+                  />
+                </div>
+                <div className="ml-6">
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-gray-500">{member.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -392,7 +206,55 @@ export default function Team() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Alumni</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Add alumni here */}
+            {[
+              { name: 'Yin Yehang', role: '2019 Master', avatar: '/avatars/yinyehang.jpg' },
+              { name: 'Wu Runfan', role: '2019 Master', avatar: '/avatars/wurunfan.jpg' },
+              { name: 'Chen Xinyi', role: '2019 Master', avatar: '/avatars/xinyi-fang-2.JPG' },
+              { name: 'Chen Dan', role: '2019 Master', avatar: '/avatars/chendan.jpg' },
+              { name: 'Li Yifei', role: '2019 Master', avatar: '/avatars/liyifei.jpg' },
+              { name: 'Chen Mingzhen', role: '2019 Master', avatar: '/avatars/chenmingzhen.jpg' },
+              { name: 'Meng Xiao', role: '2019 Master', avatar: '/avatars/mengxiao.jpg' },
+              { name: 'Wu Yonglin', role: '2019 Master', avatar: '/avatars/wuyonglin.jpg' },
+              { name: 'Zhao Yanji', role: '2019 Master', avatar: '/avatars/zhaoyanji.jpg' },
+              { name: 'Li Yu', role: '2019 Master', avatar: '/avatars/liyufang.jpg' },
+              { name: 'Zhu Xujing', role: '2019 Master', avatar: '/avatars/zhuxujing.jpg' },
+              { name: 'Liao Yichen', role: '2019 Master', avatar: '/avatars/liaoyichen.jpg' },
+              { name: 'Chen Qihang', role: '2019 Master', avatar: '/avatars/chenqihang.jpg' },
+              { name: 'Ye Yuqing', role: '2018 Master', avatar: '/avatars/yuqing-fang-2.JPG' },
+              { name: 'Zhu Kaili', role: '2018 Master', avatar: '/avatars/zhukaili.jpg' },
+              { name: 'Wang Haoyang', role: '2018 Master', avatar: '/avatars/wang-haoyang.jpg' },
+              { name: 'Fang Yujun', role: '2018 Master', avatar: '/avatars/fangyujunfang.png' },
+              { name: 'Jiang Hanyun', role: '2018 Master', avatar: '/avatars/jiang-hanyun.jpg' },
+              { name: 'Jing Li', role: '2018 Master', avatar: '/avatars/jinglifang.png' },
+              { name: 'Cao Yingping', role: '2017 Master', avatar: '/avatars/cao-yingping.jpg' },
+              { name: 'Duan Ke', role: '2017 Master', avatar: '/avatars/duan-ke.jpg' },
+              { name: 'Huang Xiaoyi', role: '2017 Master', avatar: '/avatars/huang-xiaoyi.jpg' },
+              { name: 'Zheng Jun', role: '2017 Master', avatar: '/avatars/zheng-jun.jpg' },
+              { name: 'Huang Lumin', role: '2016 Master', avatar: '/avatars/huanglumin.jpg' },
+              { name: 'Jin Mengqi', role: '2016 Master', avatar: '/avatars/jin-mengqi.jpg' },
+              { name: 'Zhang Hui', role: '2016 PhD', avatar: '/avatars/zhanghui.jpg' },
+              { name: 'Li Simeng', role: '2016 Master', avatar: '/avatars/li-simeng.jpg' },
+              { name: 'Kevin Wolterink', role: '2015 Master', avatar: '/avatars/Kevin-1.jpg' },
+              { name: 'Zhang Xiaobin', role: '2015 Master', avatar: '/avatars/zhangixaobin-2.jpg' },
+              { name: 'Zhu Qi', role: '2015 Master', avatar: '/avatars/zhuqi-3.png' },
+            ].map((member, idx) => (
+              <div className="flex items-start" key={member.name}>
+                <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
+                  <Image
+                    src={member.avatar}
+                    alt={member.name}
+                    fill
+                    className="rounded-full object-cover bg-gray-100"
+                    sizes="100px"
+                    priority
+                  />
+                </div>
+                <div className="ml-6">
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <p className="text-gray-500">{member.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
