@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div 
-        className="absolute inset-0" 
+        className="absolute inset-0 px-4 sm:px-6 lg:px-8 xl:px-8" 
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.85)',
           backdropFilter: 'blur(12px)',
@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="relative max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-8">
         <div className="flex h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center m-0 p-0">
               <Image
                 src="/images/next-lab-logo.png"
                 alt="Next Lab Logo"
@@ -98,36 +98,57 @@ export default function Navbar() {
         </div>
       </div>
       
-      {/* Mobile menu, show/hide based on menu state */}
-      <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden`}>
-        <div className="pt-2 pb-3 space-y-1">
+      {/* Mobile menu dropdown */}
+      <div className={`${isOpen ? 'block' : 'hidden'} lg:hidden absolute top-full left-0 right-0 z-50`}>
+        <div 
+          className="py-2 space-y-1 shadow-lg"
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+            borderBottom: '1px solid rgba(0, 0, 0, 0.1)'
+          }}
+        >
+          <Link
+            href="/"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
           <Link
             href="/publications"
-            className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
           >
             Publications
           </Link>
           <Link
-            href="/research"
-            className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50"
+            href="/researches"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
           >
-            Research
+            Researches
           </Link>
           <Link
-            href="/course"
-            className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+            href="/courses"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-purple-600 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
           >
             Courses
           </Link>
           <Link
             href="/team"
-            className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
           >
             Team
           </Link>
           <Link
             href="/contact"
-            className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
           >
             Contact
           </Link>

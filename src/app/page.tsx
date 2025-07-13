@@ -47,7 +47,7 @@ export default function Home() {
                         technology to generate artistic images
                       </p>
                       <Link 
-                        href="/research/gan" 
+                        href="/researches/gan" 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
                           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -88,7 +88,7 @@ export default function Home() {
                         computer graphics in artistic creation.
                       </p>
                       <Link 
-                        href="/research/graphics" 
+                        href="/researches/graphics" 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
                           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -129,7 +129,7 @@ export default function Home() {
                         technology to enhance the audience&#39;s interactive experience.
                       </p>
                       <Link 
-                        href="/research/multimedia" 
+                        href="/researches/multimedia" 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
                           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -171,7 +171,7 @@ export default function Home() {
                         unique artistic images.
                       </p>
                       <Link 
-                        href="/research/artbreeder" 
+                        href="/researches/artbreeder" 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
                           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -199,7 +199,7 @@ export default function Home() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <Link href="/publications" className="flex items-center group">
-            <div className="w-24 h-24 flex-shrink-0">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
               <Image
                 src="/icons/publications.svg"
                 alt="Publications"
@@ -218,8 +218,8 @@ export default function Home() {
             </div>
           </Link>
           
-          <Link href="/research" className="flex items-center group">
-            <div className="w-24 h-24 flex-shrink-0">
+          <Link href="/researches" className="flex items-center group">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
               <Image
                 src="/icons/researches.svg"
                 alt="Research"
@@ -238,8 +238,8 @@ export default function Home() {
             </div>
           </Link>
           
-          <Link href="/course" className="flex items-center group">
-            <div className="w-24 h-24 flex-shrink-0">
+          <Link href="/courses" className="flex items-center group">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
               <Image
                 src="/icons/courses.svg"
                 alt="Course"
@@ -259,7 +259,7 @@ export default function Home() {
           </Link>
           
           <Link href="/team" className="flex items-center group">
-            <div className="w-24 h-24 flex-shrink-0">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
               <Image
                 src="/icons/team.svg"
                 alt="Team"
