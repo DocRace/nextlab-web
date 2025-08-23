@@ -2,7 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-const courses = {
+type Course = {
+  title: string;
+  date: string;
+  tags: string[];
+  image: string;
+  link: string;
+  overview: string;
+  syllabus: string[];
+  references: string[];
+  instructors?: string[];
+};
+
+const courses: Record<string, Course> = {
   "audio-music-technology": {
     title: "Integration of Audio Music and Computer – Audio Music Technology",
     date: "Jan 09, 2023",
@@ -115,8 +127,8 @@ const courses = {
   }
 };
 
-export default function CourseDetail({ params }) {
-  const { id } = params;
+export default async function CourseDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const course = courses[id];
   if (!course) return notFound();
 

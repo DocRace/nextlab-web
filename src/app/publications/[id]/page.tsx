@@ -256,15 +256,16 @@ Please cite our paper if you use our code or data.<br/>K. Zhang et al., "Werewol
   // ... other publications ...
 };
 
-export default function PublicationDetail({ params }: { params: { id: string } }) {
-  const publication = publications[params.id as keyof typeof publications];
+export default async function PublicationDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const publication = publications[id as keyof typeof publications];
 
   if (!publication) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Publication Not Found</h1>
-          <Link 
+          <Link
             href="/publications"
             className="text-blue-600 hover:text-blue-800"
           >
@@ -332,7 +333,7 @@ export default function PublicationDetail({ params }: { params: { id: string } }
               <div className="text-gray-600 whitespace-pre-line" dangerouslySetInnerHTML={{ __html: publication.content }} />
             </div>
             <div className="mt-8">
-              <Link 
+              <Link
                 href="/publications"
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{
