@@ -51,8 +51,8 @@ export default function Courses() {
               This course focuses on the emerging interdisciplinary field of music technology, music artificial intelligence, and computer audition/AI acoustics. It covers the development of the field, talent cultivation, and the integration of academic theory and industrial application. The course is structured as a series of popular science reports, open to the public, providing a comprehensive overview of academic theories and industrial applications.
             </p>
             <div className="flex items-center">
-              <Link 
-                href="/courses/audio-music-technology" 
+              <Link
+                href="/courses/audio-music-technology"
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{
                   backgroundColor: '#000000',
@@ -90,11 +90,11 @@ export default function Courses() {
               <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
             </div>
             <p className="text-gray-600 mb-6 line-clamp-4">
-              This course systematically teaches Swift fundamentals, advanced topics, and practical knowledge, integrating typical applications such as AI, AR, Face ID, and Accessibility. It features sharing from WWDC Scholarship winners and top awardees, aiming to cultivate learners' development capabilities in the iOS ecosystem and enhance their innovation and entrepreneurship skills in mobile applications.
+              This course systematically teaches Swift fundamentals, advanced topics, and practical knowledge, integrating typical applications such as AI, AR, Face ID, and Accessibility. It features sharing from WWDC Scholarship winners and top awardees, aiming to cultivate learners&apos; development capabilities in the iOS ecosystem and enhance their innovation and entrepreneurship skills in mobile applications.
             </p>
             <div className="flex items-center">
-              <Link 
-                href="/courses/swift-innovation" 
+              <Link
+                href="/courses/swift-innovation"
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{
                   backgroundColor: '#000000',
@@ -132,11 +132,11 @@ export default function Courses() {
               <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
             </div>
             <p className="text-gray-600 mb-6 line-clamp-4">
-              This course integrates research achievements in China's innovative design field with global design thinking, building a knowledge system of "Innovative Design + Design Thinking + Entrepreneurial Practice". It focuses on design thinking, innovation, and entrepreneurship, emphasizing interdisciplinarity, cross-domain, and international perspectives.
+              This course integrates research achievements in China&apos;s innovative design field with global design thinking, building a knowledge system of &quot;Innovative Design + Design Thinking + Entrepreneurial Practice&quot;. It focuses on design thinking, innovation, and entrepreneurship, emphasizing interdisciplinarity, cross-domain, and international perspectives.
             </p>
             <div className="flex items-center">
-              <Link 
-                href="/courses/design-thinking" 
+              <Link
+                href="/courses/design-thinking"
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{
                   backgroundColor: '#000000',

@@ -91,9 +91,9 @@ const researches = {
   },
 };
 
-export default function ResearchDetail({ params }) {
-  const { id } = params;
-  const research = researches[id];
+export default async function ResearchDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const research = researches[id as keyof typeof researches];
   if (!research) return notFound();
 
   return (

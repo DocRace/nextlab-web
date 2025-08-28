@@ -134,7 +134,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
               </div>
             )}
             <div className="mt-8">
-              <Link 
+              <Link
                 href="/publications"
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{

@@ -4,13 +4,14 @@ import { notFound } from "next/navigation";
 import { getTeamMemberById } from "@/data/team";
 
 interface TeamMemberPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function TeamMemberPage({ params }: TeamMemberPageProps) {
-  const member = getTeamMemberById(params.id);
+export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
+  const { id } = await params;
+  const member = getTeamMemberById(id);
 
   if (!member) {
     notFound();
@@ -20,8 +21,8 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
     <div className="min-h-screen max-w-[900px] mx-auto py-12 px-4">
       {/* 返回按钮 - 移到最顶部 */}
       <div className="mb-8">
-        <Link 
-          href="/team" 
+        <Link
+          href="/team"
           className="inline-flex items-center text-gray-600 hover:text-gray-800 transition-colors"
         >
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,7 +46,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
             />
           </div>
         </div>
-        
+
         {/* 标题和基本信息 */}
         <h1 className="text-3xl font-bold mt-4 mb-2">{member.englishName || member.name}</h1>
         
@@ -60,13 +61,13 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
             </span>
           )}
         </div>
-        
+
         <p className="text-lg text-gray-500 mb-4">{member.position}</p>
 
         {/* 联系信息 */}
         <div className="flex items-center gap-4 mb-4">
-          <a 
-            href={`mailto:${member.email}`} 
+          <a
+            href={`mailto:${member.email}`}
             className="inline-flex items-center text-white px-4 py-2 rounded-full font-medium bg-black hover:bg-gray-800 transition-colors"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -75,10 +76,10 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
             {member.email}
           </a>
           {member.personalHomepage && (
-            <a 
-              href={member.personalHomepage} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={member.personalHomepage}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-white px-4 py-2 rounded-full font-medium bg-black hover:bg-gray-800 transition-colors"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
