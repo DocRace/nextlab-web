@@ -279,7 +279,7 @@ export const publications: Publication[] = [
     venue: "Design Studies",
     abstract: "As a visual thinking tool, sketching strongly supports the conceptual stage of product design. Designers perceive their sketches and discover new ideas. Creative Segment theory models sketching process as a Creative Segment tree, and reveals the Creative Segment-centered pattern of sketching activities. However, the perception of sketches is important during sketching, whether designers' perception is in accord with this theory has not been examined. This article reports an experiment that recorded participants' eye movements to analyze their perception. Participants displayed unique eye movement features during Creative Segments, their fixations changed during the generation of Creative Segments and differed when generating Creative Segments on the three-level branches of the tree. These results provide evidence for the Creative Segment theory.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0142694X14000428",
-    image: "/images/Designers' perception during sketching.png",
+    image: "/images/Designers perception during sketching.png",
     tags: ["Design", "Sketching", "Eye Tracking", "2014"]
   },
   {
