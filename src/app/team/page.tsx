@@ -25,7 +25,7 @@ export default function Team() {
                     className="w-full h-full"
                   />
                 </div>
-                <h1 className="text-5xl font-bold text-black">Team</h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">Team</h1>
               </div>
             </div>
           </div>
@@ -37,7 +37,7 @@ export default function Team() {
         {/* Staff Section */}
         {staffMembers.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Staff</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">Staff</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {staffMembers.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
@@ -53,13 +53,10 @@ export default function Team() {
                       />
                     </div>
                     <div className="ml-6">
-                      <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
+                      <h3 className="text-lg md:text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
-                      {member.englishName && member.name !== member.englishName && (
-                        <p className="text-sm text-gray-400">{member.name}</p>
-                      )}
-                      <p className="text-gray-500">{member.position}</p>
+                      <p className="text-gray-500 text-sm md:text-base">{member.position}</p>
                       {member.researchGroup && (
                         <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
                       )}
@@ -93,9 +90,6 @@ export default function Team() {
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
-                      {member.englishName && member.name !== member.englishName && (
-                        <p className="text-sm text-gray-400">{member.name}</p>
-                      )}
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
                         <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
@@ -130,9 +124,6 @@ export default function Team() {
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
-                      {member.englishName && member.name !== member.englishName && (
-                        <p className="text-sm text-gray-400">{member.name}</p>
-                      )}
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
                         <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
@@ -167,9 +158,6 @@ export default function Team() {
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
-                      {member.englishName && member.name !== member.englishName && (
-                        <p className="text-sm text-gray-400">{member.name}</p>
-                      )}
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
                         <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>

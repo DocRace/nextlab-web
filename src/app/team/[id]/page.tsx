@@ -48,9 +48,6 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
         
         {/* 标题和基本信息 */}
         <h1 className="text-3xl font-bold mt-4 mb-2">{member.englishName || member.name}</h1>
-        {member.englishName && member.name !== member.englishName && (
-          <p className="text-xl text-gray-600 mb-2">{member.name}</p>
-        )}
         
         {/* 标签 - 移到职位描述上面 */}
         <div className="flex gap-2 mb-2">
@@ -95,15 +92,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
 
       {/* 详细内容 */}
       <div className="prose max-w-none mb-8">
-        {/* 个人简介 */}
-        {member.chineseBio && (
-          <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">个人简介</h4>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {member.chineseBio}
-            </p>
-          </div>
-        )}
+
 
         {/* 英文简介 */}
         {member.englishBio && (
@@ -118,7 +107,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
         {/* 研究成果 */}
         {member.achievements && (
           <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">研究成果</h4>
+            <h4 className="font-bold text-lg mt-6 mb-2">Research Achievements</h4>
             <div className="text-gray-700 leading-relaxed whitespace-pre-line">
               {member.achievements}
             </div>

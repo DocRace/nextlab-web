@@ -1,73 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const publications = [
-  {
-    id: "werewolf-xl",
-    title: "Werewolf-XL Dataset",
-    authors: "K. Zhang, Kejun and Wu, Xinda and Xie, Xinzhang and Zhang, Xiaoran and Zhang, Hui and Chen, Xiaoyun and Sun, Lingyun",
-    year: "2021",
-    tags: ["Dataset", "Affective Computing", "Music Group", "Article"],
-    image: "/images/publication-werewolf-xl.png",
-    desc: "A large-scale spontaneous audio-visual database for affective computing and group interaction analysis, containing 890 minutes of recordings from 129 subjects playing the Werewolf game, with rich emotion annotations and extensive benchmarks.",
-  },
-  {
-    id: "journal-conference-list",
-    title: "Related Journals and Conferences Overview",
-    authors: "NEXT LAB Team",
-    year: "2020",
-    tags: ["Article"],
-    image: "/images/journal-conference-list.jpg",
-    desc: "CCF recommended conferences and journals related to NEXT LAB research directions, including HCI, multimedia, and affective computing.",
-  },
-  {
-    id: "lingering",
-    title: "Lingering: Cross-media Intelligent Music Generation System",
-    authors: "NEXT LAB Music Group",
-    year: "2020",
-    tags: ["Research", "Music Group", "Article"],
-    image: "/images/Lingering.jpg",
-    desc: "Lingering is a cross-media intelligent music generation system powered by optimized Transformer XL and large-scale MIDI data, supporting automatic music creation and video-music matching.",
-  },
-  {
-    id: "smart-seal-experience",
-    title: "Smart Seal Experience Project",
-    authors: "NEXT LAB Calligraphy Group",
-    year: "2020",
-    tags: ["Research", "Project", "Calligraphy Group", "Article"],
-    image: "/images/smart-seal-experience.png",
-    desc: "A digital and intelligent experience project for traditional seal carving art.",
-  },
-  {
-    id: "seal-create",
-    title: "Seal Create",
-    authors: "NEXT LAB Calligraphy Group",
-    year: "2021",
-    tags: ["Research", "Project", "Calligraphy Group", "Article"],
-    image: "/images/seal-create.png",
-    desc: "AI-powered intelligent seal carving experience project, integrating calligraphy and digital innovation.",
-  },
-  {
-    id: "pmemo-dataset",
-    title: "PMEmo: Pop Music Emotion Dataset",
-    authors: "NEXT LAB Music Group",
-    year: "2021",
-    tags: ["Dataset", "Research", "Music Group", "Article"],
-    image: "/images/pmemo-dataset.png",
-    desc: "A dataset for music emotion recognition, providing rich annotations for pop music tracks.",
-  },
-  {
-    id: "art-easiest",
-    title: "Art Easiest",
-    authors: "NEXT LAB Mobile Innovation Group",
-    year: "2021",
-    tags: ["Research", "Project", "Mobile Innovation", "Article"],
-    image: "/images/art-easiest.jpg",
-    desc: "A mobile app for innovative art creation and sharing.",
-  },
-];
+import { getAllPublications } from "@/data/publications";
 
 export default function Publications() {
+  const publications = getAllPublications();
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -85,7 +22,7 @@ export default function Publications() {
                     className="w-full h-full"
                   />
                 </div>
-                <h1 className="text-5xl font-bold text-black">Publications</h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">Publications</h1>
               </div>
             </div>
           </div>
@@ -95,52 +32,45 @@ export default function Publications() {
       {/* Publications List - alternating two-column layout */}
       <div className="max-w-[1920px] mx-auto">
         {publications.map((pub, idx) => (
-          <div
+          <Link
             key={pub.id}
-            className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
-              >
-            <div className={`relative h-[400px] rounded-[36px] overflow-hidden ${idx % 2 === 1 ? 'order-2 md:order-2' : ''}`}>
-            <Image
+            href={`/publications/${pub.id}`}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center mb-12 md:mb-16`}
+          >
+            <div className={`relative h-[300px] md:h-[400px] rounded-[36px] overflow-hidden ${idx % 2 === 1 ? 'md:order-2' : 'order-1'}`}>
+              <Image
                 src={pub.image}
                 alt={pub.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-            <div className={idx % 2 === 1 ? 'order-1 md:order-1' : ''}>
-              <h2 className="text-3xl font-bold mb-4">{pub.title}</h2>
-            <div className="flex items-center text-gray-500 mb-2">
-                <span className="mr-4">By {pub.authors}</span>
-                <span className="text-sm">{pub.year}</span>
+                fill
+                className="object-cover"
+              />
             </div>
-              <div className="flex gap-2 mb-6 flex-wrap">
+            <div className={`${idx % 2 === 1 ? 'md:order-1' : 'order-2'} p-2 md:p-0`}>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-4">{pub.title}</h2>
+              <div className="flex flex-col sm:flex-row sm:items-center text-gray-500 mb-2">
+                <span className="mr-4 text-sm md:text-base">By {pub.authors}</span>
+                <span className="text-sm">{pub.year}</span>
+              </div>
+              <div className="flex gap-2 mb-3 md:mb-6 flex-wrap">
                 {pub.tags.map((tag, idx) => (
                   <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
                     {tag}
                   </span>
                 ))}
+              </div>
+              <p className="text-gray-600 mb-3 md:mb-6 line-clamp-4 text-sm md:text-base">
+                {pub.abstract || pub.venue}
+              </p>
+              <div className="flex items-center">
+                <div className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit bg-black">
+                  Read More
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
             </div>
-            <p className="text-gray-600 mb-6 line-clamp-4">
-                {pub.desc}
-            </p>
-            <div className="flex items-center">
-              <Link 
-                  href={`/publications/${pub.id}`}
-                className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
-                style={{
-                  backgroundColor: '#000000',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                }}
-              >
-                Read More
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
+          </Link>
         ))}
       </div>
     </div>
