@@ -1,0 +1,8 @@
+build:
+  stage: build
+  tags:
+    - build
+  script:
+    - docker build -t registry.magipop.xyz/maic/nextlab-web .
+    - docker push registry.magipop.xyz/maic/nextlab-web
+    - docker image rm registry.magipop.xyz/maic/nextlab-web
