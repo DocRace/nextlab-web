@@ -191,10 +191,10 @@ const researches = {
       }
     ],
     videos: [
-      { title: 'Drinking on the Lake First Clear Then Rain', src: '/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2001%20-%20Drinking%20on%20the%20Lake%20First%20Clear%20Then%20Rain.mp4' },
-      { title: 'Jiangchengzi', src: '/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2002%20-%20Jiangchengzi.mp4' },
-      { title: 'Niannujiao', src: '/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2003%20-%20Niannujiao.mp4' },
-      { title: 'Inscription on the West Forest Wall', src: '/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2004%20-%20Inscription%20on%20the%20West%20Forest%20Wall.mp4' }
+      { title: 'Drinking on the Lake First Clear Then Rain', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2001%20-%20Drinking%20on%20the%20Lake%20First%20Clear%20Then%20Rain.mp4' },
+      { title: 'Jiangchengzi', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2002%20-%20Jiangchengzi.mp4' },
+      { title: 'Niannujiao', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2003%20-%20Niannujiao.mp4' },
+      { title: 'Inscription on the West Forest Wall', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2004%20-%20Inscription%20on%20the%20West%20Forest%20Wall.mp4' }
     ],
     publications: [
       { id: 'ideationweb', title: 'IdeationWeb: Tracking the Evolution of Design Ideas in Human-AI Co-Creation' },
@@ -239,9 +239,9 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
         {('members' in research) && (
           <div className="w-full mt-4">
             <h2 className="text-2xl font-bold mb-3">Members</h2>
-            
+
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mb-6">
-              {(research as any).members.leaders.map((m:any) => {
+              {(research as any).members.leaders.map((m: any) => {
                 const tm = m.id ? getTeamMemberById(m.id) : undefined;
                 const name = tm?.englishName || tm?.name || m.name;
                 const avatar = tm?.avatar || "/images/next-lab-logo.png";
@@ -258,7 +258,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
               })}
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
-              {(research as any).members.members.map((m:any) => {
+              {(research as any).members.members.map((m: any) => {
                 const tm = m.id ? getTeamMemberById(m.id) : undefined;
                 const name = tm?.englishName || tm?.name || m.name;
                 const avatar = tm?.avatar || "/images/next-lab-logo.png";
@@ -284,7 +284,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
         <div className="mb-10">
           <h2 className="text-2xl font-bold mb-4">Projects</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {(research as any).projects.map((p:any) => {
+            {(research as any).projects.map((p: any) => {
               const content = (
                 <div className="rounded-2xl overflow-hidden border border-gray-200 hover:shadow-md transition-shadow">
                   <div className="relative h-[120px] bg-gray-100">
@@ -303,7 +303,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
             <div id="life-of-su-shi" className="mt-8">
               <h3 className="text-xl font-semibold mb-3">"Life of Su Shi" series</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {(research as any).videos.map((v:any, idx:number) => (
+                {(research as any).videos.map((v: any, idx: number) => (
                   <div key={idx} className="rounded-2xl overflow-hidden border border-gray-200">
                     <video controls className="w-full h-auto" src={v.src} />
                     <div className="p-3 text-sm text-gray-700">{v.title}</div>
@@ -320,7 +320,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
         <div className="mb-10">
           <h2 className="text-2xl font-bold mb-3">Publications</h2>
           <ul className="list-decimal pl-6">
-            {(research as any).publications.map((p:any) => (
+            {(research as any).publications.map((p: any) => (
               <li key={p.id} className="mb-2">
                 <Link href={`/publications/${p.id}`} className="text-blue-600 hover:text-blue-800 underline">{p.title}</Link>
               </li>
