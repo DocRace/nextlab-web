@@ -191,10 +191,10 @@ const researches = {
       }
     ],
     videos: [
-      { title: 'Drinking on the Lake First Clear Then Rain', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2001%20-%20Drinking%20on%20the%20Lake%20First%20Clear%20Then%20Rain.mp4' },
-      { title: 'Jiangchengzi', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2002%20-%20Jiangchengzi.mp4' },
-      { title: 'Niannujiao', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2003%20-%20Niannujiao.mp4' },
-      { title: 'Inscription on the West Forest Wall', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2004%20-%20Inscription%20on%20the%20West%20Forest%20Wall.mp4' }
+      { title: 'Drinking on the Lake First Clear Then Rain', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2001%20-%20Drinking%20on%20the%20Lake%20First%20Clear%20Then%20Rain.mp4?v=20250914' },
+      { title: 'Jiangchengzi', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2002%20-%20Jiangchengzi.mp4?v=20250914' },
+      { title: 'Niannujiao', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2003%20-%20Niannujiao.mp4?v=20250914' },
+      { title: 'Inscription on the West Forest Wall', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2004%20-%20Inscription%20on%20the%20West%20Forest%20Wall.mp4?v=20250914' }
     ],
     publications: [
       { id: 'ideationweb', title: 'IdeationWeb: Tracking the Evolution of Design Ideas in Human-AI Co-Creation' },
