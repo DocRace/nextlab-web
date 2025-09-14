@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const ibmPlexSans = IBM_Plex_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700'],
@@ -33,6 +34,7 @@ export default function RootLayout({
             {children}
           </div>
         </main>
+        <Footer />
       </body>
     </html>
   );

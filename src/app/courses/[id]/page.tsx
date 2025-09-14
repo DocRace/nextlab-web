@@ -94,12 +94,15 @@ const courses: Record<string, Course> = {
     ]
   },
   "design-thinking": {
-    title: "Design Thinking and Innovative Design",
-    date: "Jan 08, 2023",
-    tags: ["Course", "Design Group", "Article"],
+    title: "Design Thinking And Innovation Design",
+    date: "Updated",
+    tags: ["Course", "Design Thinking"],
     image: "/images/course-design-thinking.png",
-    link: "https://www.icourse163.org/course/ZJU-1003462001#/info",
-    overview: `This course aims to integrate research achievements in China's innovative design field with cutting-edge global design thinking, building a knowledge system of 'Innovative Design + Design Thinking + Entrepreneurial Practice'. Focusing on 'Design Thinking' and 'Innovation & Entrepreneurship', and emphasizing interdisciplinarity, cross-domain, and international perspectives, the course addresses real needs for national and regional development and aims to effectively enhance product innovation and entrepreneurial practice capabilities.<br/><br/>Course Features:<br/>1. Interdisciplinary, cross-domain, and international teaching scheme, covering technology, culture, art, human-centered, business, and integrated design, as well as the steps of design thinking: needs understanding, problem definition, ideation, prototyping, iteration, and result release.<br/>2. A knowledge system of 'Design Thinking + Innovative Design + Entrepreneurial Practice', deeply integrating innovation and entrepreneurship education.<br/>3. An integrated model for cultivating 'Innovation + Entrepreneurship' abilities, promoting learning and teaching through competitions, and systematically enhancing innovation and entrepreneurship skills.`,
+    link: "https://www.icourse163.org/course/ZJU-1003462001?from=searchPage&outVendor=zw_mooc_pcssjg_",
+    overview: `As for business management problem, scientific research problem, or engineering problem, the process of finding the solutions to these problems can be regarded as the process of "design". Using design thinking, people can find suitable solutions in various fields.<br/><br/>In view of this, we developed this course "Design Thinking and Innovation Design". With the mission of strengthening moral education and cultivating people, this course is a general education course of innovation and entrepreneurship for all students. It is committed to cultivating production innovation and entrepreneurial practice students with "design-led and innovation-driven". The course is taught by professors Zhang Kejun, Sun Lingyun and Chai Chunlei. The main contents include design thinking theory, methods and tools, innovation design connotation, approaches and key technologies, and outstanding cases of innovation and entrepreneurship practice.`,
+    instructors: [
+      "Kejun Zhang", "Lingyun Sun", "Chunlei Chai"
+    ],
     syllabus: [
       "Week 1: Course Introduction, Basics of Design Thinking, Needs Understanding, Unit Test 1",
       "Week 2: Problem Definition, Ideation, Prototyping, Unit Test 2, Assignment 1",
@@ -113,17 +116,8 @@ const courses: Record<string, Course> = {
       "Week 10: Case Studies 1-3",
       "Week 11: Case Studies 4-5, Course Summary, Expert Interviews"
     ],
-    references: [
-      "Positive Computing: Technology for Wellbeing and Human Potential, Rafael Calvo, Dorian Peters, et al.",
-      "Business Model Generation, Chunlei Chai",
-      "Design Thinking Innovation Guide, Keyue Wang, Linlin Shui, Hao Jiang",
-      "Comprehensive Research Report on Innovative Design, Chinese Academy of Engineering",
-      "The Design of Everyday Things, Donald Norman",
-      "Design Thinking for Entrepreneurship, Shaoji Du",
-      "Innovative Design Thinking, Bainian Lu",
-      "The Design Thinking Playbook, Michael Lewrick, Patrick Link, Larry Leifer",
-      "... (and more, see your original list for full references)"
-    ]
+    references: [],
+    // exhibition link text left in overview area below as separate block
   }
 };
 
@@ -151,6 +145,14 @@ export default async function CourseDetail({ params }: { params: Promise<{ id: s
         </Link>
       </div>
       <div className="prose max-w-none mb-8" dangerouslySetInnerHTML={{ __html: course.overview }} />
+      {id === 'design-thinking' && (
+        <div className="mb-8">
+          <h2 className="text-xl font-bold mb-2">Exhibition</h2>
+          <p className="text-gray-700">Baidu Netdisk:</p>
+          <a href="https://pan.baidu.com/s/1zoKZOmZpLe8IKDu82L4AxA" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Link</a>
+          <div className="text-sm text-gray-600 mt-1">Extraction code: nexn</div>
+        </div>
+      )}
       {course.instructors && (
         <div className="mb-8">
           <h2 className="text-xl font-bold mb-2">Instructors</h2>
