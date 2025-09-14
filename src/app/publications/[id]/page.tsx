@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getPublicationById } from "@/data/publications";
+import { teamMembers } from "@/data/team";
 import { notFound } from "next/navigation";
 
 interface PublicationDetailProps {
@@ -16,6 +17,84 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
   if (!publication) {
     notFound();
   }
+
+  // Build an author-to-memberId matcher
+  const normalize = (s: string) => s.replace(/\*/g, "").replace(/\./g, "").trim().toLowerCase();
+
+  const nameMap = new Map<string, string>();
+  teamMembers.forEach((m) => {
+    const cn = m.name ? normalize(m.name) : undefined;
+    if (cn) nameMap.set(cn, m.id);
+    if (m.englishName) {
+      const parts = m.englishName.split(/\s+/);
+      if (parts.length >= 2) {
+        const last = parts[0];
+        const first = parts.slice(1).join(" ");
+        nameMap.set(normalize(`${first} ${last}`), m.id); // First Last
+        nameMap.set(normalize(`${last} ${first}`), m.id); // Last First
+        nameMap.set(normalize(`${first[0]} ${last}`), m.id); // Initial. Last
+      } else {
+        nameMap.set(normalize(m.englishName), m.id);
+      }
+    }
+  });
+
+  // Manual aliases for common variations
+  const aliases: Record<string, string> = {
+    "kejun zhang": "zhang-kejun",
+    "wenqi wu": "wu-wenqi",
+    "songruoyao wu": "wu-songruoyao",
+    "zihao wang": "wang-zihao",
+    "le ma": "ma-le",
+    "xinda wu": "wu-xinda",
+    "jiaxing yu": "yu-jiaxing",
+    "xinyi chen": "chen-xinyi",
+    "rui zhang": "zhang-rui",
+    "bolin wang": "wang-bolin",
+    "yiheng yang": "yang-yiheng",
+    "zehui zheng": "zheng-zehui",
+    "huaying liu": "liu-huaying",
+    "guanting lu": "lu-guanting",
+    "ziyi huang": "huang-ziyi",
+    "hanshu shen": "shen-hanshu",
+    "yuhang jin": "jin-yuhang",
+    "jinhe li": "li-jinhe",
+    "xiuqi li": "li-xiuqi",
+    "xinyi shen": "shen-xinyi",
+    "yifei li": "li-yifei",
+    "chen zhang": "zhang-chen",
+  };
+
+  const findMemberIdForAuthor = (raw: string): string | undefined => {
+    const a = normalize(raw);
+    if (aliases[a]) return aliases[a];
+    if (nameMap.has(a)) return nameMap.get(a);
+    // Try to parse forms like "C. Zhang" or "K Zhang"
+    const m = a.match(/^([a-z])[\s]?([a-z\-']+)$/i) || a.match(/^([a-z])[\s]+([a-z\-']+)$/i);
+    if (m) {
+      const initial = m[1];
+      const last = m[2];
+      // find candidate whose last name matches and first initial matches
+      for (const tm of teamMembers) {
+        if (!tm.englishName) continue;
+        const parts = tm.englishName.split(/\s+/);
+        if (parts.length >= 2) {
+          const lastName = parts[0].toLowerCase();
+          const firstName = parts.slice(1).join(" ").toLowerCase();
+          if (lastName === last && firstName.startsWith(initial)) return tm.id;
+          // also check reversed
+          if (firstName === last && lastName.startsWith(initial)) return tm.id;
+        }
+      }
+    }
+    return undefined;
+  };
+
+  const authorTokens = publication.authors
+    .replace(/\sand\s/gi, ", ")
+    .split(/,\s*/)
+    .map((s) => s.trim())
+    .filter(Boolean);
 
   return (
     <div className="min-h-screen">
@@ -54,8 +133,22 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
           </div>
           <div>
             <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4">{publication.title}</h2>
-            <div className="flex items-center text-gray-500 mb-4">
-              <span className="mr-4">By {publication.authors}</span>
+            <div className="flex items-center text-gray-500 mb-4 flex-wrap">
+              <span className="mr-2">By</span>
+              <span className="mr-4">
+                {authorTokens.map((a, idx) => {
+                  const memberId = findMemberIdForAuthor(a);
+                  const comma = idx < authorTokens.length - 1 ? ", " : "";
+                  return memberId ? (
+                    <span key={`${a}-${idx}`}>
+                      <Link href={`/team/${memberId}`} className="text-blue-600 hover:text-blue-800 underline">{a.replace(/\*/g, "")}</Link>
+                      {comma}
+                    </span>
+                  ) : (
+                    <span key={`${a}-${idx}`}>{a}{comma}</span>
+                  );
+                })}
+              </span>
               <span className="text-sm">{publication.year}</span>
             </div>
             <div className="flex flex-wrap gap-2 mb-6">

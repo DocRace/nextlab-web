@@ -1,9 +1,76 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPublications } from "@/data/publications";
+import { teamMembers } from "@/data/team";
 
 export default function Publications() {
   const publications = getAllPublications();
+
+  const normalize = (s: string) => s.replace(/\*/g, "").replace(/\./g, "").trim().toLowerCase();
+  const nameMap = new Map<string, string>();
+  teamMembers.forEach((m) => {
+    const cn = m.name ? normalize(m.name) : undefined;
+    if (cn) nameMap.set(cn, m.id);
+    if (m.englishName) {
+      const parts = m.englishName.split(/\s+/);
+      if (parts.length >= 2) {
+        const last = parts[0];
+        const first = parts.slice(1).join(" ");
+        nameMap.set(normalize(`${first} ${last}`), m.id);
+        nameMap.set(normalize(`${last} ${first}`), m.id);
+        nameMap.set(normalize(`${first[0]} ${last}`), m.id);
+      } else {
+        nameMap.set(normalize(m.englishName), m.id);
+      }
+    }
+  });
+
+  const aliases: Record<string, string> = {
+    "kejun zhang": "zhang-kejun",
+    "wenqi wu": "wu-wenqi",
+    "songruoyao wu": "wu-songruoyao",
+    "zihao wang": "wang-zihao",
+    "le ma": "ma-le",
+    "xinda wu": "wu-xinda",
+    "jiaxing yu": "yu-jiaxing",
+    "xinyi chen": "chen-xinyi",
+    "rui zhang": "zhang-rui",
+    "bolin wang": "wang-bolin",
+    "yiheng yang": "yang-yiheng",
+    "zehui zheng": "zheng-zehui",
+    "huaying liu": "liu-huaying",
+    "guanting lu": "lu-guanting",
+    "ziyi huang": "huang-ziyi",
+    "hanshu shen": "shen-hanshu",
+    "yuhang jin": "jin-yuhang",
+    "jinhe li": "li-jinhe",
+    "xiuqi li": "li-xiuqi",
+    "xinyi shen": "shen-xinyi",
+    "yifei li": "li-yifei",
+    "chen zhang": "zhang-chen",
+  };
+
+  const findMemberIdForAuthor = (raw: string): string | undefined => {
+    const a = normalize(raw);
+    if (aliases[a]) return aliases[a];
+    if (nameMap.has(a)) return nameMap.get(a);
+    const m = a.match(/^([a-z])[\s]?([a-z\-']+)$/i) || a.match(/^([a-z])[\s]+([a-z\-']+)$/i);
+    if (m) {
+      const initial = m[1];
+      const last = m[2];
+      for (const tm of teamMembers) {
+        if (!tm.englishName) continue;
+        const parts = tm.englishName.split(/\s+/);
+        if (parts.length >= 2) {
+          const lastName = parts[0].toLowerCase();
+          const firstName = parts.slice(1).join(" ").toLowerCase();
+          if (lastName === last && firstName.startsWith(initial)) return tm.id;
+          if (firstName === last && lastName.startsWith(initial)) return tm.id;
+        }
+      }
+    }
+    return undefined;
+  };
 
   return (
     <div className="min-h-screen">
@@ -48,7 +115,25 @@ export default function Publications() {
             <div className={`${idx % 2 === 1 ? 'md:order-1' : 'order-2'} p-2 md:p-0`}>
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-4">{pub.title}</h2>
               <div className="flex flex-col sm:flex-row sm:items-center text-gray-500 mb-2">
-                <span className="mr-4 text-sm md:text-base">By {pub.authors}</span>
+                <span className="mr-2 text-sm md:text-base">By</span>
+                <span className="mr-4 text-sm md:text-base">
+                  {pub.authors
+                    .replace(/\sand\s/gi, ", ")
+                    .split(/,\s*/)
+                    .filter(Boolean)
+                    .map((a, idx, arr) => {
+                      const id = findMemberIdForAuthor(a);
+                      const comma = idx < arr.length - 1 ? ", " : "";
+                      return id ? (
+                        <span key={`${a}-${idx}`}>
+                          <Link href={`/team/${id}`} className="text-blue-600 hover:text-blue-800 underline">{a.replace(/\*/g, "")}</Link>
+                          {comma}
+                        </span>
+                      ) : (
+                        <span key={`${a}-${idx}`}>{a}{comma}</span>
+                      );
+                    })}
+                </span>
                 <span className="text-sm">{pub.year}</span>
               </div>
               <div className="flex gap-2 mb-3 md:mb-6 flex-wrap">
