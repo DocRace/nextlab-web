@@ -10,6 +10,7 @@ const navItems = [
   { name: 'Publications', path: '/publications' },
   { name: 'Researches', path: '/researches' },
   { name: 'Courses', path: '/courses' },
+  { name: 'Gallery', path: '/gallery' },
   { name: 'People', path: '/team' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -123,6 +124,13 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             Publications
+          </Link>
+          <Link
+            href="/gallery"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-fuchsia-600 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Gallery
           </Link>
           <Link
             href="/researches"

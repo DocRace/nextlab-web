@@ -11,9 +11,9 @@ export default function Banner() {
   
   // 图片数据 - 使用本地图片而不是外部链接以提高性能
   const images = [
-    '/images/project1.jpg',
-    '/images/project2.jpg',
-    '/images/project3.jpg'
+    '/images/banner-1.jpg',
+    '/images/banner-2.jpg',
+    '/images/banner-3.jpg'
   ];
   
   // 动态计算胶囊尺寸和位置
@@ -228,8 +228,8 @@ export default function Banner() {
             
             {/* 右侧文字区域 */}
             <div className="z-40">
-              <h1 className="text-3xl md:text-6xl font-bold text-black mb-2 md:mb-4 [text-shadow:_0_0_42px_rgba(255,255,255,1),_0_0_82px_rgba(255,255,255,0.95),_0_0_122px_rgba(255,255,255,0.9)]">
-                ZJU Next Lab
+              <h1 className="text-3xl md:text-6xl font-bold text-black mb-2 md:mb-4 uppercase [text-shadow:_0_0_42px_rgba(255,255,255,1),_0_0_82px_rgba(255,255,255,0.95),_0_0_122px_rgba(255,255,255,0.9)]">
+                ZJU NEXT LAB
               </h1>
               <p className="text-black text-sm md:text-xl [text-shadow:_0_0_42px_rgba(255,255,255,1),_0_0_82px_rgba(255,255,255,1),_0_0_122px_rgba(255,255,255,1),_0_0_162px_rgba(255,255,255,0.95),_0_0_202px_rgba(255,255,255,0.9)]">
                 Dedicated to research aimed at enhancing human well-being, 

@@ -2,7 +2,7 @@ export interface TeamMember {
     id: string;
     name: string;
     englishName?: string;
-    category: 'Staff' | 'Doctoral Students' | 'Master Students' | 'Alumni';
+    category: 'Faculty & Researchers' | 'Staff' | 'Doctoral Students' | 'Master Students' | 'Undergraduates' | 'Alumni';
     researchGroup?: string;
     position: string;
     avatar: string;
@@ -14,12 +14,12 @@ export interface TeamMember {
   }
   
   export const teamMembers: TeamMember[] = [
-    // Staff
+    // Faculty & Researchers
     {
       id: 'zhang-kejun',
       name: '张克俊',
       englishName: 'Zhang Kejun',
-      category: 'Staff',
+      category: 'Faculty & Researchers',
       position: 'Director of the NEXT Lab of the College of Computer Science and Technology, Zhejiang University',
       avatar: '/avatars/zhang-kejun.png',
       email: 'zhangkejun@zju.edu.cn',
@@ -59,6 +59,15 @@ export interface TeamMember {
       email: 'caoyingping@zju.edu.cn',
       englishBio: 'Year of Commencement: 2023\nPosition: Assistant to the Chair, Department of Industrial Design, Zhejiang University\nKey Responsibilities:\n1. AI for Education\n2.Design Competition Workshop Coordination\n3.Laboratory Research Project Management\n4.Laboratory Administration',
       chineseBio: '入职年份：2023\n工作岗位：浙江大学工业设计系系主任助理\n工作方向：\n1、AI for education \n2、设计竞赛工作坊\n3、实验室科研项目管理\n4、实验室行政管理'
+    },
+    {
+      id: 'ye-wei',
+      name: '叶炜',
+      englishName: 'Ye Wei',
+      category: 'Staff',
+      position: 'Administrative staff',
+      avatar: '/images/next-lab-logo.png',
+      email: 'ye-wei@zju.edu.cn'
     },
   
     // Doctoral Students
@@ -249,15 +258,7 @@ export interface TeamMember {
       avatar: '/avatars/yang-yiheng.jpeg',
       email: 'yang-yiheng@zju.edu.cn'
     },
-    {
-      id: 'zhang-lekai',
-      name: '张乐凯',
-      englishName: 'Zhang Lekai',
-      category: 'Doctoral Students',
-      position: 'Postdoctoral Researcher, 2012',
-      avatar: '/avatars/zhang-lekai.jpg',
-      email: 'zhang-lekai@zju.edu.cn'
-    },
+    
   
     // Master Students
     {
@@ -619,7 +620,36 @@ export interface TeamMember {
       avatar: '/avatars/shen-hanshu.jpg',
       email: 'shen-hanshu@zju.edu.cn'
     },
+    {
+      id: 'zhang-lekai',
+      name: '张乐凯',
+      englishName: 'Zhang Lekai',
+      category: 'Faculty & Researchers',
+      position: 'Visiting Scholar, Postdoctoral Researcher',
+      avatar: '/avatars/zhang-lekai.jpg',
+      email: 'zhang-lekai@zju.edu.cn'
+    },
+    {
+      id: 'xing-baixi',
+      name: '邢白夕',
+      englishName: 'Xing Baixi',
+      category: 'Faculty & Researchers',
+      position: 'Postdoctoral Researcher',
+      avatar: '/images/next-lab-logo.png',
+      email: 'xing-baixi@zju.edu.cn'
+    },
+    {
+      id: 'ji-shulei',
+      name: '吉姝蕾',
+      englishName: 'Ji Shulei',
+      category: 'Faculty & Researchers',
+      position: 'Postdoctoral Researcher',
+      avatar: '/images/next-lab-logo.png',
+      email: 'ji-shulei@zju.edu.cn'
+    },
 
+    // Staff
+    
     // Alumni
     {
       id: 'wang-wenjing',

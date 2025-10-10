@@ -18,27 +18,27 @@ const getTagColor = (tag: string) => {
 const researches = [
   {
     id: "music",
-    title: "NEXT + Music | Creating New Horizons with Music",
-    date: "Jun 11, 2022",
+    title: "NEXT + Music | Engineering the Future of Music with AI",
+    date: "Updated",
     tags: ["Music Group"],
     image: "/images/research-music.png",
     desc: "The MUSIC-AI (Intelligent Music Group) is dedicated to using music knowledge and AI technology to empower innovation in music art and design. We build an ecosystem for music generation, human-computer interaction, emotional computing, and multimodal recommendation, aiming to solve challenges in intelligent music production.",
   },
   {
     id: "font",
-    title: "NEXT + Font | We Make Fonts, We Compute Fonts",
-    date: "Jun 10, 2022",
+    title: "NEXT + Font | Shaping the Future of Chinese Character",
+    date: "Updated",
     tags: ["Font Group"],
-    image: "/images/research-font.png",
-    desc: "The Intelligent Font Group focuses on calligraphy font generation and digital/intelligent seal carving, including database construction, font generation models, and interactive tools. We aim to make high-quality Chinese font creation easier and enrich creative tools for artists and designers.",
+    image: "/images/researches-font-cover.png",
+    desc: "We are an interdisciplinary team leveraging AI and design to revolutionize the creation and application of Chinese fonts and digital seals.",
   },
   {
     id: "design",
-    title: "NEXT + Design | Pioneering Design Science Education in China",
-    date: "Jun 09, 2022",
+    title: "AI + Design | Creating Design Innovations for the AI era",
+    date: "Updated",
     tags: ["Design Group"],
-    image: "/images/research-design.jpg",
-    desc: "DESIGN-Ed (Design Education Group) applies design thinking to business, technology, culture, and art, building a product system from design cognition to practice. We promote the development of design education in China and make design accessible and impactful in every industry.",
+    image: "/images/researches-design-cover.png",
+    desc: "We leverage AI-assisted design to create intelligent products and nurture designers capable of facing future challenges.",
   },
 ];
 
@@ -67,9 +67,9 @@ export default function Researches() {
         </div>
       </div>
 
-      {/* 内容部分 */}
-      <div className="max-w-[1920px] mx-auto py-6 md:py-12 grid gap-6 md:gap-8">
-        {researches.map((item, idx) => {
+      {/* 内容部分：竖版卡片，直接显示完整三组（图上、文下） */}
+      <div className="max-w-[1920px] mx-auto py-6 md:py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {researches.map((item) => {
           let bg = "";
           if (item.id === "music") bg = "from-purple-50 to-purple-100";
           else if (item.id === "font") bg = "from-orange-50 to-orange-100";
@@ -80,30 +80,23 @@ export default function Researches() {
               href={`/researches/${item.id}`}
               className={`block bg-gradient-to-br ${bg} rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl`}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className={`relative w-full h-full min-h-[300px] md:min-h-[400px] ${idx % 2 === 1 ? 'md:order-2' : 'order-1'}`}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+              <div className="relative w-full h-[240px] md:h-[360px]">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+              </div>
+              <div className="p-4 md:p-8">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">{item.title}</h2>
+                <div className="flex gap-2 mb-3 flex-wrap">
+                  {item.tags.map((tag) => (
+                    <span key={tag} className={`px-3 py-1 rounded-full text-xs font-medium ${getTagColor(tag)}`}>{tag}</span>
+                  ))}
                 </div>
-                <div className={`p-4 md:p-8 lg:p-12 flex flex-col justify-center ${idx % 2 === 1 ? 'md:order-1' : 'order-2'}`}>
-                  <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-2 md:mb-4">{item.title}</h2>
-                  <div className="flex gap-2 mb-2">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className={`px-3 py-1 rounded-full text-xs font-medium ${getTagColor(tag)}`}>{tag}</span>
-                    ))}
-                  </div>
-                  <div className="text-gray-500 text-sm mb-2 md:mb-4">{item.date}</div>
-                  <p className="text-gray-600 mb-3 md:mb-6 line-clamp-4 text-sm md:text-base">{item.desc}</p>
-                  <span className="inline-flex items-center px-6 py-2 rounded-full font-semibold text-white bg-black hover:bg-gray-800 transition-colors shadow w-fit">
-                    Read More
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                  </span>
-                </div>
+                <p className="text-gray-600 line-clamp-2 text-sm md:text-base">{item.desc}</p>
               </div>
             </Link>
           );

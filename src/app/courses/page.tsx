@@ -28,7 +28,85 @@ export default function Courses() {
 
       {/* 内容部分 */}
       <div className="max-w-[1920px] mx-auto">
-        {/* Integration of Audio Music and Computer */}
+        {/* 1. Design Thinking And Innovation Design */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative h-[400px] rounded-[36px] overflow-hidden">
+            <Image src="/images/course-design-thinking.png" alt="Design Thinking And Innovation Design" fill className="object-cover" />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Design Thinking And Innovation Design</h2>
+            <p className="text-gray-600 mb-4">Instructors: Zhang Kejun, Sun Lingyun, Chai Chunlei</p>
+            <div className="flex gap-4 items-center">
+              <Link
+                href="/courses/design-thinking"
+                className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
+                style={{ backgroundColor: '#000000', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}
+              >
+                Detail
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 2. Information & Interaction Design Technology */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative h-[400px] rounded-[36px] overflow-hidden">
+            <Image src="/images/course-interactive.jpg" alt="Information & Interaction Design Technology" fill className="object-cover" />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Information & Interaction Design Technology</h2>
+            <p className="text-gray-600 mb-4">Instructors: Zhang Kejun, Xiang Wei, Chen Liuqing, Chen Shi</p>
+            <Link href="https://www.icourse163.org/course/0809ZJU389-1472361166?outVendor=zw_mooc_pclszykctj_" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Chinese MOOC link</Link>
+          </div>
+        </div>
+
+        {/* 3. Artificial Intelligence：Emotion, Art and Design */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative h-[400px] rounded-[36px] overflow-hidden">
+            <Image src="/images/course-ai.jpg" alt="Artificial Intelligence：Emotion, Art and Design" fill className="object-cover" />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Artificial Intelligence：Emotion, Art and Design</h2>
+            <p className="text-gray-600 mb-4">Instructor: Zhang Kejun</p>
+          </div>
+        </div>
+
+        {/* 4. Introduction to Swift Innovation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative h-[400px] rounded-[36px] overflow-hidden">
+            <Image src="/images/course-swift.jpg" alt="Introduction to Swift Innovation" fill className="object-cover" />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Introduction to Swift Innovation</h2>
+            <p className="text-gray-600 mb-4">Instructors: Zhang Kejun, Zhu Hongming, Dong Zhanxun, Zhao Xiaogang</p>
+            <div className="flex gap-4 items-center">
+              <Link
+                href="/courses/swift-innovation"
+                className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
+                style={{ backgroundColor: '#000000', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}
+              >
+                Detail
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </Link>
+              <Link href="https://www.icourse163.org/course/ZJU-1450024180" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Chinese MOOC link</Link>
+            </div>
+          </div>
+        </div>
+
+        {/* 5. AI & Digital Art */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative h-[400px] rounded-[36px] overflow-hidden">
+            <Image src="/images/research-music.png" alt="AI & Digital Art" fill className="object-cover" />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">AI & Digital Art</h2>
+            <p className="text-gray-600 mb-4">Instructors: Yu Zhen, Zhang Kejun</p>
+            <Link href="https://www.icourse163.org/course/CAA-1473163177?from=searchPage&outVendor=zw_mooc_pcssjg_" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Chinese MOOC link</Link>
+          </div>
+        </div>
+
+        {/* 6. Integration of Audio Music and Computer – Audio Music Technology */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative h-[400px] rounded-[36px] overflow-hidden">
             <Image
@@ -40,120 +118,23 @@ export default function Courses() {
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-4">Integration of Audio Music and Computer – Audio Music Technology</h2>
-            <div className="flex items-center text-gray-500 mb-2">
-              <span className="mr-4">Course • Jan 09, 2023</span>
-            </div>
-            <div className="flex gap-2 mb-6">
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Course</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
-            </div>
-            <p className="text-gray-600 mb-6 line-clamp-4">
-              This course focuses on the emerging interdisciplinary field of music technology, music artificial intelligence, and computer audition/AI acoustics. It covers the development of the field, talent cultivation, and the integration of academic theory and industrial application. The course is structured as a series of popular science reports, open to the public, providing a comprehensive overview of academic theories and industrial applications.
-            </p>
-            <div className="flex items-center">
+            <p className="text-gray-600 mb-4">Instructors: Li Wei, Zhang Kejun</p>
+            <div className="flex gap-4 items-center">
               <Link
                 href="/courses/audio-music-technology"
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
-                style={{
-                  backgroundColor: '#000000',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                }}
+                style={{ backgroundColor: '#000000', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)' }}
               >
                 Detail
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
               </Link>
+              <Link href="https://www.icourse163.org/course/0809FDU062-1462119161?outVendor=zw_mooc_pclszykctj_" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Chinese MOOC link</Link>
             </div>
           </div>
         </div>
-
-        {/* Introduction to Swift Innovation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-          <div className="relative h-[400px] rounded-[36px] overflow-hidden">
-            <Image
-              src="/images/course-swift.jpg"
-              alt="Introduction to Swift Innovation"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Introduction to Swift Innovation</h2>
-            <div className="flex items-center text-gray-500 mb-2">
-              <span className="mr-4">Course • Jan 09, 2023</span>
-            </div>
-            <div className="flex gap-2 mb-6">
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Course</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Swift</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
-            </div>
-            <p className="text-gray-600 mb-6 line-clamp-4">
-              This course systematically teaches Swift fundamentals, advanced topics, and practical knowledge, integrating typical applications such as AI, AR, Face ID, and Accessibility. It features sharing from WWDC Scholarship winners and top awardees, aiming to cultivate learners&apos; development capabilities in the iOS ecosystem and enhance their innovation and entrepreneurship skills in mobile applications.
-            </p>
-            <div className="flex items-center">
-              <Link
-                href="/courses/swift-innovation"
-                className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
-                style={{
-                  backgroundColor: '#000000',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                }}
-              >
-                Detail
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Design Thinking and Innovative Design */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[400px] rounded-[36px] overflow-hidden">
-            <Image
-              src="/images/course-design-thinking.png"
-              alt="Design Thinking and Innovative Design"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Design Thinking and Innovative Design</h2>
-            <div className="flex items-center text-gray-500 mb-2">
-              <span className="mr-4">Course • Jan 08, 2023</span>
-            </div>
-            <div className="flex gap-2 mb-6">
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Course</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Design Group</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Article</span>
-            </div>
-            <p className="text-gray-600 mb-6 line-clamp-4">
-              This course integrates research achievements in China&apos;s innovative design field with global design thinking, building a knowledge system of &quot;Innovative Design + Design Thinking + Entrepreneurial Practice&quot;. It focuses on design thinking, innovation, and entrepreneurship, emphasizing interdisciplinarity, cross-domain, and international perspectives.
-            </p>
-            <div className="flex items-center">
-              <Link
-                href="/courses/design-thinking"
-                className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
-                style={{
-                  backgroundColor: '#000000',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                }}
-              >
-                Detail
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <div className="mb-24" />
     </div>
   );
-} 
+}
