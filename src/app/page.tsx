@@ -262,14 +262,14 @@ export default function Home() {
             <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
               <Image
                 src="/icons/team.svg"
-                alt="Team"
+                alt="People"
                 width={96}
                 height={96}
                 className="w-full h-full"
               />
             </div>
             <div className="flex flex-col ml-6 justify-center">
-              <span className="text-xl font-semibold group-hover:text-orange-600 transition-colors">Team</span>
+              <span className="text-xl font-semibold group-hover:text-orange-600 transition-colors">People</span>
               <div className="group-hover:translate-x-2 transition-transform">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:text-orange-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

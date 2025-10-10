@@ -3,6 +3,20 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTeamMemberById } from "@/data/team";
 
+// 根据研究组别返回对应的颜色类
+const getResearchGroupColor = (researchGroup: string) => {
+  switch (researchGroup) {
+    case 'Music Group':
+      return 'bg-purple-50 text-purple-800';
+    case 'Font Group':
+      return 'bg-orange-50 text-orange-800';
+    case 'Design Group':
+      return 'bg-blue-50 text-blue-800';
+    default:
+      return 'bg-gray-50 text-gray-800';
+  }
+};
+
 interface TeamMemberPageProps {
   params: Promise<{
     id: string;
@@ -28,7 +42,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Team
+          Back to People
         </Link>
       </div>
 
@@ -56,7 +70,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
             {member.category}
           </span>
           {member.researchGroup && (
-            <span className="px-3 py-1 bg-amber-50 text-amber-800 rounded-full text-xs font-medium">
+            <span className={`px-3 py-1 rounded-full text-xs font-medium ${getResearchGroupColor(member.researchGroup)}`}>
               {member.researchGroup}
             </span>
           )}

@@ -2,6 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPublications } from "@/data/publications";
 
+// 根据研究组别返回对应的颜色类
+const getTagColor = (tag: string) => {
+  switch (tag) {
+    case 'Music':
+      return 'bg-purple-100 text-purple-800';
+    case 'Font':
+      return 'bg-orange-100 text-orange-800';
+    case 'Design':
+      return 'bg-blue-100 text-blue-800';
+    default:
+      return 'bg-gray-100 text-gray-800';
+  }
+};
+
 export default function Publications() {
   const publications = getAllPublications();
 
@@ -53,7 +67,7 @@ export default function Publications() {
               </div>
               <div className="flex gap-2 mb-3 md:mb-6 flex-wrap">
                 {pub.tags.map((tag, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                  <span key={idx} className={`px-3 py-1 rounded-full text-sm ${getTagColor(tag)}`}>
                     {tag}
                   </span>
                 ))}

@@ -2,6 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { teamMembers, getTeamMembersByCategory } from "@/data/team";
 
+// 根据研究组别返回对应的颜色类
+const getResearchGroupColor = (researchGroup: string) => {
+  switch (researchGroup) {
+    case 'Music Group':
+      return 'text-purple-600';
+    case 'Font Group':
+      return 'text-orange-600';
+    case 'Design Group':
+      return 'text-blue-600';
+    default:
+      return 'text-gray-600';
+  }
+};
+
 export default function Team() {
   const staffMembers = getTeamMembersByCategory('Staff');
   const doctoralStudents = getTeamMembersByCategory('Doctoral Students');
@@ -25,7 +39,7 @@ export default function Team() {
                     className="w-full h-full"
                   />
                 </div>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">Team</h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">People</h1>
               </div>
             </div>
           </div>
@@ -58,7 +72,7 @@ export default function Team() {
                       </h3>
                       <p className="text-gray-500 text-sm md:text-base">{member.position}</p>
                       {member.researchGroup && (
-                        <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
+                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
                       )}
                     </div>
                   </div>
@@ -92,7 +106,7 @@ export default function Team() {
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
+                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
                       )}
                     </div>
                   </div>
@@ -126,7 +140,7 @@ export default function Team() {
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
+                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
                       )}
                     </div>
                   </div>
@@ -160,7 +174,7 @@ export default function Team() {
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
+                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
                       )}
                     </div>
                   </div>

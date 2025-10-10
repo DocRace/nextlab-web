@@ -20,7 +20,7 @@ export const publications: Publication[] = [
     year: "2025",
     venue: "Leonardo",
     image: "/images/Poems as musical instruments.jpeg",
-    tags: ["Music", "AI", "Interface", "2025"]
+    tags: ["Music"]
   },
   {
     id: "ideationweb",
@@ -31,7 +31,7 @@ export const publications: Publication[] = [
     abstract: "Due to the remarkable content generation capabilities, large language models (LLMs) have demonstrated potential in supporting early-stage conceptual design. However, current interaction paradigms often struggle to effectively facilitate multi-round idea exploration and selection, leading to random outputs, unclear iterations, and cognitive overload. To address these challenges, we propose a human-AI co-ideation framework aimed at tracking the evolution of design ideas. This framework leverages a structured idea representation, an analogy-based reasoning mechanism and interactive visualization techniques. It guides both designers and AI to systematically explore design spaces. We also develop a prototype system, IdeationWeb, which integrates an intuitive, mind map-like visual interface and interactive methods to support co-ideation. Our user study validates the framework's feasibility, demonstrating enhanced collaboration and creativity between humans and AI. Furthermore, we identified collaborative design patterns from user behaviors, providing valuable insights for future human-AI interaction design.",
     link: "https://dl.acm.org/doi/10.1145/3706598.3713375",
     image: "/images/IdeationWeb.png",
-    tags: ["HCI", "AI", "Design", "2025"]
+    tags: ["Design"]
   },
   {
     id: "redefining-design-competence",
@@ -42,7 +42,7 @@ export const publications: Publication[] = [
     abstract: "As generative artificial intelligence (AI) is increasingly applied in product design, identifying the new competence designers need to adapt to industry changes has become a topic of high interest in the design community. This study aims to construct a new design competence framework to deepen the understanding of the competence dimensions required by designers in the era of generative AI. First, the initial framework was determined through a literature review. Then, through three rounds of empirical research—semi-structured interviews (N = 35), expert surveys (N = 36), and designer surveys (N = 109)—the specific content of the framework was repeatedly evaluated and refined. Finally, the framework was applied to design practice (N = 43) to explore its impact on design outcomes. The study concluded that design competence in the era of generative AI consists of four core aspects: design aesthetics competence, design thinking competence, design practice competence, and design resilience competence.",
     link: "https://www.tandfonline.com/doi/full/10.1080/14606925.2025.2462862",
     image: "/images/Redefining design competence.png",
-    tags: ["Design", "AI", "Competence", "2025"]
+    tags: ["Design"]
   },
   {
     id: "songglm",
@@ -53,7 +53,7 @@ export const publications: Publication[] = [
     abstract: "Lyric-to-melody generation aims to automatically create melodies based on given lyrics, requiring the capture of complex and subtle correlations between them. However, previous works usually suffer from two main challenges: 1) lyric-melody alignment modeling, which is often simplified to one-syllable/word-to-one-note alignment, while others have the problem of low alignment accuracy; 2) lyric-melody harmony modeling, which usually relies heavily on intermediates or strict rules, limiting model's capabilities and generative diversity. In this paper, we propose SongGLM, a lyric-to-melody generation system that leverages 2D alignment encoding and multi-task pre-training based on the General Language Model (GLM) to guarantee the alignment and harmony between lyrics and melodies. Specifically, 1) we introduce a unified symbolic song representation for lyrics and melodies with word-level and phrase-level (2D) alignment encoding to capture the lyric-melody alignment; 2) we design a multi-task pre-training framework with hierarchical blank infilling objectives (n-gram, phrase, and long span), and incorporate lyric-melody relationships into the extraction of harmonized n-grams to ensure the lyric-melody harmony. We also construct a large-scale lyric-melody paired dataset comprising over 200,000 English song pieces for pre-training and fine-tuning. The objective and subjective results indicate that SongGLM can generate melodies from lyrics with significant improvements in both alignment and harmony, outperforming all the previous baseline methods.",
     link: "https://arxiv.org/abs/2412.18107",
     image: "/images/SongGLM.jpeg",
-    tags: ["Music", "AI", "Generation", "2025"]
+    tags: ["Music"]
   },
   {
     id: "intelligent-font-generation",
@@ -64,7 +64,7 @@ export const publications: Publication[] = [
     abstract: "Traditionally, font design has relied on manual craftsmanship by designers, a time-consuming and labor-intensive process that can take over a year to complete a new font family. Despite advancements in computer vision and graphics enabling the automation of font generation, creating high-quality fonts meeting commercial standards remains a technical challenge. Current automatic font generation technologies have not fully met production demands, mainly due to their lack of focus on generating glyphs that can be decomposed into strokes and their ineffective post-processing interaction, particularly for Chinese fonts. This study presents an innovative system for intelligently generating Chinese character fonts. The system utilizes a stroke database created by professional designers and combines font images generated through style transfer learning to perform stroke inference for font generation. The system's core lies in its unique stroke inference mechanism, accurately identifying and matching strokes within font images to efficiently align with standard stroke data in the database. This approach not only improves the precision of font generation but also streamlines subsequent processing steps. Compared to traditional font design systems, our system shows significant advantages in generating fonts suitable for commercial use. It not only aids designers in enhancing work efficiency but also has the potential to greatly increase the production efficiency of font libraries. Moreover, the system's design is scalable, offering extensive application prospects for future expansion to other East Asian scripts like Japanese and Korean.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0957417424025247",
     image: "/images/An intelligent font generation system.png",
-    tags: ["Font", "AI", "Design", "2025"]
+    tags: ["Font"]
   },
 
   // 2024年论文
@@ -77,7 +77,7 @@ export const publications: Publication[] = [
     abstract: "Music as an emotional intervention media has important applications in scenarios such as music therapy, games, and movies. However, music needs real-time arrangement according to changing emotions, bringing challenges to balance emotion real-time fit and soft emotion transition due to the fine-grained and mutable nature of the target emotion. Existing studies mainly focus on achieving emotion real-time fit, while the issue of smooth transition remains understudied, affecting the overall emotional coherence of the music. In this paper, we propose REMAST to address this trade-off. Specifically, we recognize the last timestep's music emotion and fuse it with the current timestep's input emotion. The fused emotion then guides REMAST to generate the music based on the input melody. To adjust music similarity and emotion real-time fit flexibly, we downsample the original melody and feed it into the generation model. Furthermore, we design four music theory features by domain knowledge to enhance emotion information and employ semi-supervised learning to mitigate the subjective bias introduced by manual dataset annotation. According to the evaluation results, REMAST surpasses the state-of-the-art methods in objective and subjective metrics. These results demonstrate that REMAST achieves real-time fit and smooth transition simultaneously, enhancing the coherence of the generated music.",
     link: "https://ieeexplore.ieee.org/document/10734159",
     image: "/images/REMAST.png",
-    tags: ["Music", "Emotion", "Real-time", "2024"]
+    tags: ["Music"]
   },
   {
     id: "suno-potential",
@@ -88,7 +88,7 @@ export const publications: Publication[] = [
     abstract: "Suno has attracted wide attention due to its impressive capabilities. It demonstrates technological advancements and opens up new possibilities for music composition, representing a milestone in the development of artificial intelligence (AI) music generation. In this paper, we first introduce the background and summarize the general technical framework of AI music generation, followed by an analysis of Suno's advantages and disadvantages. Finally, we discuss the future trends in Music and AI.",
     link: "https://link.springer.com/article/10.1631/FITEE.2400299",
     image: "/images/Suno.jpeg",
-    tags: ["Music", "AI", "Suno", "2024"]
+    tags: ["Music"]
   },
   {
     id: "muchin",
@@ -99,7 +99,7 @@ export const publications: Publication[] = [
     abstract: "The rapidly evolving multimodal Large Language Models (LLMs) urgently require new benchmarks to uniformly evaluate their performance on understanding and textually describing music. However, due to semantic gaps between Music Information Retrieval (MIR) algorithms and human understanding, discrepancies between professionals and the public, and low precision of annotations, existing music description datasets cannot serve as benchmarks. To this end, we present MuChin, the first open-source music description benchmark in Chinese colloquial language, designed to evaluate the performance of multimodal LLMs in understanding and describing music. We established the Caichong Music Annotation Platform (CaiMAP) that employs an innovative multi-person, multi-stage assurance method, and recruited both amateurs and professionals to ensure the precision of annotations and alignment with popular semantics. Utilizing this method, we built a dataset with multi-dimensional, high-precision music annotations, the Caichong Music Dataset (CaiMD), and carefully selected 1,000 high-quality entries to serve as the test set for MuChin. Based on MuChin, we analyzed the discrepancies between professionals and amateurs in terms of music description, and empirically demonstrated the effectiveness of annotated data for fine-tuning LLMs. Ultimately, we employed MuChin to evaluate existing music understanding models on their ability to provide colloquial descriptions of music. All data related to the benchmark, along with the scoring code and detailed appendices, have been open-sourced.",
     link: "https://arxiv.org/abs/2402.09871",
     image: "/images/MuChin.png",
-    tags: ["Music", "Benchmark", "LLM", "2024"]
+    tags: ["Music"]
   },
   {
     id: "sdmuse",
@@ -110,7 +110,7 @@ export const publications: Publication[] = [
     abstract: "While deep generative models have empowered music generation, it remains a challenging and under-explored problem to edit an existing musical piece at fine granularity. In this article, we propose SDMuse, a unified Stochastic Differential Music editing and generation framework, which can not only compose a whole musical piece from scratch, but also modify existing musical pieces in many ways, such as combination, continuation, inpainting, and style transferring. The proposed SDMuse follows a two-stage pipeline to achieve music generation and editing on top of a hybrid representation including pianoroll and MIDI-event. In particular, SDMuse first generates/edits pianoroll by iteratively denoising through a stochastic differential equation (SDE) based on a diffusion model generative prior, and then refines the generated pianoroll and predicts MIDI-event tokens auto-regressively. We evaluate the generated music of our method on ailabs1k7 pop music dataset in terms of quality and controllability on various music editing and generation tasks. Experimental results demonstrate the effectiveness of our proposed stochastic differential music editing and generation process, as well as the hybrid representations.",
     link: "https://ieeexplore.ieee.org/document/10149095",
     image: "/images/SDMuse.jpeg",
-    tags: ["Music", "Generation", "Editing", "2024"]
+    tags: ["Music"]
   },
 
   // 2023年论文
@@ -123,7 +123,7 @@ export const publications: Publication[] = [
     abstract: "Affective computing and natural human-computer interaction, which would be capable of interpreting and responding intelligently to the social cues of interaction in crowds, are more needed than ever as an individual's affective experience is often related to others in group activities. To develop the next-generation intelligent interactive systems, we require numerous human facial expressions with accurate annotations. However, existing databases usually consider nonspontaneous human behavior (posed or induced), individual or dyadic setting, and a single type of emotion annotation. To address this need, we created the Werewolf-XL database, which contains a total of 890 minutes of spontaneous audio-visual recordings of 129 subjects in a group interaction of nine individuals playing a conversational role-playing game called Werewolf. We provide 131,688 individual utterance-level video clips with internal self-assessment of 18 non-prototypical emotional categories and external assessment of pleasure, arousal, and dominance, including 14,632 speakers' samples and the rest of listeners' samples. Besides, the results of the annotation agreement analysis show fair reliability and validity. Role information and outcomes of the game are also recorded. Furthermore, we provided extensive benchmarks of unimodal and multimodal emotional recognition results. The database is made publicly available.",
     link: "https://ieeexplore.ieee.org/document/9506939",
     image: "/images/Werewolf-XL.png",
-    tags: ["Dataset", "Affective Computing", "Group Interaction", "2023"]
+    tags: ["Music"]
   },
 
   // 2022年论文
@@ -136,7 +136,7 @@ export const publications: Publication[] = [
     abstract: "Real-time music accompaniment generation has a wide range of applications in the music industry, such as music education and live performances. However, automatic real-time music accompaniment generation is still understudied and often faces a trade-off between logical latency and exposure bias. In this paper, we propose SongDriver, a real-time music accompaniment generation system without logical latency nor exposure bias. Specifically, SongDriver divides one accompaniment generation task into two phases: 1) The arrangement phase, where a Transformer model first arranges chords for input melodies in real-time, and caches the chords for the next phase instead of playing them out. 2) The prediction phase, where a CRF model generates playable multi-track accompaniments for the coming melodies based on previously cached chords. With this two-phase strategy, SongDriver directly generates the accompaniment for the upcoming melody, achieving zero logical latency. Furthermore, when predicting chords for a timestep, SongDriver refers to the cached chords from the first phase rather than its previous predictions, which avoids the exposure bias problem. Since the input length is often constrained under real-time conditions, another potential problem is the loss of long-term sequential information. To make up for this disadvantage, we extract four musical features from a long-term music piece before the current time step as global information. In the experiment, we train SongDriver on some open-source datasets and an original àiMusic Dataset built from Chinese-style modern pop music sheets. The results show that SongDriver outperforms existing SOTA (state-of-the-art) models on both objective and subjective metrics, meanwhile significantly reducing the physical latency.",
     link: "https://dl.acm.org/doi/10.1145/3503161.3548368",
     image: "/images/SongDriver.jpeg",
-    tags: ["Music", "Real-time", "Generation", "2022"]
+    tags: ["Music"]
   },
   {
     id: "relyme",
@@ -148,7 +148,7 @@ export const publications: Publication[] = [
     link: "https://dl.acm.org/doi/10.1145/3503161.3548357",
     additionalInfo: "论文网站有视频可供下载",
     image: "/images/ReLyMe.png",
-    tags: ["Music", "Lyric", "Melody", "2022"]
+    tags: ["Music"]
   },
   {
     id: "few-shot-font",
@@ -158,7 +158,7 @@ export const publications: Publication[] = [
     venue: "Science China Information Sciences",
     link: "https://www.nstl.gov.cn/paper_detail.html?id=cf451d9d8821a6023e5e18cfd4685ef5",
     image: "/images/Few-shot font style transfer.jpg",
-    tags: ["Font", "Style Transfer", "2022"]
+    tags: ["Font"]
   },
   {
     id: "visual-knowledge-seal",
@@ -169,7 +169,7 @@ export const publications: Publication[] = [
     abstract: "We digitally reproduce the process of resource collaboration, design creation, and visual presentation of Chinese seal-carving art. We develop an intelligent seal-carving art-generation system (Zhejiang University Intelligent Seal-Carving System, http://www.next.zju.edu.cn/seal/; the website of the seal-carving search and layout system is http://www.next.zju.edu.cn/seal/search_app/) to deal with the difficulty in using a visual knowledge guided computational art approach. The knowledge base in this study is the Qiushi Seal-Carving Database, which consists of open datasets of images of seal characters and seal stamps. We propose a seal character generation method based on visual knowledge, guided by the database and expertise. Furthermore, to create the layout of the seal, we propose a deformation algorithm to adjust the seal characters and calculate layout parameters from the database and knowledge to achieve an intelligent structure. Experimental results show that this method and system can effectively deal with the difficulties in the generation of seal carving. Our work provides theoretical and applied references for the rebirth and innovation of seal-carving art.",
     link: "https://link.springer.com/article/10.1631/FITEE.2100094?noAccess=true",
     image: "/images/seal-create.png",
-    tags: ["Seal", "AI", "Art", "2022"]
+    tags: ["Font"]
   },
   {
     id: "multimodal-emotion-recognition",
@@ -180,7 +180,7 @@ export const publications: Publication[] = [
     abstract: "Considerable attention has been paid to physiological signal-based emotion recognition in the field of affective computing. For reliability and user-friendly acquisition, electrodermal activity (EDA) has a great advantage in practical applications. However, EDA-based emotion recognition with large-scale subjects is still a tough problem. The traditional well-designed classifiers with hand-crafted features produce poorer results because of their limited representation abilities. And the deep learning models with auto feature extraction suffer the overfitting drop-off because of large-scale individual differences. Since music has a strong correlation with human emotion, static music can be involved as the external benchmark to constrain various dynamic EDA signals. In this article, we make an attempt by fusing the subject's individual EDA features and the external evoked music features. And we propose an end-to-end multimodal framework, the one-dimensional residual temporal and channel attention network (RTCAN-1D). For EDA features, the channel-temporal attention mechanism for EDA-based emotion recognition is first involved in mine the temporal and channel-wise dynamic and steady features. The comparisons with single EDA-based SOTA models on DEAP and AMIGOS datasets prove the effectiveness of RTCAN-1D to mine EDA features. For music features, we simply process the music signal with the open-source toolkit openSMILE to obtain external feature vectors. We conducted systematic and extensive evaluations. The experiments on the current largest music emotion dataset PMEmo validate that the fusion of EDA and music is a reliable and efficient solution for large-scale emotion recognition.",
     link: "https://dl.acm.org/doi/10.1145/3490686",
     image: "/images/A Multimodal Framework for Large-Scale Emotion Recognition.png",
-    tags: ["Emotion", "Multimodal", "Music", "2022"]
+    tags: ["Music"]
   },
 
   // 2021年论文
@@ -193,7 +193,7 @@ export const publications: Publication[] = [
     abstract: "While neural-based text to speech (TTS) models can synthesize natural and intelligible voice, they usually require high-quality speech data, which is costly to collect. In many scenarios, only noisy speech of a target speaker is available, which presents challenges for TTS model training for this speaker. Previous works usually address the challenge using two methods: 1) training the TTS model using the speech denoised with an enhancement model; 2) taking a single noise embedding as input when training with noisy speech. However, they usually cannot handle speech with real-world complicated noise such as those with high variations along time. In this paper, we develop DenoiSpeech, a TTS system that can synthesize clean speech for a speaker with noisy speech data. In DenoiSpeech, we handle real-world noisy speech by modeling the fine-grained frame-level noise with a noise condition module, which is jointly trained with the TTS model. Experimental results on real-world data show that DenoiSpeech outperforms the previous two methods by 0.31 and 0.66 MOS respectively.",
     link: "https://ieeexplore.ieee.org/document/9413934",
     image: "/images/Denoispeech.jpeg",
-    tags: ["Speech", "TTS", "Denoising", "2021"]
+    tags: ["Music"]
   },
 
   // 2018年论文
@@ -206,7 +206,7 @@ export const publications: Publication[] = [
     abstract: "Music Emotion Recognition (MER) has recently received considerable attention. To support the MER research which requires large music content libraries, we present the PMEmo dataset containing emotion annotations of 794 songs as well as the simultaneous electrodermal activity (EDA) signals. A Music Emotion Experiment was well-designed for collecting the affective-annotated music corpus of high quality, which recruited 457 subjects. The dataset is publically available to the research community, which is foremost intended for benchmarking in music emotion retrieval and recognition. To straightforwardly evaluate the methodologies for music affective analysis, it also involves pre-computed audio feature sets. In addition to that, manually selected chorus excerpts (compressed in MP3) of songs are provided to facilitate the development of chorus-related research. In this article, We describe in detail the resource acquisition, subject selection, experiment design and annotation collection procedures, as well as the dataset content and data reliability analysis. We also illustrate its usage in some simple music emotion recognition tasks which testified the PMEmo dataset's competence for the MER work. Compared to other homogeneous datasets, PMEmo is novel in the organization and management of the recruited annotators, and it is also characterized by its large amount of music with simultaneous physiological signals.",
     link: "https://dl.acm.org/doi/10.1145/3206025.3206037",
     image: "/images/The PMEmo Dataset.png",
-    tags: ["Dataset", "Music", "Emotion", "2018"]
+    tags: ["Music"]
   },
 
   // 2017年论文
@@ -219,7 +219,7 @@ export const publications: Publication[] = [
     abstract: "For solving the problem how the hemiplegic patients control the upper-limb exoskeleton during the active rehabilitation training, this study proposed an EEG classification method based on single-trial motor imagery. And this method in the real-time control of an upper-limb exoskeleton developed is applied. Aiming at the low noise-signal ratio and large individual differences of EEG, an advanced CSP algorithm for feature extraction is proposed. Combining this algorithm with SVM classifier, the single-trial motor imagery EEG is classified. Then, this method to construct classification models in two different paradigms is used, and evaluated the classification performance of two models. The classification model which had a better performance is applied in the real-time control of an upper-limb exoskeleton, to verify the feasibility of this method. The average accuracy is 87.12%±2.03% across all subjects in real-time control. The results demonstrate that the upper-limb exoskeleton can be controlled accurately based on the proposed method, and this study is provided the theory evidence and practical basis for BCI technology used in the rehabilitation training.",
     link: "https://qikan.cmes.org/jxgcxb/EN/10.3901/JME.2017.10.060",
     image: "/images/Research on the Control Method of an Upper-limb Rehabilitation Exoskeleton.jpeg",
-    tags: ["BCI", "Rehabilitation", "EEG", "2017"]
+    tags: ["Design"]
   },
 
   // 2016年论文
@@ -232,7 +232,7 @@ export const publications: Publication[] = [
     abstract: "Brain-Computer Interface (BCI) based on motor imagery (MI) has been applied in the rehabilitation exoskeleton widely. In the practical use, the low signal-noise ratio of electroencephalogram (EEG) signal results in the low classification accuracy in BCI. Therefore, many studies have focused on the improvement of feature extraction and classification algorithms. In this paper, we proposed an original method based on the deep convolutional neural network (CNN) to perform feature extraction and classification for single-trial MI EEG signal. Firstly, according to the EEG signal's characteristic that combining time and space information, we constructed a 5-layer CNN model to classify the MI; secondly, MI experimental paradigm was designed based on imagining left hand movement and foot movement, and the experimental data of MI were collected; thirdly, the proposed method was used in the public data set and experimental data set to build classification model, compared with the other three methods (power+SVM, CSP+SVM and MRA+LDA); finally, the classification model which achieved the best classification performance was applied in real-time control of upper-limb exoskeleton to verify the effectiveness of our proposed method. The results demonstrate that CNN can further improve classification performance: the average accuracies of public data set (90.75% ±2.47%) and experimental data set (89.51%±2.95%) using CNN are both higher than that using the other three methods. Furthermore, in real-time control of upper-limb exoskeleton, the average accuracy of all subjects reaches to 88.75% ±3.42%, which verifies the effectiveness of the CNN method. The proposed method can recognize MI, and provides theoretical basis and technical support for BCI applications in the field of rehabilitation exoskeleton.",
     link: "https://kns.cnki.net/kcms2/article/abstract?v=Y2E-z2Sa5CMkHvH2Yl2aaU6eV6gqklmQtEAqXv7yJRZasyOs-4tInBEV6xvghs4JoTZjnFUttuseJh029bwhWgKiUbYFnDFlu8Lbc8HUHEDBEHtjrgJcOZGTTc3x2rsfQjbqzvcOFQPR_C4HoxHclyPbj51-LG7l8xbTHdc4KKc9DpIe6OEYgQ==&uniplatform=NZKPT&language=CHS",
     image: "/images/Motor Imagery Classification.jpeg",
-    tags: ["BCI", "CNN", "EEG", "2016"]
+    tags: ["Design"]
   },
   {
     id: "gender-differences-online",
@@ -243,7 +243,7 @@ export const publications: Publication[] = [
     abstract: "This study focuses on gender differences in the influence of online communication on e-commerce purchase decision strategies. From the literature, we deduce a new theoretical model based on three foundational theories and design a 2 ∗ 2 mixed factorial experiment to test the influence of online communication in cases with and without online communication. This involves analyzing screen-recording data to check the effect of shopping behavior initiation, and using questionnaire research to test differences in the user experience before and after such communication. Finally, we concluded that the influence of online communication differs between men and women, and the influence is largely positive to both males and females.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0747563216305015",
     image: "/images/Gender differences.png",
-    tags: ["HCI", "Gender", "E-commerce", "2016"]
+    tags: ["Design"]
   },
 
   // 2015年论文
@@ -256,7 +256,7 @@ export const publications: Publication[] = [
     abstract: "To promote the development of the intangible cultural heritage of the world, shadow play, many studies have focused on shadow puppet modeling and interaction. Most of the shadow puppet figures are still imaginary, spread by ancients, or carved and painted by shadow puppet artists, without consideration of real dimensions or the appearance of human bodies. This study proposes an algorithm to transform 3D human models to 2D puppet figures for shadow puppets, including automatic location of feature points, automatic segmentation of 3D models, automatic extraction of 2D contours, automatic clothes matching, and animation. Experiment proves that more realistic and attractive figures and animations of the shadow puppet can be generated in real time with this algorithm.",
     link: "https://link.springer.com/article/10.1631/FITEE.1400351",
     image: "/images/A method of shadow puppet figure modeling and animation.jpeg",
-    tags: ["Animation", "Cultural Heritage", "3D", "2015"]
+    tags: ["Font"]
   },
   {
     id: "emotion-driven-music-image",
@@ -267,7 +267,7 @@ export const publications: Publication[] = [
     abstract: "In this study, we attempt to explore cross-media retrieval between music and image data based on the emotional correlation. Emotion feature analytic could be the bridge of cross-media retrieval, since emotion represents the user׳s perspective and effectively meets the user׳s retrieval need. Currently, there is little research about the emotion correlation of different multimedia data (e.g. image or music). We propose a promising model based on Differential Evolutionary-Support Vector Machine (DE-SVM) to build up the emotion-driven cross-media retrieval system between Chinese folk image and Chinese folk music. In this work, we first build up the Chinese Folk Music Library and Chinese Folk Image Library. Second, we compare Back Propagation(BP), Linear Regression(LR) and Differential Evolutionary-Support Vector Machine (DE-SVM), and find that DE-SVM has the best performance. Then we conduct DE-SVM to build the optimal model for music/image emotion recognition. Finally, an Emotion-driven Chinese Folk Music-Image Exploring System based on DE-SVM is developed and experiment results show our method is effective in terms of retrieval performance.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0925231214010212",
     image: "/images/Emotion-driven Chinese folk music-image retrieval.jpg",
-    tags: ["Cross-media", "Emotion", "Retrieval", "2015"]
+    tags: ["Music"]
   },
 
   // 2014年论文
@@ -280,7 +280,7 @@ export const publications: Publication[] = [
     abstract: "As a visual thinking tool, sketching strongly supports the conceptual stage of product design. Designers perceive their sketches and discover new ideas. Creative Segment theory models sketching process as a Creative Segment tree, and reveals the Creative Segment-centered pattern of sketching activities. However, the perception of sketches is important during sketching, whether designers' perception is in accord with this theory has not been examined. This article reports an experiment that recorded participants' eye movements to analyze their perception. Participants displayed unique eye movement features during Creative Segments, their fixations changed during the generation of Creative Segments and differed when generating Creative Segments on the three-level branches of the tree. These results provide evidence for the Creative Segment theory.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0142694X14000428",
     image: "/images/Designers perception during sketching.png",
-    tags: ["Design", "Sketching", "Eye Tracking", "2014"]
+    tags: ["Design"]
   },
   {
     id: "vibration-backpack-ergonomics",
@@ -291,7 +291,7 @@ export const publications: Publication[] = [
     abstract: "Many studies in backpack design have been focused on reducing trunk muscle activity and improving overall comfort while the wearers (college students and outdoor enthusiasts) were walking. However, little work has done on combining the vibration with harness system design. The purpose of the present study was to evaluate the effect of the vibration backpack harness system on trunk muscle activity and overall comfort in walking. There were four vibrators sewn in the four different positions of our harness system. Subjects were asked to support a load (20% body weight) on their backpack while performing 5-min walking trials on the treadmill (speed = 1.6 m/s) with different frequencies of vibration (0 Hz, 28 Hz, 35 Hz, 42 Hz). The objective measures of trunk muscle activity (electromyography) were obtained during the walking task. Subjects also were asked to complete subjective ratings of comfort. The results of the objective measures in this study had shown that the vibration function had a positive effect on reducing muscle activity for upper trapezius (UT), but not for erector spinae (ES). From the data of the two subjective surveys in our study, the comfort level of no-vibration state (0 Hz) was worse than vibration state (28 Hz, 35 Hz, 42 Hz) for both muscles, and when the frequency was 35 Hz, the comfort of the harness system was higher than the other three frequencies. The findings of the present study support that backpack with low frequency vibration has a positive effect on reducing trunk muscle activity and improving overall comfort level for wearers in walking.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0169814114001279",
     image: "/images/An ergonomics evaluation of the vibration backpack harness system in walking.png",
-    tags: ["Ergonomics", "Backpack", "Vibration", "2014"]
+    tags: ["Design"]
   },
 
   // 2013年论文
@@ -304,7 +304,7 @@ export const publications: Publication[] = [
     abstract: "In the study, we present a higher effective algorithm, called revised gene expression programming (RGEP), to construct the model for music emotion recognition. Our main contributions are as follows: firstly, we describe the basic mechanisms of music emotion recognition and introduce gene expression programming (GEP) to deal with the model construction for music emotion recognition. Secondly, we present RGEP based on backward-chaining evolutionary algorithm and use GEP, RGEP, and SVM to construct the models for music emotion recognition separately, the results show that the models obtained by SVM, GEP, and RGEP are satisfactory and well confirm the experimental values. Finally, we report the comparison of these models, and we find that the model obtained by RGEP outperforms classification accuracy of the model by GEP and takes almost 15% less processing time of GEP and even half processing time of SVM, which offers a new efficient way for solving music emotion recognition problems; moreover, because processing time is essential for the problem of large scale music information retrieval, therefore, RGEP might prompt the development of the music information retrieval technology.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0925231212007035",
     image: "/images/Web Music Emotion Recognition.jpeg",
-    tags: ["Music", "Emotion", "GEP", "2013"]
+    tags: ["Music"]
   }
 ];
 

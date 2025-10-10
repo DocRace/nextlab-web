@@ -3,6 +3,20 @@ import Link from "next/link";
 import { getPublicationById } from "@/data/publications";
 import { notFound } from "next/navigation";
 
+// 根据研究组别返回对应的颜色类
+const getTagColor = (tag: string) => {
+  switch (tag) {
+    case 'Music':
+      return 'bg-purple-100 text-purple-800';
+    case 'Font':
+      return 'bg-orange-100 text-orange-800';
+    case 'Design':
+      return 'bg-blue-100 text-blue-800';
+    default:
+      return 'bg-gray-100 text-gray-800';
+  }
+};
+
 interface PublicationDetailProps {
   params: Promise<{
     id: string;
@@ -60,77 +74,95 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
             </div>
             <div className="flex flex-wrap gap-2 mb-6">
               {publication.tags.map((tag, index) => (
-                <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                <span key={index} className={`px-3 py-1 rounded-full text-sm ${getTagColor(tag)}`}>
                   {tag}
                 </span>
               ))}
             </div>
-            <div className="mb-8">
+            <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2">Venue</h3>
               <p className="text-gray-600">{publication.venue}</p>
             </div>
+            
+            {/* 可点击链接部分 - 类似参考网站的inline形式 */}
+            <div className="mb-6">
+              <div className="flex items-center gap-4 text-sm">
+                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+                {(() => {
+                  const links = [];
+                  
+                  if (publication.link) {
+                    links.push(
+                      <a 
+                        key="pdf"
+                        href={publication.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 underline"
+                      >
+                        pdf
+                      </a>
+                    );
+                  }
+                  
+                  if (publication.id === "ideationweb") {
+                    links.push(
+                      <a 
+                        key="video"
+                        href="https://dl.acm.org/doi/10.1145/3706598.3713375"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 underline"
+                      >
+                        video
+                      </a>
+                    );
+                  }
+                  
+                  if (publication.id === "remast") {
+                    links.push(
+                      <a 
+                        key="video"
+                        href="https://ieeexplore.ieee.org/document/10734159"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 underline"
+                      >
+                        video
+                      </a>
+                    );
+                  }
+                  
+                  if (publication.id === "visual-knowledge-seal") {
+                    links.push(
+                      <a 
+                        key="demo"
+                        href="http://www.next.zju.edu.cn/seal/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 underline"
+                      >
+                        demo
+                      </a>
+                    );
+                  }
+                  
+                  return links.map((link, index) => (
+                    <span key={index}>
+                      {link}
+                      {index < links.length - 1 && <span className="text-gray-400 mx-2">|</span>}
+                    </span>
+                  ));
+                })()}
+              </div>
+            </div>
+
             {publication.abstract && (
               <div className="mb-8">
                 <h3 className="text-xl font-semibold mb-2">Abstract</h3>
                 <p className="text-gray-600 leading-relaxed">{publication.abstract}</p>
-              </div>
-            )}
-            {publication.link && (
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-2">Paper Link</h3>
-                <a 
-                  href={publication.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 underline"
-                >
-                  View Paper
-                </a>
-              </div>
-            )}
-            {publication.additionalInfo && (
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-2">Additional Information</h3>
-                <p className="text-gray-600">{publication.additionalInfo}</p>
-              </div>
-            )}
-            {publication.id === "ideationweb" && (
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-2">Video</h3>
-                <a 
-                  href="https://dl.acm.org/doi/10.1145/3706598.3713375"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 underline"
-                >
-                  View demonstration video on the paper page
-                </a>
-              </div>
-            )}
-            {publication.id === "remast" && (
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-2">Video</h3>
-                <a 
-                  href="https://ieeexplore.ieee.org/document/10734159"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 underline"
-                >
-                  View demonstration video on the paper page
-                </a>
-              </div>
-            )}
-            {publication.id === "visual-knowledge-seal" && (
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-2">Interactive Demo</h3>
-                <a 
-                  href="http://www.next.zju.edu.cn/seal/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 underline"
-                >
-                  Try the interactive seal carving system
-                </a>
               </div>
             )}
             <div className="mt-8">

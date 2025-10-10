@@ -1,6 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// 根据研究组别返回对应的颜色类
+const getTagColor = (tag: string) => {
+  switch (tag) {
+    case 'Music Group':
+      return 'bg-purple-100 text-purple-800';
+    case 'Font Group':
+      return 'bg-orange-100 text-orange-800';
+    case 'Design Group':
+      return 'bg-blue-100 text-blue-800';
+    default:
+      return 'bg-gray-100 text-gray-800';
+  }
+};
+
 const researches = [
   {
     id: "music",
@@ -58,8 +72,8 @@ export default function Researches() {
         {researches.map((item, idx) => {
           let bg = "";
           if (item.id === "music") bg = "from-purple-50 to-purple-100";
-          else if (item.id === "font") bg = "from-amber-50 to-amber-100";
-          else if (item.id === "design") bg = "from-red-50 to-red-100";
+          else if (item.id === "font") bg = "from-orange-50 to-orange-100";
+          else if (item.id === "design") bg = "from-blue-50 to-blue-100";
           return (
             <Link
               key={item.id}
@@ -80,7 +94,7 @@ export default function Researches() {
                   <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-2 md:mb-4">{item.title}</h2>
                   <div className="flex gap-2 mb-2">
                     {item.tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 bg-white text-black rounded-full text-xs font-medium">{tag}</span>
+                      <span key={tag} className={`px-3 py-1 rounded-full text-xs font-medium ${getTagColor(tag)}`}>{tag}</span>
                     ))}
                   </div>
                   <div className="text-gray-500 text-sm mb-2 md:mb-4">{item.date}</div>
