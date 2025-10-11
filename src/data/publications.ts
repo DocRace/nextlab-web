@@ -6,6 +6,8 @@ export interface Publication {
   venue: string;
   abstract?: string;
   link?: string;
+  demo?: string;
+  code?: string;
   additionalInfo?: string;
   image: string;
   tags: string[];
@@ -19,7 +21,42 @@ export const publications: Publication[] = [
     authors: "Songruoyao Wu, Jiaxing Yu, Kejun Zhang*, Wenqi Wu, Chongjun Zhong, Xiuqi Li",
     year: "2025",
     venue: "Leonardo",
+    abstract: "The author has designed a new interface of musical expression called Poem-Qin, which reveals the relationship between text and music, supporting self-accompanied singing and cross-media musical practices. Drawing inspiration from Chinese qin songs and movable-type printing, the author creatively integrates Chinese characters into the interface, controlling music with tone inflections and linguistic rhythms. Moreover, they have developed an AI model for text-to-melody composing to assist in creating new music content. User and audience testing has demonstrated that it offers a positive experience and effective creative results.",
+    link: "https://apps.apple.com/us/app/poem-qin/id6504380560",
     image: "/images/Poems as musical instruments.jpeg",
+    tags: ["Music"]
+  },
+  {
+    id: "singing-timbre-popularity",
+    title: "Singing Timbre Popularity Assessment Based on Multimodal Large Foundation Model",
+    authors: "Zihao Wang, Ruibin Yuan, Ziqi Geng, Hengjia Li, Xingwei Qu, Xinyi Li, Songye Chen, Haoying Fu, Roger B. Dannenberg, Kejun Zhang",
+    year: "2025",
+    venue: "Proceedings of the 33rd ACM International Conference on Multimedia",
+    abstract: "Automated singing assessment is crucial for education, entertainment, and talent discovery. However, existing systems are hindered by two fundamental limitations: first, their reliance on reference tracks (e.g., the original song), which stifles creative expression, and second, their simplification of complex vocal performances into a single, often non-diagnostic score based on pitch and rhythm. This paradigm fails to capture the nuanced, multifaceted attributes that define expert-level singing. Echoing the recent shift in other AI domains from discriminative to descriptive evaluation, we advocate for a new paradigm in singing assessment. This paper aims to build a complete ecosystem for reference-free, multi-dimensional, and descriptive singing assessment. First, we construct Sing-MD, a large-scale, multi-dimensional singing dataset annotated by experts across four core dimensions: breath control, timbre quality, emotional expression, and vocal technique. Analysis of this dataset reveals a key finding: significant annotation inconsistencies among experts, which challenges the validity of traditional accuracy-based evaluation metrics. Second, standard Multimodal Large Language Models (MLLMs) are unable to analyze full-length songs on resource-constrained, consumer-grade hardware due to memory limitations. This challenge leads to a \"human label-audio input mismatch\" problem and results in poor performance. To address this issue, we designed VocalVerse, an efficient hybrid architecture. It leverages a lightweight acoustic encoder and specialized modules to process the entire song, thereby learning global performance features, modeling long-term dependencies, and ultimately overcoming this limitation. Third, to address the shortcomings of automated metrics, we establish a new evaluation benchmark—HTPR (Human-in-the-loop Tiered Perceptual Ranking)—which evaluates a model's ability to generate perceptually valid performance rankings, rather than predicting a noisy \"ground-truth\" score. Our comprehensive experiments show that on the H-TPR benchmark, our VocalVerse framework can effectively learn and distinguish singing quality across different dimensions, thereby creating perceptually valid quality rankings and significantly outperforming existing baselines.",
+    link: "https://doi.org/10.1145/3746027.3758148",
+    image: "/images/placeholder.jpg",
+    tags: ["Music"]
+  },
+  {
+    id: "multi-accent-mandarin-singing",
+    title: "Multi-Accent Mandarin Dry-Vocal Singing Dataset: Benchmark for Singing Accent Recognition",
+    authors: "Zihao Wang, Shulei Ji, Le Ma, Yuhang Jin, Shun Lei, Jianyi Chen, Haoying Fu, Roger B. Dannenberg, Kejun Zhang",
+    year: "2025",
+    venue: "Proceedings of the 33rd ACM International Conference on Multimedia",
+    abstract: "Singing accent research is underexplored compared to speech accent studies, primarily due to the scarcity of suitable datasets. Existing singing datasets often suffer from detail loss, frequently resulting from the vocal-instrumental separation process. Additionally, they often lack regional accent annotations. To address this, we introduce the Multi-Accent Mandarin Dry-Vocal Singing Dataset (MADVSD). MADVSD comprises over 670 hours of dry vocal recordings from 4,206 native Mandarin speakers across nine distinct Chinese regions. In addition to each participant recording audio of three popular songs in their native accent, they also recorded phonetic exercises covering all Mandarin vowels and a full octave range. We validated MADVSD through benchmark experiments in singing accent recognition, demonstrating its utility for evaluating state-of-the-art speech models in singing contexts. Furthermore, we explored dialectal influences on singing accent and analyzed the role of vowels in accentual variations, leveraging MADVSD's unique phonetic exercises.",
+    link: "https://doi.org/10.1145/3746027.3758210",
+    image: "/images/placeholder.jpg",
+    tags: ["Music"]
+  },
+  {
+    id: "ai-assisted-human-pet-musical",
+    title: "AI-Assisted Human-Pet Artistic Musical Co-Creation for Wellness Therapy",
+    authors: "Zihao Wang, Le Ma, Yuhang Jin, Yongsheng Feng, Xin Pan, Shulei Ji, Kejun Zhang",
+    year: "2025",
+    venue: "Proceedings of the 34th International Joint Conference on Artificial Intelligence",
+    abstract: "This paper explores AI-mediated human-pet musical co-creation from an interdisciplinary perspective, leveraging recent advancements in animal-assisted therapy. These advancements have shown significant psychosocial benefits, especially in reducing anxiety and enhancing social engagement. Building on these findings, this study innovatively employs pet vocal timbres as 'digital avatars' to enhance emotional investment during the music creation process. We propose PetCoCre, a novel system that applies pet vocal timbres in three distinct character paradigms within AI music creation: (1) PetRhythm: using pet voices as rhythmic percussion through beat synchronization. (2) PetMelody: enabling pet voices to act as melodic instruments via pitch-shifting alignment. (3) PetVocalia: utilizing pet vocal timbres as the target timbre for SVC (Singing Voice Conversion), where the converted singing voice replaces the original singer's voice, thus preserving the original semantic content. Beyond these character paradigms, our technical innovation lies in proposing SaMoye, the first open-source, high-quality zero-shot SVC model that effectively overcomes existing methods' zero-shot limitations by employing mixed speaker embeddings for timbre enhancement and leveraging a large-scale singing voice dataset. In our experiments, we collected dog and cat vocalization data from pet stores and conducted experiments with 30 participants. Results demonstrate that the human-pet co-creation mode led to significant enhancements in pleasure and creative satisfaction compared to solo AI music generation, along with a significant reduction in participants' anxiety levels. Through collaborative art creation, this research pioneers new paradigms for animal-assisted therapeutic interventions and expands the boundaries of AI-assisted creative collaboration.",
+    link: "https://www.ijcai.org/proceedings/2025/",
+    image: "/images/placeholder.jpg",
     tags: ["Music"]
   },
   {
@@ -51,7 +88,9 @@ export const publications: Publication[] = [
     year: "2025",
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence",
     abstract: "Lyric-to-melody generation aims to automatically create melodies based on given lyrics, requiring the capture of complex and subtle correlations between them. However, previous works usually suffer from two main challenges: 1) lyric-melody alignment modeling, which is often simplified to one-syllable/word-to-one-note alignment, while others have the problem of low alignment accuracy; 2) lyric-melody harmony modeling, which usually relies heavily on intermediates or strict rules, limiting model's capabilities and generative diversity. In this paper, we propose SongGLM, a lyric-to-melody generation system that leverages 2D alignment encoding and multi-task pre-training based on the General Language Model (GLM) to guarantee the alignment and harmony between lyrics and melodies. Specifically, 1) we introduce a unified symbolic song representation for lyrics and melodies with word-level and phrase-level (2D) alignment encoding to capture the lyric-melody alignment; 2) we design a multi-task pre-training framework with hierarchical blank infilling objectives (n-gram, phrase, and long span), and incorporate lyric-melody relationships into the extraction of harmonized n-grams to ensure the lyric-melody harmony. We also construct a large-scale lyric-melody paired dataset comprising over 200,000 English song pieces for pre-training and fine-tuning. The objective and subjective results indicate that SongGLM can generate melodies from lyrics with significant improvements in both alignment and harmony, outperforming all the previous baseline methods.",
-    link: "https://arxiv.org/abs/2412.18107",
+    link: "https://ojs.aaai.org/index.php/AAAI/article/view/34766",
+    demo: "https://nextlab-zju.github.io/songglm/",
+    code: "https://github.com/nextlab-zju/songglm",
     image: "/images/SongGLM.jpeg",
     tags: ["Music"]
   },
@@ -61,7 +100,7 @@ export const publications: Publication[] = [
     authors: "Bolin Wang, Kejun Zhang*, Zewen Chen, etc.",
     year: "2025",
     venue: "Expert Systems with Applications",
-    abstract: "Traditionally, font design has relied on manual craftsmanship by designers, a time-consuming and labor-intensive process that can take over a year to complete a new font family. Despite advancements in computer vision and graphics enabling the automation of font generation, creating high-quality fonts meeting commercial standards remains a technical challenge. Current automatic font generation technologies have not fully met production demands, mainly due to their lack of focus on generating glyphs that can be decomposed into strokes and their ineffective post-processing interaction, particularly for Chinese fonts. This study presents an innovative system for intelligently generating Chinese character fonts. The system utilizes a stroke database created by professional designers and combines font images generated through style transfer learning to perform stroke inference for font generation. The system's core lies in its unique stroke inference mechanism, accurately identifying and matching strokes within font images to efficiently align with standard stroke data in the database. This approach not only improves the precision of font generation but also streamlines subsequent processing steps. Compared to traditional font design systems, our system shows significant advantages in generating fonts suitable for commercial use. It not only aids designers in enhancing work efficiency but also has the potential to greatly increase the production efficiency of font libraries. Moreover, the system's design is scalable, offering extensive application prospects for future expansion to other East Asian scripts like Japanese and Korean.",
+    abstract: "In the era of artificial intelligence, although font generation technology has made continuous progress, it still faces challenges such as insufficient automation and high manual labor costs. Existing methods struggle to balance efficiency and design quality, and the efficiency issue is particularly prominent in large-scale Chinese font production. To enhance the efficiency of font production, two core problems must be addressed: (1) Accurate stroke generation: Current intelligent font generation methods often fail to accurately reconstruct stroke structures. Deviations in stroke details and design specifications affect overall consistency and aesthetic quality. (2) Efficient intelligent interaction: Traditional font design tools feature complex interaction processes. Adjusting strokes and styles is time-consuming and labor-intensive, lacking intuitive and intelligent editing mechanisms. This leads to high modification costs and cumbersome workflows. To address these issues, this paper proposes an intelligent font generation system based on stroke reasoning. By recognizing and matching font strokes, the system improves generation accuracy and optimizes the production process. A Chinese character information database is constructed to support efficient and precise stroke-level reasoning and generation. Furthermore, the system enables stroke-level interaction, allowing designers to directly adjust stroke details instead of modifying entire characters, thereby enhancing design flexibility and efficiency.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0957417424025247",
     image: "/images/An intelligent font generation system.png",
     tags: ["Font"]
@@ -76,6 +115,8 @@ export const publications: Publication[] = [
     venue: "IEEE Transactions on Affective Computing",
     abstract: "Music as an emotional intervention media has important applications in scenarios such as music therapy, games, and movies. However, music needs real-time arrangement according to changing emotions, bringing challenges to balance emotion real-time fit and soft emotion transition due to the fine-grained and mutable nature of the target emotion. Existing studies mainly focus on achieving emotion real-time fit, while the issue of smooth transition remains understudied, affecting the overall emotional coherence of the music. In this paper, we propose REMAST to address this trade-off. Specifically, we recognize the last timestep's music emotion and fuse it with the current timestep's input emotion. The fused emotion then guides REMAST to generate the music based on the input melody. To adjust music similarity and emotion real-time fit flexibly, we downsample the original melody and feed it into the generation model. Furthermore, we design four music theory features by domain knowledge to enhance emotion information and employ semi-supervised learning to mitigate the subjective bias introduced by manual dataset annotation. According to the evaluation results, REMAST surpasses the state-of-the-art methods in objective and subjective metrics. These results demonstrate that REMAST achieves real-time fit and smooth transition simultaneously, enhancing the coherence of the generated music.",
     link: "https://ieeexplore.ieee.org/document/10734159",
+    demo: "https://github.com/CarlWangChina/REMAST-Real-time-Emotion-based-Music-Arrangement-with-Soft-Transition",
+    code: "https://github.com/CarlWangChina/REMAST-Real-time-Emotion-based-Music-Arrangement-with-Soft-Transition",
     image: "/images/REMAST.png",
     tags: ["Music"]
   },
@@ -98,6 +139,8 @@ export const publications: Publication[] = [
     venue: "Thirty-Third International Joint Conference on Artificial Intelligence",
     abstract: "The rapidly evolving multimodal Large Language Models (LLMs) urgently require new benchmarks to uniformly evaluate their performance on understanding and textually describing music. However, due to semantic gaps between Music Information Retrieval (MIR) algorithms and human understanding, discrepancies between professionals and the public, and low precision of annotations, existing music description datasets cannot serve as benchmarks. To this end, we present MuChin, the first open-source music description benchmark in Chinese colloquial language, designed to evaluate the performance of multimodal LLMs in understanding and describing music. We established the Caichong Music Annotation Platform (CaiMAP) that employs an innovative multi-person, multi-stage assurance method, and recruited both amateurs and professionals to ensure the precision of annotations and alignment with popular semantics. Utilizing this method, we built a dataset with multi-dimensional, high-precision music annotations, the Caichong Music Dataset (CaiMD), and carefully selected 1,000 high-quality entries to serve as the test set for MuChin. Based on MuChin, we analyzed the discrepancies between professionals and amateurs in terms of music description, and empirically demonstrated the effectiveness of annotated data for fine-tuning LLMs. Ultimately, we employed MuChin to evaluate existing music understanding models on their ability to provide colloquial descriptions of music. All data related to the benchmark, along with the scoring code and detailed appendices, have been open-sourced.",
     link: "https://arxiv.org/abs/2402.09871",
+    demo: "https://github.com/CarlWangChina/MuChin",
+    code: "https://github.com/CarlWangChina/MuChin",
     image: "/images/MuChin.png",
     tags: ["Music"]
   },
@@ -135,6 +178,8 @@ export const publications: Publication[] = [
     venue: "Proceedings of the 30th ACM International Conference on Multimedia",
     abstract: "Real-time music accompaniment generation has a wide range of applications in the music industry, such as music education and live performances. However, automatic real-time music accompaniment generation is still understudied and often faces a trade-off between logical latency and exposure bias. In this paper, we propose SongDriver, a real-time music accompaniment generation system without logical latency nor exposure bias. Specifically, SongDriver divides one accompaniment generation task into two phases: 1) The arrangement phase, where a Transformer model first arranges chords for input melodies in real-time, and caches the chords for the next phase instead of playing them out. 2) The prediction phase, where a CRF model generates playable multi-track accompaniments for the coming melodies based on previously cached chords. With this two-phase strategy, SongDriver directly generates the accompaniment for the upcoming melody, achieving zero logical latency. Furthermore, when predicting chords for a timestep, SongDriver refers to the cached chords from the first phase rather than its previous predictions, which avoids the exposure bias problem. Since the input length is often constrained under real-time conditions, another potential problem is the loss of long-term sequential information. To make up for this disadvantage, we extract four musical features from a long-term music piece before the current time step as global information. In the experiment, we train SongDriver on some open-source datasets and an original àiMusic Dataset built from Chinese-style modern pop music sheets. The results show that SongDriver outperforms existing SOTA (state-of-the-art) models on both objective and subjective metrics, meanwhile significantly reducing the physical latency.",
     link: "https://dl.acm.org/doi/10.1145/3503161.3548368",
+    demo: "https://github.com/CarlWangChina/SongDriver-Real-time-Music-Accompaniment-Generation-without-Logical-Latency-nor-Exposure-Bias",
+    code: "https://github.com/CarlWangChina/SongDriver-Real-time-Music-Accompaniment-Generation-without-Logical-Latency-nor-Exposure-Bias",
     image: "/images/SongDriver.jpeg",
     tags: ["Music"]
   },
@@ -168,6 +213,7 @@ export const publications: Publication[] = [
     venue: "Frontiers of Information Technology & Electronic Engineering",
     abstract: "We digitally reproduce the process of resource collaboration, design creation, and visual presentation of Chinese seal-carving art. We develop an intelligent seal-carving art-generation system (Zhejiang University Intelligent Seal-Carving System, http://www.next.zju.edu.cn/seal/; the website of the seal-carving search and layout system is http://www.next.zju.edu.cn/seal/search_app/) to deal with the difficulty in using a visual knowledge guided computational art approach. The knowledge base in this study is the Qiushi Seal-Carving Database, which consists of open datasets of images of seal characters and seal stamps. We propose a seal character generation method based on visual knowledge, guided by the database and expertise. Furthermore, to create the layout of the seal, we propose a deformation algorithm to adjust the seal characters and calculate layout parameters from the database and knowledge to achieve an intelligent structure. Experimental results show that this method and system can effectively deal with the difficulties in the generation of seal carving. Our work provides theoretical and applied references for the rebirth and innovation of seal-carving art.",
     link: "https://link.springer.com/article/10.1631/FITEE.2100094?noAccess=true",
+    demo: "http://www.next.zju.edu.cn/seal/",
     image: "/images/seal-create.png",
     tags: ["Font"]
   },

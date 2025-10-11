@@ -22,7 +22,7 @@ const researches = [
     date: "Updated",
     tags: ["Music Group"],
     image: "/images/research-music.png",
-    desc: "The MUSIC-AI (Intelligent Music Group) is dedicated to using music knowledge and AI technology to empower innovation in music art and design. We build an ecosystem for music generation, human-computer interaction, emotional computing, and multimodal recommendation, aiming to solve challenges in intelligent music production.",
+    desc: "Our mission is to empower the innovation of music art and design by leveraging musical knowledge as our guide and artificial intelligence as our computational engine, building an ecosystem for creation and application that encompasses music generation, human-computer interaction in music, computational analysis of music and emotion, and multimodal music recommendation, to progressively address the challenges of intelligent music empowerment and production.",
   },
   {
     id: "font",

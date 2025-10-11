@@ -131,7 +131,6 @@ export default function Publications() {
             <div className={`${idx % 2 === 1 ? 'md:order-1' : 'order-2'} p-2 md:p-0`}>
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-4">{pub.title}</h2>
               <div className="flex flex-col sm:flex-row sm:items-center text-gray-500 mb-2">
-                <span className="mr-2 text-sm md:text-base">By</span>
                 <span className="mr-4 text-sm md:text-base">
                   {pub.authors
                     .replace(/\sand\s/gi, ", ")
