@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getTeamMemberById } from "@/data/team";
+import { getTeamMemberById, teamMembers } from "@/data/team";
 
 const researches = {
   "music": {
@@ -59,19 +59,71 @@ const researches = {
       }
     ],
     publications: [
-      { id: 'poems-as-musical-instruments', title: 'Poems as musical instruments' },
-      { id: 'songglm', title: 'SongGLM' },
-      { id: 'remast', title: 'REMAST' },
-      { id: 'suno-potential', title: 'Suno: potential, prospects, and trends' },
-      { id: 'muchin', title: 'MuChin' },
-      { id: 'sdmuse', title: 'SDMuse' },
-      { id: 'werewolf-xl', title: 'Werewolf-XL' },
-      { id: 'songdriver', title: 'SongDriver' },
-      { id: 'relyme', title: 'ReLyMe' },
-      { id: 'multimodal-emotion-recognition', title: 'A Multimodal Framework for Large-Scale Emotion Recognition' },
-      { id: 'denoispeech', title: 'DenoiSpeech' },
-      { id: 'pmemo-dataset', title: 'PMEmo Dataset' },
-      { id: 'emotion-driven-music-image', title: 'Emotion-driven Chinese folk music-image retrieval' },
+      { 
+        id: 'poems-as-musical-instruments', 
+        title: 'Poems as musical instruments: an AI music performance interface based on the concepts of chinese qin songs',
+        authors: 'Songruoyao Wu, Jiaxing Yu, Kejun Zhang*, Wenqi Wu, Chongjun Zhong, Xiuqi Li'
+      },
+      { 
+        id: 'songglm', 
+        title: 'SongGLM: Lyric-to-Melody Generation with 2D Alignment Encoding and Multi-Task Pre-Training',
+        authors: 'Jiaxing Yu, Xinda Wu, Yunfei Xu, Tieyao Zhang, Songruoyao Wu, Le Ma, and Kejun Zhang*'
+      },
+      { 
+        id: 'remast', 
+        title: 'REMAST: Real-time Emotion-based Music Arrangement with Soft Transition',
+        authors: 'Zihao Wang, Le Ma, Chen Zhang, Bo Han, Yunfei Xu, Yikai Wang, Xinyi Chen, HaoRong Hong, Wenbo Liu, Xinda Wu, Kejun Zhang*'
+      },
+      { 
+        id: 'suno-potential', 
+        title: 'Suno: potential, prospects, and trends',
+        authors: 'Jiaxing Yu, Songruoyao Wu, Guanting Lu, Zijin Li, Li Zhou, Kejun Zhang*'
+      },
+      { 
+        id: 'muchin', 
+        title: 'MuChin: A Chinese Colloquial Description Benchmark for Evaluating Language Models in the Field of Music',
+        authors: 'Zihao Wang, Shuyu Li, Tao Zhang, Qi Wang, Pengfei Yu, Jinyang Luo, Yan Liu, Ming Xi, Kejun Zhang*'
+      },
+      { 
+        id: 'sdmuse', 
+        title: 'SDMuse: Stochastic Differential Music Editing and Generation via Hybrid Representation',
+        authors: 'C. Zhang, Y. Ren, K. Zhang* and S. Yan'
+      },
+      { 
+        id: 'werewolf-xl', 
+        title: 'Werewolf-XL: A Database for Identifying Spontaneous Affect in Large Competitive Group Interactions',
+        authors: 'Kejun Zhang, Xinda Wu, Xinhang Xie, Xiaoran Zhang, Hui Zhang, Xiaoyu Chen, Lingyun Sun'
+      },
+      { 
+        id: 'songdriver', 
+        title: 'SongDriver: Real-time Music Accompaniment Generation without Logical Latency nor Exposure Bias',
+        authors: 'Zihao Wang, Kejun Zhang*, Yuxing Wang, Chen Zhang, Qihao Liang, Pengfei Yu, Yongsheng Feng, Wenbo Liu, etc.'
+      },
+      { 
+        id: 'relyme', 
+        title: 'ReLyMe: Improving Lyric-to-Melody Generation by Incorporating Lyric-Melody Relationships',
+        authors: 'Zhang, Chen, Luchin Chang, Songruoyao Wu, Xu Tan, Tao Qin, Tie-Yan Liu, and Kejun Zhang*'
+      },
+      { 
+        id: 'multimodal-emotion-recognition', 
+        title: 'A Multimodal Framework for Large-Scale Emotion Recognition by Fusing Music and Electrodermal Activity Signals',
+        authors: 'Yin, Guanghao., Sun, Shouqian., Yu, Dian., Li, Dejian., Kejun Zhang*'
+      },
+      { 
+        id: 'denoispeech', 
+        title: 'Denoispeech: Denoising text to speech with frame-level noise modeling',
+        authors: 'Zhang, Chen, Yi Ren, Xu Tan, Jinglin Liu, Kejun Zhang*, Tao Qin, Sheng Zhao, and Tie-Yan Liu'
+      },
+      { 
+        id: 'pmemo-dataset', 
+        title: 'The PMEmo Dataset for Music Emotion Recognition',
+        authors: 'Kejun Zhang, Hui Zhang, Simeng Li, Changyuan Yang, Lingyun Sun'
+      },
+      { 
+        id: 'emotion-driven-music-image', 
+        title: 'Emotion-driven Chinese folk music-image retrieval based on DE-SVM',
+        authors: 'Xing, B., Zhang, K*., Sun, S., Zhang, L., Gao, Z., Wang,J., and Chen, S.'
+      },
     ],
     info: {
       text: 'To apply, please send your personal resume and your research content of interest to: yujx@zju.edu.cn',
@@ -106,9 +158,21 @@ const researches = {
       }
     ],
     publications: [
-      { id: 'intelligent-font-generation', title: 'An intelligent font generation system based on stroke inference' },
-      { id: 'few-shot-font', title: 'Few-shot font style transfer with multiple style encoders' },
-      { id: 'visual-knowledge-seal', title: 'Visual knowledge guided intelligent generation of Chinese seal carving' }
+      { 
+        id: 'intelligent-font-generation', 
+        title: 'An intelligent font generation system based on stroke inference, mitigating production labor and enhancing design experience',
+        authors: 'Bolin Wang, Kejun Zhang*, Zewen Chen, etc.'
+      },
+      { 
+        id: 'few-shot-font', 
+        title: 'Few-shot font style transfer with multiple style encoders',
+        authors: 'Zhang Kejun, Zhang Rui, Wu Yonglin, Li Yifei, Ling Yonggen, Wang Bolin, Sun Lingyun, Li Yingming.'
+      },
+      { 
+        id: 'visual-knowledge-seal', 
+        title: 'Visual knowledge guided intelligent generation of Chinese seal carving',
+        authors: 'Zhang Kejun, Zhang Rui, Yin Yehang, Li Yifei, Wu Wenqi, Sun Lingyun, Wu Fei, Deng Huanghuang, Pan Yunhe.'
+      }
     ],
     info: {
       text: 'Welcome to the NEXT Lab Font Group at Zhejiang University. We invite students passionate about type design, kinetic typography, Chinese calligraphy, or seal carving to join our interdisciplinary research team. Ideal candidates have experience or strong interest in algorithmic design, computer vision, deep learning, graphics, or web/mobile development—and are eager to explore the future of digital typography and cultural computation. To apply, please send your CV and a brief statement of interest to: shenxinyi@zju.edu.cn',
@@ -170,8 +234,16 @@ const researches = {
       { title: 'Inscription on the West Forest Wall', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2004%20-%20Inscription%20on%20the%20West%20Forest%20Wall.mp4?v=20250914' }
     ],
     publications: [
-      { id: 'ideationweb', title: 'IdeationWeb: Tracking the Evolution of Design Ideas in Human-AI Co-Creation' },
-      { id: 'redefining-design-competence', title: 'Redefining design competence: A framework for equipping product designers in the generative AI era' }
+      { 
+        id: 'ideationweb', 
+        title: 'IdeationWeb: Tracking the Evolution of Design Ideas in Human-AI Co-Creation',
+        authors: 'Hanshu Shen, Lyukesheng Shen, Wenqi Wu, Kejun Zhang*.'
+      },
+      { 
+        id: 'redefining-design-competence', 
+        title: 'Redefining design competence: A framework for equipping product designers in the generative AI era',
+        authors: 'Kejun Zhang*, Xiaoran Zhang, Wenqi Wu, Songruoyao Wu, Shixuan Cai, Hanshu Shen.'
+      }
     ],
     info: {
       text: 'Welcome to the NEXT Design Group at Zhejiang University! We invite students passionate about design, digital creativity, AI, and cultural computation to join our interdisciplinary research team. If you love design, have empathy, solid design knowledge, and experience in AI production, we welcome you to join us! To apply, please send your CV (portfolio preferred) to: Prof. Zhang (zhangkejun@zju.edu.cn).',
@@ -196,6 +268,73 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
   const research = researches[id as keyof typeof researches];
   if (!research) return notFound();
 
+  // Author linking logic (same as publications page)
+  const normalize = (s: string) => s.replace(/\*/g, "").replace(/\./g, "").trim().toLowerCase();
+  const nameMap = new Map<string, string>();
+  teamMembers.forEach((m) => {
+    const cn = m.name ? normalize(m.name) : undefined;
+    if (cn) nameMap.set(cn, m.id);
+    if (m.englishName) {
+      const parts = m.englishName.split(/\s+/);
+      if (parts.length >= 2) {
+        const last = parts[0];
+        const first = parts.slice(1).join(" ");
+        nameMap.set(normalize(`${first} ${last}`), m.id);
+        nameMap.set(normalize(`${last} ${first}`), m.id);
+        nameMap.set(normalize(`${first[0]} ${last}`), m.id);
+      } else {
+        nameMap.set(normalize(m.englishName), m.id);
+      }
+    }
+  });
+
+  const aliases: Record<string, string> = {
+    "kejun zhang": "zhang-kejun",
+    "wenqi wu": "wu-wenqi",
+    "songruoyao wu": "wu-songruoyao",
+    "zihao wang": "wang-zihao",
+    "le ma": "ma-le",
+    "xinda wu": "wu-xinda",
+    "jiaxing yu": "yu-jiaxing",
+    "xinyi chen": "chen-xinyi",
+    "rui zhang": "zhang-rui",
+    "bolin wang": "wang-bolin",
+    "yiheng yang": "yang-yiheng",
+    "zehui zheng": "zheng-zehui",
+    "huaying liu": "liu-huaying",
+    "guanting lu": "lu-guanting",
+    "ziyi huang": "huang-ziyi",
+    "hanshu shen": "shen-hanshu",
+    "yuhang jin": "jin-yuhang",
+    "jinhe li": "li-jinhe",
+    "xiuqi li": "li-xiuqi",
+    "xinyi shen": "shen-xinyi",
+    "yifei li": "li-yifei",
+    "chen zhang": "zhang-chen",
+  };
+
+  const findMemberIdForAuthor = (raw: string): string | undefined => {
+    const a = normalize(raw);
+    if (aliases[a]) return aliases[a];
+    if (nameMap.has(a)) return nameMap.get(a);
+    const m = a.match(/^([a-z])[\s]?([a-z\-']+)$/i) || a.match(/^([a-z])[\s]+([a-z\-']+)$/i);
+    if (m) {
+      const initial = m[1];
+      const last = m[2];
+      for (const tm of teamMembers) {
+        if (!tm.englishName) continue;
+        const parts = tm.englishName.split(/\s+/);
+        if (parts.length >= 2) {
+          const lastName = parts[0].toLowerCase();
+          const firstName = parts.slice(1).join(" ").toLowerCase();
+          if (lastName === last && firstName.startsWith(initial)) return tm.id;
+          if (firstName === last && lastName.startsWith(initial)) return tm.id;
+        }
+      }
+    }
+    return undefined;
+  };
+
   return (
     <div className="min-h-screen max-w-[1000px] mx-auto py-12 px-4">
       <div className="mb-8 flex flex-col items-start gap-4">
@@ -210,7 +349,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
         </div>
         {/* Members */}
         {('members' in research) && (
-          <div className="w-full mt-4">
+          <div className="w-full mt-4 pt-8">
             <h2 className="text-2xl font-bold mb-3">Members</h2>
 
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mb-6">
@@ -249,12 +388,12 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
           </div>
         )}
       </div>
-      <h2 className="text-2xl font-bold mb-3">Overview</h2>
+      <h2 className="text-2xl font-bold mb-3 pt-8">Overview</h2>
       <div className="prose max-w-none mb-8" dangerouslySetInnerHTML={{ __html: research.overview }} />
 
       {/* Projects */}
       {('projects' in research) && (
-        <div className="mb-10">
+        <div className="mb-10 pt-8">
           <h2 className="text-2xl font-bold mb-4">Projects</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {(research as any).projects.map((p: any) => {
@@ -290,21 +429,48 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
 
       {/* Publications */}
       {('publications' in research) && (
-        <div className="mb-10">
+        <div className="mb-10 pt-8">
           <h2 className="text-2xl font-bold mb-3">Publications</h2>
-          <ul className="list-decimal pl-6">
-            {(research as any).publications.map((p: any) => (
-              <li key={p.id} className="mb-2">
-                <Link href={`/publications/${p.id}`} className="text-blue-600 hover:text-blue-800 underline">{p.title}</Link>
+          <ol className="list-decimal pl-6 space-y-2">
+            {(research as any).publications.map((p: any, index: number) => (
+              <li key={p.id} className="text-gray-800 mb-4">
+                <div>
+                  <Link href={`/publications/${p.id}`} className="text-black hover:text-gray-700 underline font-medium">
+                    {p.title}
+                  </Link>
+                </div>
+                <div className="text-gray-600 mt-1">
+                  {p.authors
+                    .replace(/\sand\s/gi, ", ")
+                    .split(/,\s*/)
+                    .filter(Boolean)
+                    .map((author: string, idx: number, arr: string[]) => {
+                      const id = findMemberIdForAuthor(author);
+                      const comma = idx < arr.length - 1 ? ", " : "";
+                      return id ? (
+                        <span key={`${author}-${idx}`}>
+                          <Link 
+                            href={`/team/${id}`} 
+                            className="text-blue-600 hover:text-blue-800 underline"
+                          >
+                            {author.replace(/\*/g, "")}
+                          </Link>
+                          {comma}
+                        </span>
+                      ) : (
+                        <span key={`${author}-${idx}`}>{author}{comma}</span>
+                      );
+                    })}
+                </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       )}
 
       {/* Information */}
       {('info' in research) && (
-        <div className="mb-10">
+        <div className="mb-10 pt-8">
           <h2 className="text-2xl font-bold mb-3">Information</h2>
           <p className="text-gray-700">{(research as any).info.text}</p>
           <div className="mt-2">
