@@ -28,7 +28,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative w-screen left-1/2 right-1/2 -mx-[50vw]">
             {/* 项目卡片 1 - Publications: SongGLM */}
-            <div className="relative overflow-hidden group md:rounded-r-[36px]">
+            <Link href="/publications/songglm" className="relative overflow-hidden group md:rounded-r-[36px] block">
               <div className="h-[588px] relative">
                 <ColorExtractor imageSrc="/images/Publications-SongGLM.jpg">
                   <Image
@@ -41,14 +41,14 @@ export default function Home() {
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-900/60 via-blue-900/20 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
+                    <span className="text-white text-sm font-medium opacity-90 mb-1 block">Publication</span>
                     <h3 className="text-2xl font-bold text-white mb-2">
                       SongGLM: Lyric-to-Melody Generation with 2D Alignment Encoding and Multi-Task Pre-Training
                     </h3>
                     <p className="text-white text-sm mb-4">
                       AAAI 2025 publication on lyric-to-melody alignment and harmony.
                     </p>
-                    <Link 
-                      href="/publications/songglm" 
+                    <div 
                       className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                       style={{
                         backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -60,14 +60,14 @@ export default function Home() {
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
  
             {/* 项目卡片 2 - Researches: "Life of Su Shi" series */}
-            <div className="relative overflow-hidden group md:rounded-l-[36px]">
+            <Link href="/researches/su-shi-series" className="relative overflow-hidden group md:rounded-l-[36px] block">
               <div className="h-[588px] relative">
                 <ColorExtractor imageSrc="/images/Researches-Life-of-Su-Shi-series.png">
                   <Image
@@ -81,10 +81,10 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="max-w-[1920px] mx-auto w-full">
                     <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
+                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">Research</span>
                       <h3 className="text-2xl font-bold text-white mb-2">"Life of Su Shi" series</h3>
                       <p className="text-white text-sm mb-4">Design group project — video showcase coming soon.</p>
-                      <Link 
-                        href="/researches/su-shi-series" 
+                      <div 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
                           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -96,20 +96,20 @@ export default function Home() {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
  
             {/* 项目卡片 3 - Gallery: Heritage Spark */}
-            <div className="relative overflow-hidden group md:rounded-r-[36px]">
+            <Link href="https://competition.adesignaward.com/ada-winner-design.php?ID=170646#Design-170646" target="_blank" rel="noreferrer" className="relative overflow-hidden group md:rounded-r-[36px] block">
               <div className="h-[588px] relative">
                 <ColorExtractor imageSrc="/images/Gallery-Heritage-Spark.png">
                   <Image
                     src="/images/Gallery-Heritage-Spark.png"
-                    alt="Heritage Spark — Iron A’ Design Award 2025"
+                    alt="Heritage Spark — Iron A' Design Award 2025"
                     fill
                     className="object-cover"
                   />
@@ -118,10 +118,10 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="max-w-[1920px] mx-auto w-full">
                     <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
-                      <h3 className="text-2xl font-bold text-white mb-2">Heritage Spark — Iron A’ Design Award 2025</h3>
+                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">Award</span>
+                      <h3 className="text-2xl font-bold text-white mb-2">Heritage Spark — Iron A' Design Award 2025</h3>
                       <p className="text-white text-sm mb-4">Award-winning design project.</p>
-                      <Link 
-                        href="https://competition.adesignaward.com/ada-winner-design.php?ID=170646#Design-170646" target="_blank" rel="noreferrer" 
+                      <div 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
                           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -133,15 +133,15 @@ export default function Home() {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
  
             {/* 项目卡片 4 - News: Bringing Pets into Your Music Creation */}
-            <div className="relative overflow-hidden group md:rounded-l-[36px]">
+            <Link href="https://mp.weixin.qq.com/s/-Zx29YORIDsOqYjYiLkH0g" target="_blank" rel="noreferrer" className="relative overflow-hidden group md:rounded-l-[36px] block">
               <div className="h-[588px] relative">
                 <ColorExtractor imageSrc="/images/News-Bringing-Pets-into-Your-Music Creation.png">
                   <Image
@@ -155,10 +155,10 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="max-w-[1920px] mx-auto w-full">
                     <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
+                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">News</span>
                       <h3 className="text-2xl font-bold text-white mb-2">Bringing Pets into Your Music Creation</h3>
                       <p className="text-white text-sm mb-4">PetCoCre — AI + music + pets.</p>
-                      <Link 
-                        href="https://mp.weixin.qq.com/s/-Zx29YORIDsOqYjYiLkH0g" target="_blank" rel="noreferrer" 
+                      <div 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
                           backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -170,12 +170,12 @@ export default function Home() {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

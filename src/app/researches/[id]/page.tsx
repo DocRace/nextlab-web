@@ -11,27 +11,7 @@ const researches = {
     image: "/images/research-music.png",
     link: "/researches",
     overview: `
-<h4 class="font-bold text-lg mt-6 mb-2">WHAT: What We Do</h4>
-<p>Our mission is to empower the innovation of music art and design by leveraging musical knowledge as our guide and artificial intelligence as our computational engine, building an ecosystem for creation and application that encompasses music generation, human-computer interaction in music, computational analysis of music and emotion, and multimodal music recommendation, to progressively address the challenges of intelligent music empowerment and production.</p>
-
-<h4 class="font-bold text-lg mt-6 mb-2">WHY: Our Vision</h4>
-<p>Throughout history, music has fascinated countless musicians and scholars with its abstract auditory expression and emotional power. As cross-media becomes a market hotspot, the demand for emotional expression through music is growing, and efficient models for audio-visual fusion are urgently needed. We aim to leverage AI, affective computing, and interaction design to clarify the essence of musical emotion, explore adaptive solutions for audio-visual fusion, and achieve high-quality, high-efficiency music creation accessible to all.</p>
-
-<h4 class="font-bold text-lg mt-6 mb-2">HOW: How We Do It</h4>
-<p>The group conducts research in music intelligence, focusing on building an audio-visual intelligent interaction ecosystem. Key areas include intelligent music generation, music structure analysis, cross-media image-audio recommendation, and user studies guided by music. We emphasize database construction, intelligent composition algorithms, short video generation models, and are developing related websites and apps.</p>
-
-<h4 class="font-bold text-lg mt-6 mb-2">PROGRESS: Achievements & Progress</h4>
-<p>The group has received support from national and provincial research funds, as well as industry partners like Alibaba and Huawei. Achievements include:</p>
-<ul class="list-disc pl-6 mb-4">
-  <li>Over 30 papers published in top journals and conferences (IEEE Trans. on Affective Computing, ACM MM, AAAI, ICASSP, etc.)</li>
-  <li>Multiple invention patents and software copyrights</li>
-  <li>Innovative projects such as short audio generation for e-commerce, cross-media creative platforms, and AI-driven music training tools</li>
-  <li>National awards in innovation and entrepreneurship competitions</li>
-</ul>
-<p>For more, visit: <a href="https://alibabawood.aliyun.com/" class="text-blue-600 underline hover:text-blue-800" target="_blank">AlibabaWood</a>, <a href="https://enjoymusic.ai/" class="text-blue-600 underline hover:text-blue-800" target="_blank">StepBeats</a>, <a href="https://maddelta.com/" class="text-blue-600 underline hover:text-blue-800" target="_blank">MadDelta</a></p>
-
-<h4 class="font-bold text-lg mt-6 mb-2">JOIN: Join Us</h4>
-<p>If you love music, have a background in music theory, performance, or creation, or are interested in AI composition, product design, or programming, we welcome you to join us! We offer academic internships, summer camps, SRTP, and guidance for undergraduate theses. Contact: Wu (11921149@zju.edu.cn), Prof. Zhang (zhangkejun@zju.edu.cn)</p>
+<p>The NEXT + Music is at the forefront of intelligent music research, exploring the deep integration of artificial intelligence with musical creativity and experience. Our research is centered on several key areas, including automated music generation, where we develop models for lyric-to-melody synthesis and text-to-music generation. We are also deeply engaged in multimodal music applications, investigating the intricate relationships between music and other modalities such as text, images, and video to create novel interactive experiences. A significant part of our work is dedicated to affective computing in music, aiming to understand and model the emotional responses to music. Through these directions, we strive to build advanced computational systems that not only understand and process music but also collaborate with artists and users in the creative process, pushing the boundaries of music technology.</p>
 `,
     members: {
       leaders: [
@@ -105,10 +85,6 @@ const researches = {
     image: "/images/researches-font-cover.png",
     link: "/researches",
     overview: `
-<h4 class="font-bold text-lg mt-6 mb-2">WHAT: What We Do</h4>
-<p>We are an interdisciplinary team leveraging AI and design to revolutionize the creation and application of Chinese fonts and digital seals.</p>
-
-<h4 class="font-bold text-lg mt-6 mb-2">Overview</h4>
 <p>The NEXT Font Group is dedicated to addressing the unique challenges of digitizing the artistic expression of Chinese characters through computational methods. Our research spans the entire pipeline from fundamental data construction to end-user applications. We meticulously digitize and annotate large-scale datasets of historical seal scripts and calligraphy, which serve as the foundation for developing novel AI models for font style transfer and glyph generation. Beyond algorithms, we integrate interaction design and software engineering to build practical tools and platforms, including intelligent font design systems, user-friendly seal carving apps, and educational products. Our interdisciplinary approach, combining computer science, design, and cultural study, aims to make the creation and enjoyment of beautiful typography accessible to everyone.</p>
 `,
     members: {
@@ -146,9 +122,6 @@ const researches = {
     image: "/images/researches-design-cover.png",
     link: "/researches",
     overview: `
-<p>We leverage AI-assisted design to create intelligent products and nurture designers capable of facing future challenges.</p>
-
-<h4 class="font-bold text-lg mt-6 mb-2">Overview</h4>
 <p>The NEXT Design Group drives innovation in design through technology, covering but not limited to education, manufacturing, and media creation. In design education, we promote the dissemination of design knowledge with products like the "Heritage Spark" toolkit, which integrates intangible cultural heritage with contemporary creativity, and the design textbook "Is It Design?" aimed at a general audience. In intelligent manufacturing, we combine technology and design to innovate traditional production methods, such as the personalized seal engraving machine "NEXTSEALER" and the modern salt jar "CoastalBam Jar," enhancing both the functionality and aesthetics of traditional craftsmanship. In intelligent media, we use AI to reconstruct the traditional media creation process, launching the AIGC video app "Ink Frames" and the "Life of Su Shi" series to digitally spread and creatively express traditional culture.</p>
 `,
     members: {
