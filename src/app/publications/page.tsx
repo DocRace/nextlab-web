@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPublications } from "@/data/publications";
@@ -113,10 +115,10 @@ export default function Publications() {
       {/* Publications List - alternating two-column layout */}
       <div className="max-w-[1920px] mx-auto">
         {publications.map((pub, idx) => (
-          <Link
+          <div
             key={pub.id}
-            href={`/publications/${pub.id}`}
-            className={`grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center mb-12 md:mb-16`}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center mb-12 md:mb-16 cursor-pointer`}
+            onClick={() => window.location.href = `/publications/${pub.id}`}
           >
             <div className={`relative h-[300px] md:h-[400px] rounded-[36px] overflow-hidden ${idx % 2 === 1 ? 'md:order-2' : 'order-1'}`}>
               <Image
@@ -140,7 +142,13 @@ export default function Publications() {
                       const comma = idx < arr.length - 1 ? ", " : "";
                       return id ? (
                         <span key={`${a}-${idx}`}>
-                          <Link href={`/team/${id}`} className="text-blue-600 hover:text-blue-800 underline">{a.replace(/\*/g, "")}</Link>
+                          <Link 
+                            href={`/team/${id}`} 
+                            className="text-blue-600 hover:text-blue-800 underline"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {a.replace(/\*/g, "")}
+                          </Link>
                           {comma}
                         </span>
                       ) : (
@@ -152,7 +160,7 @@ export default function Publications() {
               </div>
               <div className="flex gap-2 mb-3 md:mb-6 flex-wrap">
                 {pub.tags.map((tag, idx) => (
-                  <span key={idx} className={`px-3 py-1 rounded-full text-sm ${getTagColor(tag)}`}>
+                  <span key={idx} className={`px-3 py-1 rounded-full text-xs font-medium ${getTagColor(tag)}`}>
                     {tag}
                   </span>
                 ))}
@@ -169,7 +177,7 @@ export default function Publications() {
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

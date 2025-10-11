@@ -167,7 +167,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
             </div>
             <div className="flex flex-wrap gap-2 mb-6">
               {publication.tags.map((tag, index) => (
-                <span key={index} className={`px-3 py-1 rounded-full text-sm ${getTagColor(tag)}`}>
+                <span key={index} className={`px-3 py-1 rounded-full text-xs font-medium ${getTagColor(tag)}`}>
                   {tag}
                 </span>
               ))}
@@ -259,7 +259,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
               </div>
             )}
             <div className="mt-8">
-              <Link
+              <Link 
                 href="/publications"
                 className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                 style={{

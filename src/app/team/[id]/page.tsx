@@ -2,18 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTeamMemberById } from "@/data/team";
+import TeamAvatar from "@/components/TeamAvatar";
 
 // 根据研究组别返回对应的颜色类
 const getResearchGroupColor = (researchGroup: string) => {
   switch (researchGroup) {
     case 'Music Group':
-      return 'bg-purple-50 text-purple-800';
+      return 'bg-purple-100 text-purple-800';
     case 'Font Group':
-      return 'bg-orange-50 text-orange-800';
+      return 'bg-orange-100 text-orange-800';
     case 'Design Group':
-      return 'bg-blue-50 text-blue-800';
+      return 'bg-blue-100 text-blue-800';
     default:
-      return 'bg-gray-50 text-gray-800';
+      return 'bg-gray-100 text-gray-800';
   }
 };
 
@@ -49,16 +50,12 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
       <div className="mb-8 flex flex-col items-start gap-4">
         {/* 头像区域 */}
         <div className="w-full flex items-start">
-          <div className="relative" style={{ width: '200px', height: '200px' }}>
-            <Image
-              src={member.avatar}
-              alt={member.name}
-              fill
-              className="rounded-full object-cover"
-              sizes="200px"
-              priority
-            />
-          </div>
+          <TeamAvatar
+            src={member.avatar}
+            alt={member.name}
+            size={200}
+            priority
+          />
         </div>
 
         {/* 标题和基本信息 */}

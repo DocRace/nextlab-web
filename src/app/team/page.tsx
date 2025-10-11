@@ -1,25 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { teamMembers, getTeamMembersByCategory } from "@/data/team";
+import TeamAvatar from "@/components/TeamAvatar";
 
 // 根据研究组别返回对应的颜色类
 const getResearchGroupColor = (researchGroup: string) => {
   switch (researchGroup) {
     case 'Music Group':
-      return 'text-purple-600';
+      return 'bg-purple-100 text-purple-800';
     case 'Font Group':
-      return 'text-orange-600';
+      return 'bg-orange-100 text-orange-800';
     case 'Design Group':
-      return 'text-blue-600';
+      return 'bg-blue-100 text-blue-800';
     default:
-      return 'text-gray-600';
+      return 'bg-gray-100 text-gray-800';
   }
 };
 
 export default function Team() {
   const facultyMembers = getTeamMembersByCategory('Faculty & Researchers');
   const staffMembers = getTeamMembersByCategory('Staff');
-  const doctoralStudents = getTeamMembersByCategory('Doctoral Students');
+  const doctoralStudents = getTeamMembersByCategory('PhD Students');
   const masterStudents = getTeamMembersByCategory('Master Students');
   const undergraduates = getTeamMembersByCategory('Undergraduates');
   const alumni = getTeamMembersByCategory('Alumni');
@@ -58,23 +59,23 @@ export default function Team() {
               {facultyMembers.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
                   <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
-                    <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
-                      <Image
-                        src={member.avatar}
-                        alt={member.name}
-                        fill
-                        className="rounded-full object-cover bg-gray-100"
-                        sizes="100px"
-                        priority
-                      />
-                    </div>
+                    <TeamAvatar
+                      src={member.avatar}
+                      alt={member.name}
+                      size={100}
+                      priority
+                    />
                     <div className="ml-6">
                       <h3 className="text-lg md:text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
-                      <p className="text-gray-500 text-sm md:text-base">{member.position}</p>
+                      <p className="text-gray-500 text-sm md:text-base mb-2">{member.position}</p>
                       {member.researchGroup && (
-                        <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
+                        <div>
+                          <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${getResearchGroupColor(member.researchGroup)}`}>
+                            {member.researchGroup}
+                          </span>
+                        </div>
                       )}
                     </div>
                   </div>
@@ -91,23 +92,21 @@ export default function Team() {
               {staffMembers.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
                   <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
-                    <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
-                      <Image
-                        src={member.avatar}
-                        alt={member.name}
-                        fill
-                        className="rounded-full object-cover bg-gray-100"
-                        sizes="100px"
-                        priority
-                      />
-                    </div>
+                    <TeamAvatar
+                      src={member.avatar}
+                      alt={member.name}
+                      size={100}
+                      priority
+                    />
                     <div className="ml-6">
                       <h3 className="text-lg md:text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
                       <p className="text-gray-500 text-sm md:text-base">{member.position}</p>
                       {member.researchGroup && (
-                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
+                        <span className={`inline-flex items-center whitespace-nowrap px-3 py-1 rounded-full text-xs font-medium mt-1 w-fit ${getResearchGroupColor(member.researchGroup)}`}>
+                          {member.researchGroup}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -125,23 +124,21 @@ export default function Team() {
               {doctoralStudents.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
                   <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
-                    <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
-                      <Image
-                        src={member.avatar}
-                        alt={member.name}
-                        fill
-                        className="rounded-full object-cover bg-gray-100"
-                        sizes="100px"
-                        priority
-                      />
-                    </div>
+                    <TeamAvatar
+                      src={member.avatar}
+                      alt={member.name}
+                      size={100}
+                      priority
+                    />
                     <div className="ml-6">
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
+                        <span className={`inline-flex items-center whitespace-nowrap px-3 py-1 rounded-full text-xs font-medium mt-1 w-fit ${getResearchGroupColor(member.researchGroup)}`}>
+                          {member.researchGroup}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -158,23 +155,21 @@ export default function Team() {
               {undergraduates.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
                   <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
-                    <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
-                      <Image
-                        src={member.avatar}
-                        alt={member.name}
-                        fill
-                        className="rounded-full object-cover bg-gray-100"
-                        sizes="100px"
-                        priority
-                      />
-                    </div>
+                    <TeamAvatar
+                      src={member.avatar}
+                      alt={member.name}
+                      size={100}
+                      priority
+                    />
                     <div className="ml-6">
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <p className="text-sm text-purple-600 mt-1">{member.researchGroup}</p>
+                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mt-1 ${getResearchGroupColor(member.researchGroup)}`}>
+                          {member.researchGroup}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -192,23 +187,21 @@ export default function Team() {
               {masterStudents.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
                   <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
-                    <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
-                      <Image
-                        src={member.avatar}
-                        alt={member.name}
-                        fill
-                        className="rounded-full object-cover bg-gray-100"
-                        sizes="100px"
-                        priority
-                      />
-                    </div>
+                    <TeamAvatar
+                      src={member.avatar}
+                      alt={member.name}
+                      size={100}
+                      priority
+                    />
                     <div className="ml-6">
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
+                        <span className={`inline-flex items-center whitespace-nowrap px-3 py-1 rounded-full text-xs font-medium mt-1 w-fit ${getResearchGroupColor(member.researchGroup)}`}>
+                          {member.researchGroup}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -226,23 +219,21 @@ export default function Team() {
               {alumni.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
                   <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
-                    <div className="relative flex-shrink-0" style={{ width: '100px', height: '100px', minWidth: '100px' }}>
-                      <Image
-                        src={member.avatar}
-                        alt={member.name}
-                        fill
-                        className="rounded-full object-cover bg-gray-100"
-                        sizes="100px"
-                        priority
-                      />
-                    </div>
+                    <TeamAvatar
+                      src={member.avatar}
+                      alt={member.name}
+                      size={100}
+                      priority
+                    />
                     <div className="ml-6">
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
                         {member.englishName || member.name}
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <p className={`text-sm mt-1 ${getResearchGroupColor(member.researchGroup)}`}>{member.researchGroup}</p>
+                        <span className={`inline-flex items-center whitespace-nowrap px-3 py-1 rounded-full text-xs font-medium mt-1 w-fit ${getResearchGroupColor(member.researchGroup)}`}>
+                          {member.researchGroup}
+                        </span>
                       )}
                     </div>
                   </div>
