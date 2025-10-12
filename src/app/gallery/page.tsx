@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import MemoryImage from "@/components/MemoryImage";
 
 const tabs = ["Code", "Demos", "Works", "Competition Entries", "News", "Memories", "More"] as const;
 
@@ -361,15 +362,10 @@ export default function Gallery() {
                 "/images/memories-images/memories-13.jpg"
               ].map((src, idx) => (
                 <div key={idx} className="relative h-[180px] w-[320px] rounded-xl overflow-hidden flex-shrink-0">
-                  <Image 
+                  <MemoryImage 
                     src={src} 
                     alt={`memory-${idx + 1}`} 
-                    fill 
                     className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/images/next-lab-logo.png';
-                    }}
                   />
                 </div>
               ))}
