@@ -408,7 +408,9 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
               if (p.external) {
                 return <a key={p.id} href={p.external} target="_blank" rel="noreferrer">{content}</a>;
               }
-              return <Link key={p.id} href={p.href || '#'}>{content}</Link>;
+              // Link to project detail page based on research group and project ID
+              const projectHref = `/projects/${id}/${p.id}`;
+              return <Link key={p.id} href={projectHref}>{content}</Link>;
             })}
           </div>
           {('videos' in research) && (
