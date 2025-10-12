@@ -345,9 +345,32 @@ export default function Gallery() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Memories</h2>
           <div className="relative w-full overflow-hidden">
             <div className="flex gap-4 animate-[scrollleft_30s_linear_infinite]">
-              {["/images/project1.jpg","/images/project2.jpg","/images/project3.jpg","/images/project4.jpg"].map((src, idx) => (
+              {[
+                "/images/memories-images/memories-1.jpg",
+                "/images/memories-images/memories-2.jpg", 
+                "/images/memories-images/memories-3.jpg",
+                "/images/memories-images/memories-4.jpg",
+                "/images/memories-images/memories-5.jpg",
+                "/images/memories-images/memories-6.jpg",
+                "/images/memories-images/memories-7.jpg",
+                "/images/memories-images/memories-8.jpg",
+                "/images/memories-images/memories-9.jpg",
+                "/images/memories-images/memories-10.jpg",
+                "/images/memories-images/memories-11.jpg",
+                "/images/memories-images/memories-12.jpg",
+                "/images/memories-images/memories-13.jpg"
+              ].map((src, idx) => (
                 <div key={idx} className="relative h-[180px] w-[320px] rounded-xl overflow-hidden flex-shrink-0">
-                  <Image src={src} alt={`memory-${idx}`} fill className="object-cover" />
+                  <Image 
+                    src={src} 
+                    alt={`memory-${idx + 1}`} 
+                    fill 
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/images/next-lab-logo.png';
+                    }}
+                  />
                 </div>
               ))}
             </div>
