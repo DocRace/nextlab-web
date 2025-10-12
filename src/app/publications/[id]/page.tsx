@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getPublicationById } from "@/data/publications";
 import { teamMembers } from "@/data/team";
 import { notFound } from "next/navigation";
+import PublicationImage from "@/components/PublicationImage";
 
 // Helper function to generate detail image path
 function getDetailImagePath(coverImagePath: string): string {
@@ -165,15 +166,10 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
             
             {/* Detail Image */}
             <div className="relative h-[300px] rounded-[36px] overflow-hidden">
-              <Image
+              <PublicationImage
                 src={getDetailImagePath(publication.image)}
                 alt={`${publication.title} - Detail`}
-                fill
                 className="object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = '/images/next-lab-logo.png';
-                }}
               />
             </div>
           </div>
