@@ -205,77 +205,84 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
               <p className="text-gray-600">{publication.venue}</p>
             </div>
             
-            {/* 可点击链接部分 - 类似参考网站的inline形式 */}
+            {/* 固定4个链接显示 */}
             <div className="mb-6">
               <div className="flex items-center gap-4 text-sm">
                 <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
+                
+                {/* PDF Link */}
+                {publication.link ? (
+                  <a 
+                    href={publication.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    pdf
+                  </a>
+                ) : (
+                  <span className="text-gray-400">pdf</span>
+                )}
+                
+                <span className="text-gray-400">|</span>
+                
+                {/* Code Link */}
+                {publication.code ? (
+                  <a 
+                    href={publication.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    code
+                  </a>
+                ) : (
+                  <span className="text-gray-400">code</span>
+                )}
+                
+                <span className="text-gray-400">|</span>
+                
+                {/* Demo Link */}
+                {publication.demo ? (
+                  <a 
+                    href={publication.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    demo
+                  </a>
+                ) : (
+                  <span className="text-gray-400">demo</span>
+                )}
+                
+                <span className="text-gray-400">|</span>
+                
+                {/* Video Link */}
                 {(() => {
-                  const links = [];
+                  let videoUrl = null;
                   
-                  if (publication.link) {
-                    links.push(
-                      <a 
-                        key="pdf"
-                        href={publication.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 underline"
-                      >
-                        pdf
-                      </a>
-                    );
-                  }
-                  
+                  // Check for specific publications with video links
                   if (publication.id === "ideationweb") {
-                    links.push(
-                      <a 
-                        key="video"
-                        href="https://dl.acm.org/doi/10.1145/3706598.3713375"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 underline"
-                      >
-                        video
-                      </a>
-                    );
+                    videoUrl = "https://dl.acm.org/doi/10.1145/3706598.3713375";
+                  } else if (publication.id === "remast") {
+                    videoUrl = "https://ieeexplore.ieee.org/document/10734159";
                   }
                   
-                  if (publication.id === "remast") {
-                    links.push(
-                      <a 
-                        key="video"
-                        href="https://ieeexplore.ieee.org/document/10734159"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 underline"
-                      >
-                        video
-                      </a>
-                    );
-                  }
-                  
-                  if (publication.id === "visual-knowledge-seal") {
-                    links.push(
-                      <a 
-                        key="demo"
-                        href="http://www.next.zju.edu.cn/seal/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-800 underline"
-                      >
-                        demo
-                      </a>
-                    );
-                  }
-                  
-                  return links.map((link, index) => (
-                    <span key={index}>
-                      {link}
-                      {index < links.length - 1 && <span className="text-gray-400 mx-2">|</span>}
-                    </span>
-                  ));
+                  return videoUrl ? (
+                    <a 
+                      href={videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      video
+                    </a>
+                  ) : (
+                    <span className="text-gray-400">video</span>
+                  );
                 })()}
               </div>
             </div>
