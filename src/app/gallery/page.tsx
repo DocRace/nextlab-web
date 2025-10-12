@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import MemoryImage from "@/components/MemoryImage";
+import GalleryImage from "@/components/GalleryImage";
 
 const tabs = ["Code", "Demos", "Works", "Competition Entries", "News", "Memories", "More"] as const;
 
@@ -192,15 +193,10 @@ export default function Gallery() {
             {codeData.map((item, index) => (
               <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
                 <div className="relative h-[220px] bg-gray-100">
-                  <Image 
+                  <GalleryImage 
                     src={item.image} 
                     alt={item.title} 
-                    fill 
                     className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/images/next-lab-logo.png';
-                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -228,15 +224,10 @@ export default function Gallery() {
             {demoData.map((item, index) => (
               <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
                 <div className="relative h-[220px] bg-gray-100">
-                  <Image 
+                  <GalleryImage 
                     src={item.image} 
                     alt={item.title} 
-                    fill 
                     className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/images/next-lab-logo.png';
-                    }}
                   />
                 </div>
                 <div className="p-4">
@@ -285,15 +276,10 @@ export default function Gallery() {
             {competitionData.map((item, index) => (
               <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
                 <div className="relative h-[220px] bg-gray-100">
-                  <Image 
+                  <GalleryImage 
                     src={item.image} 
                     alt={item.title} 
-                    fill 
                     className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/images/next-lab-logo.png';
-                    }}
                   />
                 </div>
                 <div className="p-4">
