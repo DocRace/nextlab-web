@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Banner() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -155,7 +156,7 @@ export default function Banner() {
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-8 h-full">
           <div className="grid h-full items-center grid-cols-1 md:grid-cols-2 gap-6">
             {/* 左侧胶囊区域 */}
-            <div className="flex items-center justify-start h-full pl-0">
+            <Link href="/introduction" className="flex items-center justify-start h-full pl-0 cursor-pointer">
               <div className="relative" style={{ transform: `translateY(-${capsuleConfig.offset * 4}px)` }}>
                 {/* 渲染四个位置的胶囊 */}
                 {currentPositions.map((pos) => {
@@ -224,10 +225,10 @@ export default function Banner() {
                   );
                 })}
               </div>
-            </div>
+            </Link>
             
             {/* 右侧文字区域 */}
-            <div className="z-40">
+            <Link href="/introduction" className="z-40 cursor-pointer">
               <h1 className="text-3xl md:text-6xl font-bold text-black mb-2 md:mb-4 uppercase [text-shadow:_0_0_42px_rgba(255,255,255,1),_0_0_82px_rgba(255,255,255,0.95),_0_0_122px_rgba(255,255,255,0.9)]">
                 ZJU NEXT LAB
               </h1>
@@ -237,7 +238,7 @@ export default function Banner() {
                 data, musical emotion computing, and information and 
                 interaction design.
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ export const publications: Publication[] = [
     venue: "Leonardo",
     abstract: "The author has designed a new interface of musical expression called Poem-Qin, which reveals the relationship between text and music, supporting self-accompanied singing and cross-media musical practices. Drawing inspiration from Chinese qin songs and movable-type printing, the author creatively integrates Chinese characters into the interface, controlling music with tone inflections and linguistic rhythms. Moreover, they have developed an AI model for text-to-melody composing to assist in creating new music content. User and audience testing has demonstrated that it offers a positive experience and effective creative results.",
     link: "https://apps.apple.com/us/app/poem-qin/id6504380560",
-    image: "/images/Poems as musical instruments.jpeg",
+    image: "/images/Poems as musical instruments.png",
     tags: ["Music"]
   },
   {
