@@ -4,6 +4,20 @@ import { getPublicationById } from "@/data/publications";
 import { teamMembers } from "@/data/team";
 import { notFound } from "next/navigation";
 
+// Helper function to generate detail image path
+function getDetailImagePath(coverImagePath: string): string {
+  const pathParts = coverImagePath.split('/');
+  const fileName = pathParts[pathParts.length - 1];
+  const nameWithoutExt = fileName.split('.')[0];
+  const extension = fileName.split('.').pop();
+  
+  // Create detail image path: {name}-detail.{extension}
+  const detailFileName = `${nameWithoutExt}-detail.${extension}`;
+  pathParts[pathParts.length - 1] = detailFileName;
+  
+  return pathParts.join('/');
+}
+
 // 根据研究组别返回对应的颜色类
 const getTagColor = (tag: string) => {
   switch (tag) {
@@ -137,13 +151,31 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
       {/* Content */}
       <div className="max-w-[1920px] mx-auto px-4 py-6 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="relative h-[500px] rounded-[36px] overflow-hidden">
-            <Image
-              src={publication.image}
-              alt={publication.title}
-              fill
-              className="object-cover"
-            />
+          {/* Images Section */}
+          <div className="space-y-4">
+            {/* Cover Image */}
+            <div className="relative h-[300px] rounded-[36px] overflow-hidden">
+              <Image
+                src={publication.image}
+                alt={`${publication.title} - Cover`}
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            {/* Detail Image */}
+            <div className="relative h-[300px] rounded-[36px] overflow-hidden">
+              <Image
+                src={getDetailImagePath(publication.image)}
+                alt={`${publication.title} - Detail`}
+                fill
+                className="object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/images/next-lab-logo.png';
+                }}
+              />
+            </div>
           </div>
           <div>
             <h2 className="text-xl md:text-2xl lg:text-4xl font-bold mb-4">{publication.title}</h2>
