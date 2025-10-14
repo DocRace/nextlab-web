@@ -7,8 +7,8 @@ import { useState } from 'react';
 
 const navItems = [
   { name: 'Home', path: '/' },
-  { name: 'Publications', path: '/publications' },
   { name: 'Researches', path: '/researches' },
+  { name: 'Publications', path: '/publications' },
   { name: 'Courses', path: '/courses' },
   { name: 'Gallery', path: '/gallery' },
   { name: 'People', path: '/team' },
@@ -119,6 +119,13 @@ export default function Navbar() {
             Home
           </Link>
           <Link
+            href="/researches"
+            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Researches
+          </Link>
+          <Link
             href="/publications"
             className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
             onClick={() => setIsOpen(false)}
@@ -131,13 +138,6 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             Gallery
-          </Link>
-          <Link
-            href="/researches"
-            className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Researches
           </Link>
           <Link
             href="/courses"

@@ -7,11 +7,19 @@ type Course = {
   date: string;
   tags: string[];
   image: string;
-  link: string;
+  chineseLink?: string;
+  englishLink?: string;
   overview: string;
   syllabus: string[];
   references: string[];
   instructors?: string[];
+  exhibition?: {
+    title: string;
+    description: string;
+    videoUrl?: string;
+    link?: string;
+    linkText?: string;
+  };
 };
 
 const courses: Record<string, Course> = {
@@ -20,7 +28,7 @@ const courses: Record<string, Course> = {
     date: "Jan 09, 2023",
     tags: ["Course", "Article"],
     image: "/images/course-audio-music.png",
-    link: "https://www.icourse163.org/course/0809FDU062-1462119161?outVendor=zw_mooc_pclszykctj_",
+    chineseLink: "https://www.icourse163.org/course/0809FDU062-1462119161?outVendor=zw_mooc_pclszykctj_",
     overview: `This course focuses on the emerging interdisciplinary field of music technology, music artificial intelligence, and computer audition/AI acoustics. The field is generally considered to have started with the establishment of the ISMIR (International Society of Music Information Retrieval Conference) in 2000. As a high-threshold interdisciplinary subject with significant academic and practical value, talent cultivation is both challenging and crucial for the development of the discipline.<br/><br/>Due to the long-standing separation of arts and sciences in China, there are very few interdisciplinary talents in this field domestically, while such talents are more common in developed countries due to their general education philosophy. In the entire industry chain of music technology, music AI, and computer audition/AI acoustics, developed countries occupy high-end positions, generating significant profits from China each year. In recent years, with the rise of interdisciplinary thinking and the popularity of AI technology, the demand for domestic talents in music technology and related fields has rapidly increased.<br/><br/>Previously, research and teaching in this field in China were scattered. Since the establishment of the National Conference on Sound and Music Technology (CSMT) in 2013, the field has gradually become more cohesive. The course leader has authored two major reviews (2017–2020) on music technology and computer audition, edited the Chinese academic monograph "Integration of Audio Music and Computer – Audio Music Technology (Vol. 1 & 2)", and defined key terms in Baidu Baike. These efforts laid the foundation for launching the first online course in this field in China.<br/><br/>The course is structured as a series of popular science reports, open to the public, providing a comprehensive overview of academic theories and industrial applications. Those interested in specific directions can collaborate with relevant mentors for deeper research. The faculty is distributed across comprehensive universities, technical universities, and music academies, making online courses an effective solution.`,
     syllabus: [
       "Chapter 1: Overview of Music Technology, Music AI, and Computer Audition",
@@ -55,7 +63,7 @@ const courses: Record<string, Course> = {
     date: "Jan 09, 2023",
     tags: ["Course", "Swift", "Article"],
     image: "/images/course-swift.jpg",
-    link: "https://www.icourse163.org/course/ZJU-1450024180",
+    chineseLink: "https://www.icourse163.org/course/ZJU-1450024180",
     overview: `This course systematically teaches Swift fundamentals, advanced topics, and practical knowledge, integrating typical applications such as AI, AR, Face ID, and Accessibility. It features sharing from WWDC Scholarship winners, China 'Internet+' National Competition Gold Medalists, and top awardees from the China College Computer Competition for Mobile Application Innovation, aiming to cultivate learners' development capabilities in the iOS ecosystem and enhance their innovation and entrepreneurship skills in mobile applications.`,
     instructors: [
       "Kejun Zhang (Zhejiang University)",
@@ -98,7 +106,8 @@ const courses: Record<string, Course> = {
     date: "Updated",
     tags: ["Course", "Design Thinking"],
     image: "/images/course-design-thinking.png",
-    link: "https://www.icourse163.org/course/ZJU-1003462001?from=searchPage&outVendor=zw_mooc_pcssjg_",
+    chineseLink: "https://www.icourse163.org/course/ZJU-1003462001?from=searchPage&outVendor=zw_mooc_pcssjg_",
+    englishLink: "https://www.coursera.org/learn/design-thinking-innovation",
     overview: `As for business management problem, scientific research problem, or engineering problem, the process of finding the solutions to these problems can be regarded as the process of "design". Using design thinking, people can find suitable solutions in various fields.<br/><br/>In view of this, we developed this course "Design Thinking and Innovation Design". With the mission of strengthening moral education and cultivating people, this course is a general education course of innovation and entrepreneurship for all students. It is committed to cultivating production innovation and entrepreneurial practice students with "design-led and innovation-driven". The course is taught by professors Zhang Kejun, Sun Lingyun and Chai Chunlei. The main contents include design thinking theory, methods and tools, innovation design connotation, approaches and key technologies, and outstanding cases of innovation and entrepreneurship practice.`,
     instructors: [
       "Kejun Zhang", "Lingyun Sun", "Chunlei Chai"
@@ -117,7 +126,12 @@ const courses: Record<string, Course> = {
       "Week 11: Case Studies 4-5, Course Summary, Expert Interviews"
     ],
     references: [],
-    // exhibition link text left in overview area below as separate block
+    exhibition: {
+      title: "Course Exhibition",
+      description: "View course materials and resources",
+      link: "https://pan.baidu.com/s/1zoKZOmZpLe8IKDu82L4AxA",
+      linkText: "Baidu Netdisk Link (Extraction code: nexn)"
+    }
   }
 };
 
@@ -127,51 +141,129 @@ export default async function CourseDetail({ params }: { params: Promise<{ id: s
   if (!course) return notFound();
 
   return (
-    <div className="min-h-screen max-w-[900px] mx-auto py-12 px-4">
-      <div className="mb-8 flex flex-col items-start gap-4">
-        <div className="w-full max-w-[900px] aspect-[16/6] relative rounded-[36px] overflow-hidden">
+    <div className="min-h-screen max-w-[1200px] mx-auto py-12 px-4">
+      {/* Course Header */}
+      <div className="mb-12">
+        <div className="w-full aspect-[16/6] relative rounded-[36px] overflow-hidden mb-6">
           <Image src={course.image} alt={course.title} fill className="object-cover" />
         </div>
-        <h1 className="text-3xl font-bold mt-4 mb-2">{course.title}</h1>
-        <div className="flex gap-2 mb-1">
+        <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
+        <div className="flex gap-2 mb-4">
           {course.tags.map(tag => (
-            <span key={tag} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">{tag}</span>
+            <span key={tag} className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">{tag}</span>
           ))}
         </div>
-        <div className="text-gray-500 text-sm">{course.date}</div>
-        <Link href={course.link} target="_blank" className="inline-flex items-center text-white px-6 py-2 rounded-full font-semibold bg-black hover:bg-gray-800 transition-colors shadow">
-          Go to Course
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-        </Link>
+        <div className="text-gray-500 text-lg">{course.date}</div>
       </div>
-      <div className="prose max-w-none mb-8" dangerouslySetInnerHTML={{ __html: course.overview }} />
-      {id === 'design-thinking' && (
-        <div className="mb-8">
-          <h2 className="text-xl font-bold mb-2">Exhibition</h2>
-          <p className="text-gray-700">Baidu Netdisk:</p>
-          <a href="https://pan.baidu.com/s/1zoKZOmZpLe8IKDu82L4AxA" target="_blank" className="text-blue-600 hover:text-blue-800 underline">Link</a>
-          <div className="text-sm text-gray-600 mt-1">Extraction code: nexn</div>
+
+      {/* Main Content Sections */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Column - Overview and Syllabus */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Overview Section */}
+          <section className="bg-gray-100 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900">Overview</h2>
+            <div className="prose max-w-none text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: course.overview }} />
+          </section>
+
+          {/* Syllabus Section */}
+          <section className="bg-gray-100 rounded-2xl p-8">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900">Syllabus</h2>
+            <div className="space-y-3">
+              {course.syllabus.map((item, index) => (
+                <div key={index} className="flex items-start gap-3 p-3 bg-white rounded-lg">
+                  <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-sm font-medium">
+                    {index + 1}
+                  </span>
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Exhibition Section */}
+          {course.exhibition && (
+            <section className="bg-gray-100 rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">{course.exhibition.title}</h2>
+              <p className="text-gray-700 mb-4">{course.exhibition.description}</p>
+              {course.exhibition.link && (
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <a 
+                    href={course.exhibition.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline font-medium"
+                  >
+                    {course.exhibition.linkText}
+                  </a>
+                </div>
+              )}
+            </section>
+          )}
         </div>
-      )}
-      {course.instructors && (
-        <div className="mb-8">
-          <h2 className="text-xl font-bold mb-2">Instructors</h2>
-          <ul className="list-disc pl-6">
-            {course.instructors.map(name => <li key={name}>{name}</li>)}
-          </ul>
+
+        {/* Right Column - Course Links and Additional Info */}
+        <div className="space-y-6">
+          {/* Course Links */}
+          <div className="bg-gray-100 rounded-2xl p-6">
+            <h3 className="text-xl font-bold mb-4 text-gray-900">Course Access</h3>
+            <div className="space-y-3">
+              {course.chineseLink && (
+                <Link 
+                  href={course.chineseLink} 
+                  target="_blank" 
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  Go to Course (Chinese)
+                </Link>
+              )}
+              {course.englishLink && (
+                <Link 
+                  href={course.englishLink} 
+                  target="_blank" 
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  Go to Course (English)
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {/* Instructors */}
+          {course.instructors && (
+            <div className="bg-gray-100 rounded-2xl p-6">
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Instructors</h3>
+              <div className="space-y-2">
+                {course.instructors.map((name, index) => (
+                  <div key={index} className="flex items-center gap-2 text-gray-700">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span>{name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* References */}
+          {course.references.length > 0 && (
+            <div className="bg-gray-100 rounded-2xl p-6">
+              <h3 className="text-xl font-bold mb-4 text-gray-900">References</h3>
+              <div className="space-y-2 max-h-64 overflow-y-auto">
+                {course.references.map((ref, index) => (
+                  <div key={index} className="text-sm text-gray-600 p-2 bg-gray-50 rounded">
+                    {ref}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      )}
-      <div className="mb-8">
-        <h2 className="text-xl font-bold mb-2">Syllabus</h2>
-        <ul className="list-disc pl-6">
-          {course.syllabus.map(item => <li key={item}>{item}</li>)}
-        </ul>
-      </div>
-      <div className="mb-8">
-        <h2 className="text-xl font-bold mb-2">References</h2>
-        <ul className="list-disc pl-6">
-          {course.references.map(ref => <li key={ref}>{ref}</li>)}
-        </ul>
       </div>
     </div>
   );
