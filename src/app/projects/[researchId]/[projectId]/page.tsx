@@ -3,7 +3,24 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 // Project data structure
-const projects = {
+interface Project {
+  title: string;
+  cover: string;
+  description: string;
+  details: string;
+  features: string[];
+  technologies: string[];
+  year: string;
+  status: string;
+}
+
+interface ProjectsData {
+  [researchId: string]: {
+    [projectId: string]: Project;
+  };
+}
+
+const projects: ProjectsData = {
   "music": {
     "wuyun": {
       title: "WuYun: Hierarchical skeleton-guided melody generation",
