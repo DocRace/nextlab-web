@@ -294,9 +294,9 @@ export default function CourseDetail({ params }: { params: Promise<{ id: string 
           {course.references.length > 0 && (
             <div className="bg-gray-100 rounded-2xl p-6">
               <h3 className="text-xl font-bold mb-4 text-gray-900">References</h3>
-              <div className="space-y-2 max-h-64 overflow-y-auto">
+              <div className="text-sm text-gray-600 leading-relaxed">
                 {course.references.map((ref, index) => (
-                  <div key={index} className="text-sm text-gray-600 p-2 bg-gray-50 rounded">
+                  <div key={index} className="mb-2">
                     {ref}
                   </div>
                 ))}
