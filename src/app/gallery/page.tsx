@@ -4,7 +4,7 @@ import MemoryImage from "@/components/MemoryImage";
 import GalleryImage from "@/components/GalleryImage";
 import { competitions } from "@/data/competitions";
 
-const tabs = ["Code", "Demos", "Works", "Competition Entries", "News", "Memories", "More"] as const;
+const tabs = ["Memories", "Code", "Demos", "Works", "Competition Entries", "News", "More"] as const;
 
 // Code data from CSV
 const codeData = [
