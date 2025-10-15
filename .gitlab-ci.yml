@@ -6,3 +6,13 @@ build:
     - docker build -t registry.magipop.xyz/maic/nextlab-web .
     - docker push registry.magipop.xyz/maic/nextlab-web
     - docker image rm registry.magipop.xyz/maic/nextlab-web
+
+deploy:
+  stage: deploy
+  tags:
+    - layer-wa
+  script:
+    - docker pull registry.magipop.xyz/maic/nextlab-web
+    - docker stop nextlab
+    - docker rm nextlab
+    - docker run --name nextlab -d -p 127.0.0.1:6001:3000 registry.magipop.xyz/maic/nextlab-web
