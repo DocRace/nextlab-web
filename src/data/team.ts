@@ -11,6 +11,9 @@ export interface TeamMember {
   chineseBio?: string;
   achievements?: string;
   personalHomepage?: string;
+  publications?: string;
+  projects?: string;
+  researchDirection?: string;
 }
 
 export const teamMembers: TeamMember[] = [
@@ -125,7 +128,7 @@ export const teamMembers: TeamMember[] = [
     category: 'Staff',
     position: 'Research Assistant',
     avatar: '/avatars/liu-yuxuan.png',
-    email: '0917279@zju.edu.cn',
+    email: 'liuyuxuan@zju.edu.cn',
     englishBio: 'Year of Commencement: 2017\nPosition: Research Assistant\nKey Responsibilities:\n1. China University Computer Competition - Mobile Application Innovation Competition\n2. Zhejiang Province iOS Innovation Practice Alliance\n3. Maintenance and management of laboratory websites\n4. Administrative Management of NEXT Lab',
     chineseBio: '入职年份：2017\n工作岗位：科研助理\n工作方向：\n1、中国高校计算机大赛—移动应用创新赛\n2、浙江省iOS创新实践联盟\n3、实验室网站维护管理\n4、NEXT Lab行政管理'
   },
@@ -220,7 +223,7 @@ export const teamMembers: TeamMember[] = [
     position: 'PhD student in Design Studies, 2022',
     avatar: '/avatars/zhong-chongjun.jpg',
     email: 'zhong_chongjun@zju.edu.cn',
-    englishBio: 'Zhong Chongjun is currently a PhD candidate in Design Science at Zhejiang University, and earned a Bachelor\'s Degree in the same field from this institution. Her research interests include human-computer interaction, digital art and human-AI co-creation.'
+    englishBio: 'I am currently a PhD candidate in Design Science at Zhejiang University, where I also earned my Bachelor\'s degree in the same field. My research focuses on human-computer interaction, digital art, and human-AI co-creation.\nBeyond my academic pursuits, I am passionate about singing and painting, and I have over ten years of professional dance training. I have twice won the First Prize in the East China Division of the China Collegiate Computing Competition – Mobile Application Innovation Contest, as well as a National Second Prize. In addition, I have received several design awards, including the A\' Design Award and the K Design Award.'
   },
   {
     id: 'yu-jiaxing',

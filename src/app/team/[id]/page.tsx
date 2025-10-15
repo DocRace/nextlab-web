@@ -106,10 +106,10 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
       <div className="prose max-w-none mb-8">
 
 
-        {/* 英文简介 */}
+        {/* Overview */}
         {member.englishBio && (
           <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">Biography</h4>
+            <h4 className="font-bold text-lg mt-6 mb-2">Overview</h4>
             <p className="text-gray-700 leading-relaxed whitespace-pre-line">
               {member.englishBio}
             </p>
@@ -122,6 +122,36 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
             <h4 className="font-bold text-lg mt-6 mb-2">Research Achievements</h4>
             <div className="text-gray-700 leading-relaxed whitespace-pre-line">
               {member.achievements}
+            </div>
+          </div>
+        )}
+
+        {/* Publications & Works - 仅对PhD Students和Master Students显示 */}
+        {member.publications && (member.category === 'PhD Students' || member.category === 'Master Students') && (
+          <div className="mb-8">
+            <h4 className="font-bold text-lg mt-6 mb-2">Publications & Works</h4>
+            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+              {member.publications}
+            </div>
+          </div>
+        )}
+
+        {/* Participating Projects - 仅对PhD Students和Master Students显示 */}
+        {member.projects && (member.category === 'PhD Students' || member.category === 'Master Students') && (
+          <div className="mb-8">
+            <h4 className="font-bold text-lg mt-6 mb-2">Participating Projects</h4>
+            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+              {member.projects}
+            </div>
+          </div>
+        )}
+
+        {/* Research Direction - 仅对Undergraduates显示 */}
+        {member.researchDirection && member.category === 'Undergraduates' && (
+          <div className="mb-8">
+            <h4 className="font-bold text-lg mt-6 mb-2">Research Direction</h4>
+            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+              {member.researchDirection}
             </div>
           </div>
         )}
