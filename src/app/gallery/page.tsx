@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MemoryImage from "@/components/MemoryImage";
 import GalleryImage from "@/components/GalleryImage";
+import { competitions } from "@/data/competitions";
 
 const tabs = ["Code", "Demos", "Works", "Competition Entries", "News", "Memories", "More"] as const;
 
@@ -93,63 +94,7 @@ const demoData = [
   }
 ];
 
-// Competition Entries data from CSV
-const competitionData = [
-  {
-    title: "Shihua Shijie: Winner of the First Prize at the 2025 \"Beautiful China\" Innovative Design Competition",
-    award: "First Prize of the \"Beautiful China\" Innovative Design Competition",
-    year: "2025",
-    winners: "Jinhe Li, Yuhang Jin, Xiuqi Li, Songruoyao Wu, Xiaohui Chen",
-    description: "Shihua Shijie——Amid the AIGC wave, Shihua Shijie (Poetry & Painting Vision) leverages three core innovations to bridge traditional poetry and modern short videos. It addresses industry pain points, injects vitality into traditional culture dissemination, and breaks AI's cultural aesthetic bias.",
-    link: "https://cpipc.acge.org.cn/cw/hp/2c908018876ef068018774a9501a03fe",
-    image: "/images/placeholder.jpg"
-  },
-  {
-    title: "Sugar Blossom: reddot winner 2025",
-    award: "Red Dot Award: Design Concept",
-    year: "2025",
-    winners: "Jiangyu Pan, Liang Hou, Yilin Wei, Mengyue Yuan",
-    description: "Sugar Blossom is a blood-glucose monitoring solution for kids. As childhood diabetes grows and traditional methods fall short, we designed a flower-shape monitor. It reveals blood-glucose levels through petal and stamen changes.",
-    link: "",
-    image: "/images/placeholder.jpg"
-  },
-  {
-    title: "Heritage Spark: Winner of the Iron A' Design Award 2025",
-    award: "Iron A' Design Award",
-    year: "2025",
-    winners: "Liang Hou",
-    description: "Heritage Spark is a design toolkit that integrates Intangible Cultural Heritage ICH into contemporary creativity. It includes ICH cards for quick understanding, role cards for diverse perspectives, and technology cards to inspire innovation.",
-    link: "https://competition.adesignaward.com/ada-winner-design.php?ID=170646#Design-170646",
-    image: "/images/Gallery-Heritage-Spark.png"
-  },
-  {
-    title: "Architone: Winner of the Iron A' Design Award 2025",
-    award: "Iron A' Design Award",
-    year: "2025",
-    winners: "Jiaxing Yu, Wenqi Wu",
-    description: "Traditional music education often leaves learners confused by abstract theory and aural skills, reducing their interest and creativity. Architone innovatively transforms abstract music theory into intuitive musical blocks and buildings.",
-    link: "https://competition.adesignaward.com/ada-winner-design.php?ID=170188",
-    image: "/images/placeholder.jpg"
-  },
-  {
-    title: "NEXTsealer: reddot winner 2024",
-    award: "Red Dot Award: Design Concept",
-    year: "2024",
-    winners: "Wenqi Wu, Liang Hou, Hanshu Shen, Zizhen Hong",
-    description: "NEXTSEALER addresses the decline of seal carving by making personalised seals accessible. It simplifies the creation process to text input, style selection, and layout adjustment.",
-    link: "https://www.red-dot.org/zh/project/nextsealer-72110",
-    image: "/images/smart-seal-experience.png"
-  },
-  {
-    title: "CoastalBam Jar: reddot winner 2024",
-    award: "Red Dot Award: Design Concept",
-    year: "2024",
-    winners: "Liang Hou, Wenqi Wu, Hanshu Shen, Jiangyu Pan, Duola Jin",
-    description: "CoastalBam Jar is modern salt jar inspired by the traditional method used by Chinese fishermen to turn coarse salt into brine. It combines a metal vessel and two bamboo sieves with hexagonal holes.",
-    link: "https://www.red-dot.org/zh/project/coastalbam-jar-71913",
-    image: "/images/research-design.jpg"
-  }
-];
+// Competition Entries data - now imported from competitions.ts
 
 export default function Gallery() {
   return (
@@ -187,7 +132,7 @@ export default function Gallery() {
         </div>
 
         {/* Code Section */}
-        <section id="code" className="mb-16">
+        <section id="code" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Code</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {codeData.map((item, index) => (
@@ -218,7 +163,7 @@ export default function Gallery() {
         </section>
 
         {/* Demos Section */}
-        <section id="demos" className="mb-16">
+        <section id="demos" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Demos</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {demoData.map((item, index) => (
@@ -249,7 +194,7 @@ export default function Gallery() {
         </section>
 
         {/* Works Section */}
-        <section id="works" className="mb-16">
+        <section id="works" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Works</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1,2,3].map((i) => (
@@ -270,11 +215,17 @@ export default function Gallery() {
         </section>
 
         {/* Competition Entries Section */}
-        <section id="competition-entries" className="mb-16">
+        <section id="competition-entries" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Competition Entries</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {competitionData.map((item, index) => (
-              <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+            {competitions.map((item) => (
+              <Link 
+                key={item.id}
+                href={`/gallery/${item.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow block"
+              >
                 <div className="relative h-[220px] bg-gray-100">
                   <GalleryImage 
                     src={item.image} 
@@ -287,27 +238,18 @@ export default function Gallery() {
                   <p className="text-sm text-gray-600 mb-2">{item.award} ({item.year})</p>
                   <p className="text-xs text-gray-500 mb-3 line-clamp-2">{item.description}</p>
                   <div className="mt-3">
-                    {item.link ? (
-                      <Link 
-                        href={item.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 rounded-full bg-black text-white text-sm hover:bg-gray-800 transition-colors"
-                      >
-                        View Award
-                      </Link>
-                    ) : (
-                      <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-300 text-gray-600 text-sm">No Link</span>
-                    )}
+                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-black text-white text-sm hover:bg-gray-800 transition-colors">
+                      View Details
+                    </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
 
         {/* News Section */}
-        <section id="news" className="mb-16">
+        <section id="news" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">News</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1,2,3].map((i) => (
@@ -328,7 +270,7 @@ export default function Gallery() {
         </section>
 
         {/* Memories Section */}
-        <section id="memories" className="mb-16">
+        <section id="memories" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Memories</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {[
@@ -360,7 +302,7 @@ export default function Gallery() {
         </section>
 
         {/* More Section */}
-        <section id="more" className="mb-16">
+        <section id="more" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">More</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1,2,3].map((i) => (

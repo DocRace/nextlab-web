@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPublications } from "@/data/publications";
 import { teamMembers } from "@/data/team";
+import { useState } from "react";
 
 // 根据研究组别返回对应的颜色类
 const getTagColor = (tag: string) => {
@@ -20,7 +21,16 @@ const getTagColor = (tag: string) => {
 };
 
 export default function Publications() {
-  const publications = getAllPublications();
+  const allPublications = getAllPublications();
+  const [selectedTag, setSelectedTag] = useState<string>('All');
+  
+  // 获取所有可用的标签
+  const allTags = ['All', ...Array.from(new Set(allPublications.flatMap(pub => pub.tags)))];
+  
+  // 根据选中的标签筛选论文
+  const publications = selectedTag === 'All' 
+    ? allPublications 
+    : allPublications.filter(pub => pub.tags.includes(selectedTag));
 
   const normalize = (s: string) => s.replace(/\*/g, "").replace(/\./g, "").trim().toLowerCase();
   const nameMap = new Map<string, string>();
@@ -109,6 +119,30 @@ export default function Publications() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Filter Section */}
+      <div className="max-w-[1920px] mx-auto mb-8">
+        <div className="flex flex-wrap gap-3 items-center">
+          <span className="text-lg font-semibold text-gray-700 mr-4">Filter by Group:</span>
+          {allTags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                selectedTag === tag
+                  ? 'bg-black text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+        <div className="mt-2 text-sm text-gray-500">
+          Showing {publications.length} publication{publications.length !== 1 ? 's' : ''}
+          {selectedTag !== 'All' && ` in ${selectedTag} group`}
         </div>
       </div>
 

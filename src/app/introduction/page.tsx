@@ -33,7 +33,7 @@ export default function Introduction() {
           We are dedicated to forging a future———<strong>NEXT Lab</strong>, where technology transcends its role as a cold tool, becoming a <strong>Narrative-driven</strong> partner with deep <strong>Empathetic</strong> capacity. By exploring novel interaction design paradigms across X-reality boundaries, we aim to achieve a fundamental <strong>Transformation</strong> in the relationship between humans, society, and the digital realm.
         </p>
         <p className="text-lg leading-relaxed text-gray-700 mt-6">
-          The lab's mission is "<strong>Design Driven, Technology Empowered</strong>," specializing in interaction design with three directions: <Link href="/researches/music" className="text-blue-600 hover:text-blue-800 underline font-medium">Visual Intelligence（VI Group）</Link>, <Link href="/researches/font" className="text-blue-600 hover:text-blue-800 underline font-medium">Auditory Intelligence （AI Group）</Link>, and <Link href="/researches/design" className="text-blue-600 hover:text-blue-800 underline font-medium">Emotional Intelligence（EI Group）</Link>.
+          The lab's mission is "<strong>Design Driven, Technology Empowered</strong>," specializing in interaction design with three directions: <Link href="/researches/music" className="text-blue-600 hover:text-blue-800 underline font-medium">Auditory Intelligence（AI Group）</Link>, <Link href="/researches/font" className="text-blue-600 hover:text-blue-800 underline font-medium">Visual Intelligence（VI Group）</Link>, and <Link href="/researches/design" className="text-blue-600 hover:text-blue-800 underline font-medium">Emotional Intelligence（EI Group）</Link>.
         </p>
       </div>
 
@@ -53,7 +53,7 @@ export default function Introduction() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
-                  Visual Intelligence (VI Group)
+                  Auditory Intelligence (AI Group)
                 </h3>
                 <p className="text-gray-600 text-sm">
                   Engineering the Future of Music with AI
@@ -74,7 +74,7 @@ export default function Introduction() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors">
-                  Auditory Intelligence (AI Group)
+                  Visual Intelligence (VI Group)
                 </h3>
                 <p className="text-gray-600 text-sm">
                   Shaping the Future of Chinese Character

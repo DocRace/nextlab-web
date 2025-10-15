@@ -1,6 +1,9 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useState, use } from "react";
 
 type Course = {
   title: string;
@@ -16,7 +19,10 @@ type Course = {
   exhibition?: {
     title: string;
     description: string;
-    videoUrl?: string;
+    videos?: Array<{
+      title: string;
+      placeholder?: boolean;
+    }>;
     link?: string;
     linkText?: string;
   };
@@ -107,7 +113,7 @@ const courses: Record<string, Course> = {
     tags: ["Course", "Design Thinking"],
     image: "/images/course-design-thinking.png",
     chineseLink: "https://www.icourse163.org/course/ZJU-1003462001?from=searchPage&outVendor=zw_mooc_pcssjg_",
-    englishLink: "https://www.coursera.org/learn/design-thinking-innovation",
+    englishLink: "https://www.icourse163.org/course/ZJU1-1458079166",
     overview: `As for business management problem, scientific research problem, or engineering problem, the process of finding the solutions to these problems can be regarded as the process of "design". Using design thinking, people can find suitable solutions in various fields.<br/><br/>In view of this, we developed this course "Design Thinking and Innovation Design". With the mission of strengthening moral education and cultivating people, this course is a general education course of innovation and entrepreneurship for all students. It is committed to cultivating production innovation and entrepreneurial practice students with "design-led and innovation-driven". The course is taught by professors Zhang Kejun, Sun Lingyun and Chai Chunlei. The main contents include design thinking theory, methods and tools, innovation design connotation, approaches and key technologies, and outstanding cases of innovation and entrepreneurship practice.`,
     instructors: [
       "Kejun Zhang", "Lingyun Sun", "Chunlei Chai"
@@ -128,16 +134,22 @@ const courses: Record<string, Course> = {
     references: [],
     exhibition: {
       title: "Course Exhibition",
-      description: "View course materials and resources",
-      link: "https://pan.baidu.com/s/1zoKZOmZpLe8IKDu82L4AxA",
-      linkText: "Baidu Netdisk Link (Extraction code: nexn)"
+      description: "Student works and project showcases from the course",
+      videos: [
+        { title: "Student Work 1", placeholder: true },
+        { title: "Student Work 2", placeholder: true },
+        { title: "Student Work 3", placeholder: true },
+        { title: "Student Work 4", placeholder: true }
+      ]
     }
   }
 };
 
-export default async function CourseDetail({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export default function CourseDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const course = courses[id];
+  const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
+  
   if (!course) return notFound();
 
   return (
@@ -185,9 +197,37 @@ export default async function CourseDetail({ params }: { params: Promise<{ id: s
           {course.exhibition && (
             <section className="bg-gray-100 rounded-2xl p-8">
               <h2 className="text-2xl font-bold mb-6 text-gray-900">{course.exhibition.title}</h2>
-              <p className="text-gray-700 mb-4">{course.exhibition.description}</p>
+              <p className="text-gray-700 mb-6">{course.exhibition.description}</p>
+              
+              {/* Video Cards */}
+              {course.exhibition.videos && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {course.exhibition.videos.map((video, index) => (
+                    <div 
+                      key={index} 
+                      className={`bg-white rounded-lg overflow-hidden border border-gray-200 ${video.placeholder ? '' : 'cursor-pointer hover:shadow-md transition-shadow'}`}
+                      onClick={() => !video.placeholder && setSelectedVideo(index)}
+                    >
+                      <div className="relative aspect-video bg-gray-200 flex items-center justify-center">
+                        <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-sm font-medium text-gray-700">{video.title}</h3>
+                        {video.placeholder && (
+                          <p className="text-xs text-gray-500 mt-1">Coming soon</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {/* Link (if any) */}
               {course.exhibition.link && (
-                <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="bg-blue-50 p-4 rounded-lg mt-6">
                   <a 
                     href={course.exhibition.link} 
                     target="_blank" 
@@ -265,6 +305,43 @@ export default async function CourseDetail({ params }: { params: Promise<{ id: s
           )}
         </div>
       </div>
+
+      {/* Video Modal */}
+      {selectedVideo !== null && course.exhibition?.videos && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div 
+            className="relative w-full max-w-4xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            {/* Video Player Placeholder */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden">
+              <div className="aspect-video bg-gray-800 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <svg className="w-24 h-24 mx-auto mb-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <h3 className="text-xl font-semibold mb-2">{course.exhibition.videos[selectedVideo].title}</h3>
+                  <p className="text-gray-400">Video player placeholder - Coming soon</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 

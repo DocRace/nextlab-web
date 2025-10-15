@@ -230,13 +230,10 @@ export default function Banner() {
             {/* 右侧文字区域 */}
             <Link href="/introduction" className="z-40 cursor-pointer">
               <h1 className="text-3xl md:text-6xl font-bold text-black mb-2 md:mb-4 uppercase [text-shadow:_0_0_42px_rgba(255,255,255,1),_0_0_82px_rgba(255,255,255,0.95),_0_0_122px_rgba(255,255,255,0.9)]">
-                ZJU NEXT LAB
+                ZJU NEXT Lab
               </h1>
-              <p className="text-black text-sm md:text-xl [text-shadow:_0_0_42px_rgba(255,255,255,1),_0_0_82px_rgba(255,255,255,1),_0_0_122px_rgba(255,255,255,1),_0_0_162px_rgba(255,255,255,0.95),_0_0_202px_rgba(255,255,255,0.9)]">
-                Dedicated to research aimed at enhancing human well-being, 
-                the main research directions include artificial intelligence, big 
-                data, musical emotion computing, and information and 
-                interaction design.
+              <p className="text-black text-sm md:text-xl [text-shadow:_0_0_42px_rgba(255,255,255,1),_0_0_82px_rgba(255,255,255,1),_0_0_122px_rgba(255,255,255,1),_0_0_162px_rgba(255,255,255,0.95),_0_0_202px_rgba(255,255,255,0.9)] text-justify">
+                We are dedicated to forging a future—NEXT Lab, where technology transcends its role as a cold tool, becoming a <strong>Narrative</strong>-driven partner with deep <strong>Empathetic</strong> capacity. By exploring novel interaction design paradigms across <strong>X-reality</strong> boundaries, we aim to achieve a fundamental <strong>Transformation</strong> in the relationship between humans, society, and the digital realm.
               </p>
             </Link>
           </div>

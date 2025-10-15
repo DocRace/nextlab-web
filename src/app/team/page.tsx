@@ -18,7 +18,7 @@ const getResearchGroupColor = (researchGroup: string) => {
 };
 
 export default function Team() {
-  const facultyMembers = getTeamMembersByCategory('Faculty & Researchers');
+  const facultyMembers = getTeamMembersByCategory('Researchers');
   const staffMembers = getTeamMembersByCategory('Staff');
   const doctoralStudents = getTeamMembersByCategory('PhD Students');
   const masterStudents = getTeamMembersByCategory('Master Students');
@@ -51,10 +51,10 @@ export default function Team() {
 
       {/* 内容部分 */}
       <div className="max-w-[1920px] mx-auto">
-        {/* Faculty & Researchers Section */}
+        {/* Researchers Section */}
         {facultyMembers.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">Faculty & Researchers</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">Researchers</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {facultyMembers.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
@@ -147,38 +147,6 @@ export default function Team() {
             </div>
           </div>
         )}
-        {/* Undergraduates Section */}
-        {undergraduates.length > 0 && (
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Undergraduates</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {undergraduates.map((member) => (
-                <Link href={`/team/${member.id}`} key={member.id} className="group">
-                  <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
-                    <TeamAvatar
-                      src={member.avatar}
-                      alt={member.name}
-                      size={100}
-                      priority
-                    />
-                    <div className="ml-6">
-                      <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
-                        {member.englishName || member.name}
-                      </h3>
-                      <p className="text-gray-500">{member.position}</p>
-                      {member.researchGroup && (
-                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mt-1 ${getResearchGroupColor(member.researchGroup)}`}>
-                          {member.researchGroup}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Master Students Section */}
         {masterStudents.length > 0 && (
           <div className="mb-16">
@@ -211,12 +179,12 @@ export default function Team() {
           </div>
         )}
 
-        {/* Alumni Section */}
-        {alumni.length > 0 && (
+        {/* Undergraduates Section */}
+        {undergraduates.length > 0 && (
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Alumni</h2>
+            <h2 className="text-3xl font-bold mb-8">Undergraduates</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {alumni.map((member) => (
+              {undergraduates.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
                   <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
                     <TeamAvatar
@@ -231,13 +199,43 @@ export default function Team() {
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
-                        <span className={`inline-flex items-center whitespace-nowrap px-3 py-1 rounded-full text-xs font-medium mt-1 w-fit ${getResearchGroupColor(member.researchGroup)}`}>
+                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mt-1 ${getResearchGroupColor(member.researchGroup)}`}>
                           {member.researchGroup}
                         </span>
                       )}
                     </div>
                   </div>
                 </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Alumni Section */}
+        {alumni.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8">Alumni</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {alumni.map((member) => (
+                <div key={member.id} className="flex items-start py-2">
+                  <TeamAvatar
+                    src={member.avatar}
+                    alt={member.name}
+                    size={100}
+                    priority
+                  />
+                  <div className="ml-6">
+                    <h3 className="text-xl font-bold">
+                      {member.englishName || member.name}
+                    </h3>
+                    <p className="text-gray-500">{member.position}</p>
+                    {member.researchGroup && (
+                      <span className={`inline-flex items-center whitespace-nowrap px-3 py-1 rounded-full text-xs font-medium mt-1 w-fit ${getResearchGroupColor(member.researchGroup)}`}>
+                        {member.researchGroup}
+                      </span>
+                    )}
+                  </div>
+                </div>
               ))}
             </div>
           </div>

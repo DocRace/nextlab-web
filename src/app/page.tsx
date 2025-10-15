@@ -27,13 +27,13 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative w-screen left-1/2 right-1/2 -mx-[50vw]">
-            {/* 项目卡片 1 - Publications: SongGLM */}
-            <Link href="/publications/songglm" className="relative overflow-hidden group md:rounded-r-[36px] block">
+            {/* 左上 - News: Poems as musical instruments */}
+            <Link href="/publications/poems-as-musical-instruments" className="relative overflow-hidden group md:rounded-r-[36px] block">
               <div className="h-[588px] relative">
-                <ColorExtractor imageSrc="/images/Publications-SongGLM.jpg">
+                <ColorExtractor imageSrc="/images/Poems as musical instruments.jpeg">
                   <Image
-                    src="/images/Publications-SongGLM.jpg"
-                    alt="SongGLM: Lyric-to-Melody Generation"
+                    src="/images/Poems as musical instruments.jpeg"
+                    alt="Poems as musical instruments: an AI music performance interface"
                     fill
                     className="object-cover"
                   />
@@ -41,12 +41,12 @@ export default function Home() {
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-900/60 via-blue-900/20 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
-                    <span className="text-white text-sm font-medium opacity-90 mb-1 block">Publication</span>
+                    <span className="text-white text-sm font-medium opacity-90 mb-1 block">News</span>
                     <h3 className="text-2xl font-bold text-white mb-2">
-                      SongGLM: Lyric-to-Melody Generation with 2D Alignment Encoding and Multi-Task Pre-Training
+                      Poems as musical instruments: an AI music performance interface based on the concepts of chinese qin songs
                     </h3>
                     <p className="text-white text-sm mb-4">
-                      AAAI 2025 publication on lyric-to-melody alignment and harmony.
+                      Leonardo 2025 publication on AI music performance interface.
                     </p>
                     <div 
                       className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
@@ -66,13 +66,13 @@ export default function Home() {
               </div>
             </Link>
  
-            {/* 项目卡片 2 - Researches: "Life of Su Shi" series */}
-            <Link href="/researches/su-shi-series" className="relative overflow-hidden group md:rounded-l-[36px] block">
+            {/* 右上 - Publications: SongGLM */}
+            <Link href="/publications/songglm" className="relative overflow-hidden group md:rounded-l-[36px] block">
               <div className="h-[588px] relative">
-                <ColorExtractor imageSrc="/images/Researches-Life-of-Su-Shi-series.png">
+                <ColorExtractor imageSrc="/images/Publications-SongGLM.jpg">
                   <Image
-                    src="/images/Researches-Life-of-Su-Shi-series.png"
-                    alt={'"Life of Su Shi" series'}
+                    src="/images/Publications-SongGLM.jpg"
+                    alt="SongGLM: Lyric-to-Melody Generation"
                     fill
                     className="object-cover"
                   />
@@ -81,9 +81,13 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="max-w-[1920px] mx-auto w-full">
                     <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
-                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">Research</span>
-                      <h3 className="text-2xl font-bold text-white mb-2">"Life of Su Shi" series</h3>
-                      <p className="text-white text-sm mb-4">Design group project — video showcase coming soon.</p>
+                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">Publication</span>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        SongGLM: Lyric-to-Melody Generation with 2D Alignment Encoding and Multi-Task Pre-Training
+                      </h3>
+                      <p className="text-white text-sm mb-4">
+                        AAAI 2025 publication on lyric-to-melody alignment and harmony.
+                      </p>
                       <div 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
@@ -103,13 +107,13 @@ export default function Home() {
               </div>
             </Link>
  
-            {/* 项目卡片 3 - Gallery: Heritage Spark */}
-            <Link href="https://competition.adesignaward.com/ada-winner-design.php?ID=170646#Design-170646" target="_blank" rel="noreferrer" className="relative overflow-hidden group md:rounded-r-[36px] block">
+            {/* 左下 - Courses: Design Thinking And Innovation Design */}
+            <Link href="/courses/design-thinking" className="relative overflow-hidden group md:rounded-r-[36px] block">
               <div className="h-[588px] relative">
-                <ColorExtractor imageSrc="/images/Gallery-Heritage-Spark.png">
+                <ColorExtractor imageSrc="/images/course-design-thinking.png">
                   <Image
-                    src="/images/Gallery-Heritage-Spark.png"
-                    alt="Heritage Spark — Iron A' Design Award 2025"
+                    src="/images/course-design-thinking.png"
+                    alt="Design Thinking And Innovation Design"
                     fill
                     className="object-cover"
                   />
@@ -118,9 +122,9 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="max-w-[1920px] mx-auto w-full">
                     <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
-                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">Award</span>
-                      <h3 className="text-2xl font-bold text-white mb-2">Heritage Spark — Iron A' Design Award 2025</h3>
-                      <p className="text-white text-sm mb-4">Award-winning design project.</p>
+                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">Course</span>
+                      <h3 className="text-2xl font-bold text-white mb-2">Design Thinking And Innovation Design</h3>
+                      <p className="text-white text-sm mb-4">A comprehensive course on design thinking and innovation methodologies.</p>
                       <div 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
@@ -140,13 +144,13 @@ export default function Home() {
               </div>
             </Link>
  
-            {/* 项目卡片 4 - News: Bringing Pets into Your Music Creation */}
-            <Link href="https://mp.weixin.qq.com/s/-Zx29YORIDsOqYjYiLkH0g" target="_blank" rel="noreferrer" className="relative overflow-hidden group md:rounded-l-[36px] block">
+            {/* 右下 - Gallery: Shihua Shijie */}
+            <Link href="/gallery/shihua-shijie" className="relative overflow-hidden group md:rounded-l-[36px] block">
               <div className="h-[588px] relative">
-                <ColorExtractor imageSrc="/images/News-Bringing-Pets-into-Your-Music Creation.png">
+                <ColorExtractor imageSrc="/images/Gallery-Shihua-Shijie.png">
                   <Image
-                    src="/images/News-Bringing-Pets-into-Your-Music Creation.png"
-                    alt="Bringing Pets into Your Music Creation"
+                    src="/images/Gallery-Shihua-Shijie.png"
+                    alt="Shihua Shijie: Winner of the First Prize at the 2025 Beautiful China Innovative Design Competition"
                     fill
                     className="object-cover"
                   />
@@ -155,9 +159,9 @@ export default function Home() {
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="max-w-[1920px] mx-auto w-full">
                     <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
-                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">News</span>
-                      <h3 className="text-2xl font-bold text-white mb-2">Bringing Pets into Your Music Creation</h3>
-                      <p className="text-white text-sm mb-4">PetCoCre — AI + music + pets.</p>
+                      <span className="text-white text-sm font-medium opacity-90 mb-1 block">Award</span>
+                      <h3 className="text-2xl font-bold text-white mb-2">Shihua Shijie: Winner of the First Prize at the 2025 "Beautiful China" Innovative Design Competition</h3>
+                      <p className="text-white text-sm mb-4">Award-winning design project showcasing innovative design excellence.</p>
                       <div 
                         className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
                         style={{
@@ -295,12 +299,12 @@ export default function Home() {
             </svg>
           </Link>
           <div className="flex gap-6 mt-4">
-            <Link href="mailto:zhangkejun@zju.edu.cn" className="w-8 h-8 transition-colors" title="Email">
+            <Link href="/contact" className="w-8 h-8 transition-colors" title="Email">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-black hover:text-blue-700/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </Link>
-            <Link href="tel:+8657187952010" className="w-8 h-8 transition-colors" title="Office Phone">
+            <Link href="/contact" className="w-8 h-8 transition-colors" title="Office Phone">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-black hover:text-blue-700/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>

@@ -337,64 +337,73 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
 
   return (
     <div className="min-h-screen max-w-[1000px] mx-auto py-12 px-4">
-      <div className="mb-8 flex flex-col items-start gap-4">
+      {/* 封面图 */}
+      <div className="mb-8">
         <div className="w-full max-w-[900px] aspect-[16/6] relative rounded-[36px] overflow-hidden">
           <Image src={research.image} alt={research.title} fill className="object-cover" />
         </div>
-        <h1 className="text-3xl font-bold mt-4 mb-2">{research.title}</h1>
-        <div className="flex gap-2 mb-1">
-          {research.tags.map(tag => (
-            <span key={tag} className="px-3 py-1 bg-amber-50 text-amber-800 rounded-full text-xs font-medium">{tag}</span>
-          ))}
-        </div>
-        {/* Members */}
-        {('members' in research) && (
-          <div className="w-full mt-4 pt-8">
-            <h2 className="text-2xl font-bold mb-3">Members</h2>
-
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mb-6">
-              {(research as any).members.leaders.map((m: any) => {
-                const tm = m.id ? getTeamMemberById(m.id) : undefined;
-                const name = tm?.englishName || tm?.name || m.name;
-                const avatar = tm?.avatar || "/images/next-lab-logo.png";
-                const href = m.id ? `/team/${m.id}` : '#';
-                return (
-                  <Link key={name} href={href} className="group flex flex-col items-start text-left">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100">
-                      <Image src={avatar} alt={name} fill className="object-cover" />
-                    </div>
-                    <div className="mt-2 text-sm font-medium group-hover:underline">{name}</div>
-                    <span className="mt-1 px-2 py-0.5 rounded-full bg-black text-white text-[10px] leading-none w-fit">Leader</span>
-                  </Link>
-                );
-              })}
-            </div>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
-              {(research as any).members.members.map((m: any) => {
-                const tm = m.id ? getTeamMemberById(m.id) : undefined;
-                const name = tm?.englishName || tm?.name || m.name;
-                const avatar = tm?.avatar || "/images/next-lab-logo.png";
-                const href = m.id ? `/team/${m.id}` : '#';
-                return (
-                  <Link key={name} href={href} className="group flex flex-col items-start text-left">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100">
-                      <Image src={avatar} alt={name} fill className="object-cover" />
-                    </div>
-                    <div className="mt-2 text-sm group-hover:underline">{name}</div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        )}
       </div>
-      <h2 className="text-2xl font-bold mb-3 pt-8">Overview</h2>
-      <div className="prose max-w-none mb-8" dangerouslySetInnerHTML={{ __html: research.overview }} />
+
+      {/* 标题 */}
+      <h1 className="text-3xl font-bold mb-4">{research.title}</h1>
+
+      {/* 小组标签 */}
+      <div className="flex gap-2 mb-8">
+        {research.tags.map(tag => (
+          <span key={tag} className="px-3 py-1 bg-amber-50 text-amber-800 rounded-full text-xs font-medium">{tag}</span>
+        ))}
+      </div>
+
+      {/* Members */}
+      {('members' in research) && (
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-6">Members</h2>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mb-6">
+            {(research as any).members.leaders.map((m: any) => {
+              const tm = m.id ? getTeamMemberById(m.id) : undefined;
+              const name = tm?.englishName || tm?.name || m.name;
+              const avatar = tm?.avatar || "/images/next-lab-logo.png";
+              const href = m.id ? `/team/${m.id}` : '#';
+              return (
+                <Link key={name} href={href} className="group flex flex-col items-start text-left">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100">
+                    <Image src={avatar} alt={name} fill className="object-cover" />
+                  </div>
+                  <div className="mt-2 text-sm font-medium group-hover:underline">{name}</div>
+                  <span className="mt-1 px-2 py-0.5 rounded-full bg-black text-white text-[10px] leading-none w-fit">Leader</span>
+                </Link>
+              );
+            })}
+          </div>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+            {(research as any).members.members.map((m: any) => {
+              const tm = m.id ? getTeamMemberById(m.id) : undefined;
+              const name = tm?.englishName || tm?.name || m.name;
+              const avatar = tm?.avatar || "/images/next-lab-logo.png";
+              const href = m.id ? `/team/${m.id}` : '#';
+              return (
+                <Link key={name} href={href} className="group flex flex-col items-start text-left">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100">
+                    <Image src={avatar} alt={name} fill className="object-cover" />
+                  </div>
+                  <div className="mt-2 text-sm group-hover:underline">{name}</div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Overview */}
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold mb-6">Overview</h2>
+        <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: research.overview }} />
+      </div>
 
       {/* Projects */}
       {('projects' in research) && (
-        <div className="mb-10 pt-8">
-          <h2 className="text-2xl font-bold mb-4">Projects</h2>
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-6">Projects</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {(research as any).projects.map((p: any) => {
               const content = (
@@ -431,8 +440,8 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
 
       {/* Publications */}
       {('publications' in research) && (
-        <div className="mb-10 pt-8">
-          <h2 className="text-2xl font-bold mb-3">Publications</h2>
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold mb-6">Publications</h2>
           <ol className="list-decimal pl-6 space-y-2">
             {(research as any).publications.map((p: any, index: number) => (
               <li key={p.id} className="text-gray-800 mb-4">
@@ -467,17 +476,6 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
               </li>
             ))}
           </ol>
-        </div>
-      )}
-
-      {/* Information */}
-      {('info' in research) && (
-        <div className="mb-10 pt-8">
-          <h2 className="text-2xl font-bold mb-3">Information</h2>
-          <p className="text-gray-700">{(research as any).info.text}</p>
-          <div className="mt-2">
-            <a href={`mailto:${(research as any).info.email}`} className="text-blue-600 hover:text-blue-800 underline">{(research as any).info.email}</a>
-          </div>
         </div>
       )}
     </div>

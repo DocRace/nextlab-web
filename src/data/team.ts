@@ -2,7 +2,7 @@ export interface TeamMember {
   id: string;
   name: string;
   englishName?: string;
-  category: 'Faculty & Researchers' | 'Staff' | 'PhD Students' | 'Master Students' | 'Undergraduates' | 'Alumni';
+  category: 'Researchers' | 'Staff' | 'PhD Students' | 'Master Students' | 'Undergraduates' | 'Alumni';
   researchGroup?: string;
   position: string;
   avatar: string;
@@ -14,12 +14,12 @@ export interface TeamMember {
 }
 
 export const teamMembers: TeamMember[] = [
-  // Faculty & Researchers (按CSV顺序)
+  // Researchers (按CSV顺序)
   {
     id: 'zhang-kejun',
     name: '张克俊',
     englishName: 'Zhang Kejun',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Director of the NEXT Lab of the College of Computer Science and Technology, Zhejiang University',
     avatar: '/avatars/zhang-kejun.png',
     email: 'zhangkejun@zju.edu.cn',
@@ -30,7 +30,7 @@ export const teamMembers: TeamMember[] = [
     id: 'zhang-lekai',
     name: '张乐凯',
     englishName: 'Zhang Lekai',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher, Visiting Scholar',
     avatar: '/avatars/zhang-lekai.jpg',
     email: '',
@@ -40,7 +40,7 @@ export const teamMembers: TeamMember[] = [
     id: 'xing-baixi',
     name: '邢白夕',
     englishName: 'Xing Baixi',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher',
     avatar: '/avatars/xing-baixi.jpg',
     email: '',
@@ -50,7 +50,7 @@ export const teamMembers: TeamMember[] = [
     id: 'teng-jiajie',
     name: '滕佳洁',
     englishName: 'Teng Jiajie',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher',
     avatar: '/avatars/teng-jiajie.jpg',
     email: '',
@@ -60,7 +60,7 @@ export const teamMembers: TeamMember[] = [
     id: 'qiao-xianyue',
     name: '乔显越',
     englishName: 'Qiao Xianyue',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher',
     avatar: '/avatars/qiao-xianyue.jpg',
     email: '',
@@ -70,7 +70,7 @@ export const teamMembers: TeamMember[] = [
     id: 'ji-shulei',
     name: '吉姝蕾',
     englishName: 'Ji Shulei',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher',
     avatar: '/avatars/ji-shulei.png',
     email: 'shuleiji@zju.edu.cn',
@@ -80,7 +80,7 @@ export const teamMembers: TeamMember[] = [
     id: 'gong-qing',
     name: '龚卿',
     englishName: 'Gong Qing',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher',
     avatar: '/avatars/gong-qing.jpg',
     email: '',
@@ -90,7 +90,7 @@ export const teamMembers: TeamMember[] = [
     id: 'chen-pei',
     name: '陈培',
     englishName: 'Chen Pei',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher',
     avatar: '/avatars/chen-pei.jpg',
     email: '',
@@ -100,7 +100,7 @@ export const teamMembers: TeamMember[] = [
     id: 'zhang-hongbo',
     name: '张洪博',
     englishName: 'Zhang Hongbo',
-    category: 'Faculty & Researchers',
+    category: 'Researchers',
     position: 'Postdoctoral Researcher',
     avatar: '/avatars/zhang-hongbo.jpg',
     email: '',
@@ -218,7 +218,7 @@ export const teamMembers: TeamMember[] = [
     category: 'PhD Students',
     researchGroup: 'Music Group',
     position: 'PhD student in Design Studies, 2022',
-    avatar: '/avatars/zhong-chongjun.jpeg',
+    avatar: '/avatars/zhong-chongjun.jpg',
     email: 'zhong_chongjun@zju.edu.cn',
     englishBio: 'Zhong Chongjun is currently a PhD candidate in Design Science at Zhejiang University, and earned a Bachelor\'s Degree in the same field from this institution. Her research interests include human-computer interaction, digital art and human-AI co-creation.'
   },
@@ -411,7 +411,7 @@ export const teamMembers: TeamMember[] = [
     category: 'Master Students',
     researchGroup: 'Music Group',
     position: 'Master student in Design Studies, 2024',
-    avatar: '/avatars/feng-yuan.jpeg',
+    avatar: '/avatars/feng-yuowei.jpg',
     email: 'david88913@gmail.com',
     englishBio: 'I am currently a graduate student at the College of Computer Science, Zhejiang University, and a member of the Music Group at NEXTLab.\nMy research interests focus on the intersection of AI music generation, XR/AR creative interaction design, and practical DAW (Digital Audio Workstation) music editing, with the aim of applying cutting-edge large models to real-world scenarios in education, artistic creation, and immersive experiences.',
     achievements: 'Patent\nA Method for Generating Continuous Scene Background Music Integrated with Environmental Perception and Personalized Experience (专利号：202410318748X)\nCompetitions & Awards\nFirst Prize (Provincial Level), China Collegiate Computing Contest — Mobile Application Innovation Contest\nGold Award (Provincial Level), "Internet+" National Innovation and Entrepreneurship Competition — Industry Track & Higher Education Main Track\nGold Award (Provincial Level), "Challenge Cup" National College Students\' Extracurricular Academic Science and Technology Competition — "AI+" Track'
@@ -423,7 +423,7 @@ export const teamMembers: TeamMember[] = [
     category: 'Master Students',
     researchGroup: 'Music Group',
     position: 'Master student in Industrial Design Engineering, 2024',
-    avatar: '/avatars/liu-huaying.jpg',
+    avatar: '/avatars/liu-huaying.png',
     email: 'liuhuaying9@zju.edu.cn',
     englishBio: 'I am Liu Huaying, a graduate student in Industrial Design Engineering. My research explores intelligent music interaction at the intersection of AI and music, aiming to create warm, technology-driven emotional experiences by integrating design, technology, and user needs.'
   },
@@ -546,6 +546,574 @@ export const teamMembers: TeamMember[] = [
     email: '1004483997@qq.com',
     englishBio: 'Ma Boyang, a junior AI major with a focus on AI-driven music design. Currently developing music visualization systems in the lab',
     achievements: 'Music Visualization Project'
+  },
+  // Alumni
+  {
+    id: 'chen-mingwei',
+    name: '陈铭威',
+    englishName: 'Chen Mingwei',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'shen-lvkecheng',
+    name: '沈吕可晟',
+    englishName: 'Shen Lvkecheng',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhang-qiyuan',
+    name: '张启元',
+    englishName: 'Zhang Qiyuan',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'huang-ouying',
+    name: '黄欧影',
+    englishName: 'Huang Ouying',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'duan-xuan',
+    name: '段萱',
+    englishName: 'Duan Xuan',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'hong-zizhen',
+    name: '洪子帧',
+    englishName: 'Hong Zizhen',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'feng-yuan',
+    name: '冯源',
+    englishName: 'Feng Yuan',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'shen-hanshu',
+    name: '沈寒暑',
+    englishName: 'Shen Hanshu',
+    category: 'Alumni',
+    position: 'Master Student, 2022',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'yang-yiheng',
+    name: '杨怿恒',
+    englishName: 'Yang Yiheng',
+    category: 'Alumni',
+    position: 'PhD Student, 2021',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wang-jiaqi',
+    name: '汪嘉麒',
+    englishName: 'Wang Jiaqi',
+    category: 'Alumni',
+    position: 'Master Student, 2021',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'jia-zhongyu',
+    name: '贾钟毓',
+    englishName: 'Jia Zhongyu',
+    category: 'Alumni',
+    position: 'Master Student, 2021',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'lin-han',
+    name: '林瀚',
+    englishName: 'Lin Han',
+    category: 'Alumni',
+    position: 'Master Student, 2021',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'cai-shixuan',
+    name: '蔡世轩',
+    englishName: 'Cai Shixuan',
+    category: 'Alumni',
+    position: 'Master Student, 2021',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'chen-zewen',
+    name: '陈泽文',
+    englishName: 'Chen Zewen',
+    category: 'Alumni',
+    position: 'Master Student, 2021',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhang-xiaoran',
+    name: '张晓然',
+    englishName: 'Zhang Xiaoran',
+    category: 'Alumni',
+    position: 'PhD Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'huang-qiaoqiao',
+    name: '黄巧巧',
+    englishName: 'Huang Qiaoqiao',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhang-chen',
+    name: '章晨',
+    englishName: 'Zhang Chen',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhang-you',
+    name: '张悠',
+    englishName: 'Zhang You',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'liu-mingyue',
+    name: '刘明月',
+    englishName: 'Liu Mingyue',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'du-dashuang',
+    name: '杜大爽',
+    englishName: 'Du Dashuang',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'tang-ruiyuan',
+    name: '唐睿源',
+    englishName: 'Tang Ruiyuan',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'pang-bo',
+    name: '庞勃',
+    englishName: 'Pang Bo',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wu-qiuning',
+    name: '武秋凝',
+    englishName: 'Wu Qiuning',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'lin-liangjie',
+    name: '林良杰',
+    englishName: 'Lin Liangjie',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'chen-yitong',
+    name: '陈异同',
+    englishName: 'Chen Yitong',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'chen-yukai',
+    name: '陈宇剀',
+    englishName: 'Chen Yukai',
+    category: 'Alumni',
+    position: 'Master Student, 2020',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wu-xinda',
+    name: '吴鑫达',
+    englishName: 'Wu Xinda',
+    category: 'Alumni',
+    position: 'PhD Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'yin-yehang',
+    name: '殷叶航',
+    englishName: 'Yin Yehang',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wu-runfan',
+    name: '吴润凡',
+    englishName: 'Wu Runfan',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'chen-xinyi',
+    name: '陈欣宜',
+    englishName: 'Chen Xinyi',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'chen-dan',
+    name: '陈丹',
+    englishName: 'Chen Dan',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'li-yifei',
+    name: '李一非',
+    englishName: 'Li Yifei',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'chen-mingzhen',
+    name: '陈明真',
+    englishName: 'Chen Mingzhen',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'meng-xiao',
+    name: '孟晓',
+    englishName: 'Meng Xiao',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wu-yonglin',
+    name: '吴泳林',
+    englishName: 'Wu Yonglin',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhao-yanji',
+    name: '赵延吉',
+    englishName: 'Zhao Yanji',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'li-yu',
+    name: '李豫',
+    englishName: 'Li Yu',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhu-xujing',
+    name: '朱许静',
+    englishName: 'Zhu Xujing',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'liao-yichen',
+    name: '廖艺琛',
+    englishName: 'Liao Yichen',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'chen-qihang',
+    name: '陈其航',
+    englishName: 'Chen Qihang',
+    category: 'Alumni',
+    position: 'Master Student, 2019',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhang-rui',
+    name: '张瑞',
+    englishName: 'Zhang Rui',
+    category: 'Alumni',
+    position: 'PhD Student, 2018',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'ye-yuqing',
+    name: '叶雨晴',
+    englishName: 'Ye Yuqing',
+    category: 'Alumni',
+    position: 'Master Student, 2018',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhu-kaili',
+    name: '朱凯丽',
+    englishName: 'Zhu Kaili',
+    category: 'Alumni',
+    position: 'Master Student, 2018',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wang-haoyang',
+    name: '王昊阳',
+    englishName: 'Wang Haoyang',
+    category: 'Alumni',
+    position: 'Master Student, 2018',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'fang-yujun',
+    name: '方雨君',
+    englishName: 'Fang Yujun',
+    category: 'Alumni',
+    position: 'Master Student, 2018',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'jiang-hanyun',
+    name: '蒋菡韵',
+    englishName: 'Jiang Hanyun',
+    category: 'Alumni',
+    position: 'Master Student, 2018',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'jing-li',
+    name: '景丽',
+    englishName: 'Jing Li',
+    category: 'Alumni',
+    position: 'Master Student, 2018',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'duan-ke',
+    name: '段轲',
+    englishName: 'Duan Ke',
+    category: 'Alumni',
+    position: 'Master Student, 2017',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'huang-xiaoyi',
+    name: '黄小倚',
+    englishName: 'Huang Xiaoyi',
+    category: 'Alumni',
+    position: 'Master Student, 2017',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zheng-ran',
+    name: '郑然',
+    englishName: 'Zheng Ran',
+    category: 'Alumni',
+    position: 'Master Student, 2017',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhang-hui',
+    name: '张卉',
+    englishName: 'Zhang Hui',
+    category: 'Alumni',
+    position: 'PhD Student, 2016',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'huang-lumin',
+    name: '黄璐敏',
+    englishName: 'Huang Lumin',
+    category: 'Alumni',
+    position: 'Master Student, 2016',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'jin-mengqi',
+    name: '金梦奇',
+    englishName: 'Jin Mengqi',
+    category: 'Alumni',
+    position: 'Master Student, 2016',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'li-simeng',
+    name: '李思蒙',
+    englishName: 'Li Simeng',
+    category: 'Alumni',
+    position: 'Master Student, 2016',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhang-xiaobin',
+    name: '张晓彬',
+    englishName: 'Zhang Xiaobin',
+    category: 'Alumni',
+    position: 'Master Student, 2015',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhu-qi',
+    name: '朱琦',
+    englishName: 'Zhu Qi',
+    category: 'Alumni',
+    position: 'Master Student, 2015',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'zhu-bin',
+    name: '朱斌',
+    englishName: 'Zhu Bin',
+    category: 'Alumni',
+    position: 'Master Student, 2015',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wang-shuyi',
+    name: '王淑怡',
+    englishName: 'Wang Shuyi',
+    category: 'Alumni',
+    position: 'Master Student, 2015',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'fu-jiaqi',
+    name: '傅佳琪',
+    englishName: 'Fu Jiaqi',
+    category: 'Alumni',
+    position: 'Master Student, 2015',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'kevin-wolterink',
+    name: 'Kevin Wolterink',
+    englishName: 'Kevin Wolterink',
+    category: 'Alumni',
+    position: 'Master Student, 2014',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'gao-junying',
+    name: '高俊颖',
+    englishName: 'Gao Junying',
+    category: 'Alumni',
+    position: 'Master Student, 2014',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'gao-minquan',
+    name: '高民权',
+    englishName: 'Gao Minquan',
+    category: 'Alumni',
+    position: 'Master Student, 2014',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
+  },
+  {
+    id: 'wang-jiaxi',
+    name: '汪佳希',
+    englishName: 'Wang Jiaxi',
+    category: 'Alumni',
+    position: 'Master Student, 2011',
+    avatar: '/avatars/avatar-placeholder.png',
+    email: ''
   }
 ];
 
