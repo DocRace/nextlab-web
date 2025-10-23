@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTeamMemberById } from "@/data/team";
 import TeamAvatar from "@/components/TeamAvatar";
+import { formatDisplayName } from "@/utils/nameFormatter";
 
 // 根据研究组别返回对应的颜色类
 const getResearchGroupColor = (researchGroup: string) => {
@@ -59,7 +60,7 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
         </div>
 
         {/* 标题和基本信息 */}
-        <h1 className="text-3xl font-bold mt-4 mb-2">{member.englishName || member.name}</h1>
+        <h1 className="text-3xl font-bold mt-4 mb-2">{formatDisplayName(member.name, member.englishName)}</h1>
         
         {/* 标签 - 移到职位描述上面 */}
         <div className="flex gap-2 mb-2">
@@ -104,56 +105,86 @@ export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
 
       {/* 详细内容 */}
       <div className="prose max-w-none mb-8">
+        {/* 根据成员类别显示不同的内容结构 */}
+        {member.category === 'Undergraduates' ? (
+          <>
+            {/* 本科生专用布局 */}
+            {/* Overview */}
+            {member.englishBio && (
+              <div className="mb-8">
+                <h4 className="font-bold text-lg mt-6 mb-2">Overview</h4>
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {member.englishBio}
+                </p>
+              </div>
+            )}
 
+            {/* Research Direction */}
+            {member.researchDirection && (
+              <div className="mb-8">
+                <h4 className="font-bold text-lg mt-6 mb-2">Research Direction</h4>
+                <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {member.researchDirection}
+                </div>
+              </div>
+            )}
 
-        {/* Overview */}
-        {member.englishBio && (
-          <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">Overview</h4>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {member.englishBio}
-            </p>
-          </div>
-        )}
-
-        {/* 研究成果 */}
-        {member.achievements && (
-          <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">Research Achievements</h4>
-            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {member.achievements}
+            {/* Contact */}
+            <div className="mb-8">
+              <h4 className="font-bold text-lg mt-6 mb-2">Contact</h4>
+              <div className="text-gray-700 leading-relaxed">
+                <p><strong>Email:</strong> {member.email}</p>
+                {member.personalHomepage && (
+                  <p><strong>Personal Homepage:</strong> <a href={member.personalHomepage} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">{member.personalHomepage}</a></p>
+                )}
+              </div>
             </div>
-          </div>
-        )}
 
-        {/* Publications & Works - 仅对PhD Students和Master Students显示 */}
-        {member.publications && (member.category === 'PhD Students' || member.category === 'Master Students') && (
-          <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">Publications & Works</h4>
-            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {member.publications}
-            </div>
-          </div>
-        )}
+          </>
+        ) : (
+          <>
+            {/* 研究生/博士/研究人员布局 */}
+            {/* Overview */}
+            {member.englishBio && (
+              <div className="mb-8">
+                <h4 className="font-bold text-lg mt-6 mb-2">Overview</h4>
+                <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {member.englishBio}
+                </p>
+              </div>
+            )}
 
-        {/* Participating Projects - 仅对PhD Students和Master Students显示 */}
-        {member.projects && (member.category === 'PhD Students' || member.category === 'Master Students') && (
-          <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">Participating Projects</h4>
-            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {member.projects}
-            </div>
-          </div>
-        )}
+            {/* 研究成果 */}
+            {member.achievements && (
+              <div className="mb-8">
+                <h4 className="font-bold text-lg mt-6 mb-2">Research Achievements</h4>
+                <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {member.achievements}
+                </div>
+              </div>
+            )}
 
-        {/* Research Direction - 仅对Undergraduates显示 */}
-        {member.researchDirection && member.category === 'Undergraduates' && (
-          <div className="mb-8">
-            <h4 className="font-bold text-lg mt-6 mb-2">Research Direction</h4>
-            <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {member.researchDirection}
-            </div>
-          </div>
+            {/* Publications & Works - 仅对PhD Students和Master Students显示 */}
+            {member.publications && (member.category === 'PhD Students' || member.category === 'Master Students') && (
+              <div className="mb-8">
+                <h4 className="font-bold text-lg mt-6 mb-2">Publications & Works</h4>
+                <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {member.publications}
+                </div>
+              </div>
+            )}
+
+            {/* Participating Projects - 仅对PhD Students和Master Students显示 */}
+            {member.projects && (member.category === 'PhD Students' || member.category === 'Master Students') && (
+              <div className="mb-8">
+                <h4 className="font-bold text-lg mt-6 mb-2">Participating Projects</h4>
+                <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+                  {member.projects}
+                </div>
+              </div>
+            )}
+
+          </>
         )}
       </div>
     </div>

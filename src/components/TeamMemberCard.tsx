@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TeamMember } from "@/data/team";
+import { formatDisplayName } from "@/utils/nameFormatter";
 
 interface TeamMemberCardProps {
   member: TeamMember;
@@ -9,7 +10,7 @@ interface TeamMemberCardProps {
 export default function TeamMemberCard({ member }: TeamMemberCardProps) {
   return (
     <Link href={`/team/${member.id}`} className="group">
-      <div className="flex items-start p-4 rounded-lg border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all duration-200 group-hover:bg-purple-50">
+      <div className="flex items-center p-4 rounded-lg border border-gray-200 hover:border-purple-300 hover:shadow-md transition-all duration-200 group-hover:bg-purple-50">
         <div className="relative flex-shrink-0" style={{ width: '80px', height: '80px', minWidth: '80px' }}>
           <Image
             src={member.avatar}
@@ -22,7 +23,7 @@ export default function TeamMemberCard({ member }: TeamMemberCardProps) {
         </div>
         <div className="ml-4 flex-1">
           <h3 className="text-lg font-semibold text-gray-900 group-hover:text-purple-700 transition-colors">
-            {member.name}
+            {formatDisplayName(member.name, member.englishName)}
           </h3>
           <p className="text-sm text-gray-600 mt-1">{member.englishName}</p>
           <p className="text-sm text-gray-500 mt-1">{member.position}</p>

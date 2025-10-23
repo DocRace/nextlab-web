@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { teamMembers, getTeamMembersByCategory } from "@/data/team";
 import TeamAvatar from "@/components/TeamAvatar";
+import { formatDisplayName } from "@/utils/nameFormatter";
 
 // 根据研究组别返回对应的颜色类
 const getResearchGroupColor = (researchGroup: string) => {
@@ -58,7 +59,7 @@ export default function Team() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {facultyMembers.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
-                  <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
+                  <div className="flex items-center hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
                     <TeamAvatar
                       src={member.avatar}
                       alt={member.name}
@@ -67,7 +68,7 @@ export default function Team() {
                     />
                     <div className="ml-6">
                       <h3 className="text-lg md:text-xl font-bold group-hover:text-purple-600 transition-colors">
-                        {member.englishName || member.name}
+                        {formatDisplayName(member.name, member.englishName)}
                       </h3>
                       <p className="text-gray-500 text-sm md:text-base mb-2">{member.position}</p>
                       {member.researchGroup && (
@@ -91,7 +92,7 @@ export default function Team() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {staffMembers.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
-                  <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
+                  <div className="flex items-center hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
                     <TeamAvatar
                       src={member.avatar}
                       alt={member.name}
@@ -100,7 +101,7 @@ export default function Team() {
                     />
                     <div className="ml-6">
                       <h3 className="text-lg md:text-xl font-bold group-hover:text-purple-600 transition-colors">
-                        {member.englishName || member.name}
+                        {formatDisplayName(member.name, member.englishName)}
                       </h3>
                       <p className="text-gray-500 text-sm md:text-base">{member.position}</p>
                       {member.researchGroup && (
@@ -123,7 +124,7 @@ export default function Team() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {doctoralStudents.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
-                  <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
+                  <div className="flex items-center hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
                     <TeamAvatar
                       src={member.avatar}
                       alt={member.name}
@@ -132,7 +133,7 @@ export default function Team() {
                     />
                     <div className="ml-6">
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
-                        {member.englishName || member.name}
+                        {formatDisplayName(member.name, member.englishName)}
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
@@ -154,7 +155,7 @@ export default function Team() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {masterStudents.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
-                  <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
+                  <div className="flex items-center hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
                     <TeamAvatar
                       src={member.avatar}
                       alt={member.name}
@@ -163,7 +164,7 @@ export default function Team() {
                     />
                     <div className="ml-6">
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
-                        {member.englishName || member.name}
+                        {formatDisplayName(member.name, member.englishName)}
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
@@ -186,7 +187,7 @@ export default function Team() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {undergraduates.map((member) => (
                 <Link href={`/team/${member.id}`} key={member.id} className="group">
-                  <div className="flex items-start hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
+                  <div className="flex items-center hover:bg-purple-50 hover:rounded-full py-2 transition-all duration-200">
                     <TeamAvatar
                       src={member.avatar}
                       alt={member.name}
@@ -195,7 +196,7 @@ export default function Team() {
                     />
                     <div className="ml-6">
                       <h3 className="text-xl font-bold group-hover:text-purple-600 transition-colors">
-                        {member.englishName || member.name}
+                        {formatDisplayName(member.name, member.englishName)}
                       </h3>
                       <p className="text-gray-500">{member.position}</p>
                       {member.researchGroup && (
@@ -217,7 +218,7 @@ export default function Team() {
             <h2 className="text-3xl font-bold mb-8">Alumni</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {alumni.map((member) => (
-                <div key={member.id} className="flex items-start py-2">
+                <div key={member.id} className="flex items-center py-2">
                   <TeamAvatar
                     src={member.avatar}
                     alt={member.name}
@@ -226,7 +227,7 @@ export default function Team() {
                   />
                   <div className="ml-6">
                     <h3 className="text-xl font-bold">
-                      {member.englishName || member.name}
+                      {formatDisplayName(member.name, member.englishName)}
                     </h3>
                     <p className="text-gray-500">{member.position}</p>
                     {member.researchGroup && (

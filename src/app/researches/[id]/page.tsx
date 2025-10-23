@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTeamMemberById, teamMembers } from "@/data/team";
+import { formatDisplayName } from "@/utils/nameFormatter";
 
 const researches = {
   "music": {
@@ -361,7 +362,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 mb-6">
             {(research as any).members.leaders.map((m: any) => {
               const tm = m.id ? getTeamMemberById(m.id) : undefined;
-              const name = tm?.englishName || tm?.name || m.name;
+              const name = tm ? formatDisplayName(tm.name, tm.englishName) : m.name;
               const avatar = tm?.avatar || "/images/next-lab-logo.png";
               const href = m.id ? `/team/${m.id}` : '#';
               return (
@@ -378,7 +379,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
             {(research as any).members.members.map((m: any) => {
               const tm = m.id ? getTeamMemberById(m.id) : undefined;
-              const name = tm?.englishName || tm?.name || m.name;
+              const name = tm ? formatDisplayName(tm.name, tm.englishName) : m.name;
               const avatar = tm?.avatar || "/images/next-lab-logo.png";
               const href = m.id ? `/team/${m.id}` : '#';
               return (
