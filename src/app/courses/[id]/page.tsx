@@ -107,6 +107,58 @@ const courses: Record<string, Course> = {
       "WWDC Scholarship Winners 2017-2019 Collections"
     ]
   },
+  "information-interaction": {
+    title: "Information & Interaction Design Technology",
+    date: "Updated",
+    tags: ["Course", "Information Design", "Interaction Design"],
+    image: "/images/course-interactive.jpg",
+    chineseLink: "https://www.icourse163.org/course/0809ZJU389-1472361166?outVendor=zw_mooc_pclszykctj_",
+    overview: `This course investigates the key technology and application of information and interactive design. The content of this course consists of the information graph and the website (software) interactive prototype design. Students are supposed to learn the basic concept and theory, the trend and historical development, the key technologies and application fields of information and interactive design, so as to master the general method and procedure of information and interactive design, and hence improve their ability of information design and interactive design.`,
+    instructors: [
+      "Kejun Zhang", "Wei Xiang", "Liuqing Chen", "Shi Chen"
+    ],
+    syllabus: [
+      "Week 1: Introduction to Information Design",
+      "Week 2: Fundamentals of Interactive Design",
+      "Week 3: Information Architecture and User Experience",
+      "Week 4: Visual Design Principles",
+      "Week 5: Prototyping and Testing",
+      "Week 6: Advanced Interaction Techniques",
+      "Week 7: Case Studies and Applications",
+      "Week 8: Final Project Development"
+    ],
+    references: [
+      "Norman, D. (2013). The Design of Everyday Things: Revised and Expanded Edition.",
+      "Tufte, E. R. (2001). The Visual Display of Quantitative Information.",
+      "Cooper, A., Reimann, R., & Cronin, D. (2007). About Face 3: The Essentials of Interaction Design."
+    ]
+  },
+  "ai-emotion-art": {
+    title: "Artificial Intelligence：Emotion, Art and Design",
+    date: "Updated",
+    tags: ["Course", "Artificial Intelligence", "Emotion", "Art", "Design"],
+    image: "/images/course-ai.jpg",
+    chineseLink: "https://www.icourse163.org/course/CAA-1473163177?from=searchPage&outVendor=zw_mooc_pcssjg_",
+    overview: `The course introduces the basic concepts, methods and development status of artificial intelligence and emotional intelligence. According to the artistic classification system, the application methods of emotional intelligence in nine types of artistic resources such as music, calligraphy and film are emphatically introduced, and students are encouraged to carry out corresponding innovative design and transformation practice. The course effectively promotes students to better understand Chinese traditional art, master the innovative design methods of stimulating the beauty of traditional culture and art with new technology.`,
+    instructors: [
+      "Kejun Zhang"
+    ],
+    syllabus: [
+      "Week 1: Introduction to AI and Emotional Intelligence",
+      "Week 2: Music and AI Emotion Recognition",
+      "Week 3: Calligraphy and AI Analysis",
+      "Week 4: Film and AI Emotion Computing",
+      "Week 5: Traditional Art and AI Integration",
+      "Week 6: Innovative Design Methods",
+      "Week 7: Cultural Heritage and Technology",
+      "Week 8: Final Project and Case Studies"
+    ],
+    references: [
+      "Russell, S., & Norvig, P. (2020). Artificial Intelligence: A Modern Approach.",
+      "Picard, R. W. (2000). Affective Computing.",
+      "McCarthy, J., Minsky, M. L., Rochester, N., & Shannon, C. E. (2006). A proposal for the dartmouth summer research project on artificial intelligence."
+    ]
+  },
   "design-thinking": {
     title: "Design Thinking And Innovation Design",
     date: "Updated",
@@ -275,10 +327,10 @@ export default function CourseDetail({ params }: { params: Promise<{ id: string 
             </div>
           </div>
 
-          {/* Instructors */}
+          {/* Teachers */}
           {course.instructors && (
             <div className="bg-gray-100 rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Instructors</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">Teachers</h3>
               <div className="space-y-2">
                 {course.instructors.map((name, index) => (
                   <div key={index} className="flex items-center gap-2 text-gray-700">
