@@ -24,13 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="light" style={{ backgroundColor: '#ffffff' }}>
       <body
         className={`${ibmPlexSans.variable} ${ibmPlexSans.className} font-sans antialiased`}
+        style={{ backgroundColor: '#ffffff' }}
       >
         <Navbar />
-        <main className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-8">
-          <div className="w-full max-w-[1920px] mx-auto">
+        <main className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-8 bg-white">
+          <div className="w-full max-w-[1920px] mx-auto bg-white">
             {children}
           </div>
         </main>

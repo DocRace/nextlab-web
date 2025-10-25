@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Courses() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* 渐变背景和标题部分 */}
       <div className="relative h-[240px] w-full">
         <div className="relative h-full max-w-[1920px] mx-auto flex items-start pt-8">

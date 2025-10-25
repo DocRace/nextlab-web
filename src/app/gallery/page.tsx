@@ -135,31 +135,36 @@ export default function Gallery() {
         <section id="memories" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Memories</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {[
-              "/images/memories-images/memories-1.jpg",
-              "/images/memories-images/memories-2.jpg", 
-              "/images/memories-images/memories-3.jpg",
-              "/images/memories-images/memories-4.jpg",
-              "/images/memories-images/memories-5.jpg",
-              "/images/memories-images/memories-6.jpg",
-              "/images/memories-images/memories-7.jpg",
-              "/images/memories-images/memories-8.jpg",
-              "/images/memories-images/memories-9.jpg",
-              "/images/memories-images/memories-10.jpg",
-              "/images/memories-images/memories-11.jpg",
-              "/images/memories-images/memories-12.jpg",
-              "/images/memories-images/memories-13.jpg"
-            ].map((src, idx) => (
-              <div key={idx} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
-                <div className="relative h-[220px] bg-gray-100">
-                  <MemoryImage 
-                    src={src} 
-                    alt={`memory-${idx + 1}`} 
-                    className="object-cover"
-                  />
+            {(() => {
+              const memoryImages = [
+                "/images/memories-images/memories-1.jpg",
+                "/images/memories-images/memories-2.jpg", 
+                "/images/memories-images/memories-3.jpg",
+                "/images/memories-images/memories-4.jpg",
+                "/images/memories-images/memories-5.jpg",
+                "/images/memories-images/memories-6.jpg",
+                "/images/memories-images/memories-7.jpg",
+                "/images/memories-images/memories-8.jpg",
+                "/images/memories-images/memories-9.jpg",
+                "/images/memories-images/memories-10.jpg",
+                "/images/memories-images/memories-11.jpg",
+                "/images/memories-images/memories-12.jpg",
+                "/images/memories-images/memories-13.jpg"
+              ];
+              return memoryImages.map((src, idx) => (
+                <div key={idx} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                  <div className="relative h-[220px] bg-gray-100">
+                    <MemoryImage 
+                      src={src} 
+                      alt={`memory-${idx + 1}`} 
+                      className="object-cover"
+                      imageList={memoryImages}
+                      currentIndex={idx}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ));
+            })()}
           </div>
         </section>
 
