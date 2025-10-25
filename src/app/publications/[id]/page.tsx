@@ -153,7 +153,7 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
       <div className="max-w-[1920px] mx-auto px-4 py-6 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Images Section */}
-          <div className="space-y-4">
+          <div className="space-y-8">
             {/* Cover Image */}
             <div className="relative w-full rounded-[36px] overflow-hidden">
               <Image
