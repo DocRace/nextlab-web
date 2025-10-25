@@ -80,8 +80,11 @@ export default async function ProjectDetail({
     <div className="min-h-screen max-w-[1000px] mx-auto py-12 px-4">
       {/* Back to Research Group button */}
       <div className="mb-8">
-        <Link href={`/researches/${researchId}`} className="text-gray-600 hover:text-gray-800 transition-colors">
-          ← Back to {researchId === 'music' ? 'Music' : researchId === 'font' ? 'Font' : 'Design'} Research
+        <Link href={`/researches/${researchId}`} className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to {researchId === 'music' ? 'Music' : researchId === 'font' ? 'Font' : 'Design'} Research
         </Link>
       </div>
 
@@ -120,9 +123,12 @@ export default async function ProjectDetail({
               href={button.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-base font-medium"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-base font-medium"
             >
               {button.label}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </a>
           ))}
         </div>
