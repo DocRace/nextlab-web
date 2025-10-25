@@ -341,15 +341,8 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
 
   return (
     <div className="min-h-screen max-w-[1000px] mx-auto py-12 px-4">
-      {/* 封面图 */}
-      <div className="mb-8">
-        <div className="w-full max-w-[900px] aspect-[16/6] relative rounded-[36px] overflow-hidden">
-          <Image src={research.image} alt={research.title} fill className="object-cover" />
-        </div>
-      </div>
-
-      {/* 详情图 - 如果有的话 */}
-      {('detailImage' in research) && (
+      {/* 顶部图片 - 优先显示详情图，否则显示封面图 */}
+      {('detailImage' in research) ? (
         <div className="mb-8">
           <div className="w-full max-w-[900px] relative rounded-[36px] overflow-hidden">
             <Image 
@@ -360,6 +353,12 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
               className="w-full h-auto object-contain"
               style={{ maxWidth: '100%', height: 'auto' }}
             />
+          </div>
+        </div>
+      ) : (
+        <div className="mb-8">
+          <div className="w-full max-w-[900px] aspect-[16/6] relative rounded-[36px] overflow-hidden">
+            <Image src={research.image} alt={research.title} fill className="object-cover" />
           </div>
         </div>
       )}
