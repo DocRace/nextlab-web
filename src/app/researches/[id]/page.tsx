@@ -40,19 +40,19 @@ const researches = {
       {
         id: 'wuyun',
         title: 'WuYun: Hierarchical skeleton-guided melody generation',
-        cover: '/images/project1.jpg',
+        cover: '/images/music-team-project1-cover.png',
         href: '/projects/music/wuyun'
       },
       {
         id: 'mind-band',
         title: 'Mind Band: Crossmedia AI Music Composing Platform',
-        cover: '/images/project2.jpg',
+        cover: '/images/music-team-project2-cover.png',
         external: 'https://github.com/xinxian-tech'
       },
       {
         id: 'stepbeats',
         title: 'StepBeats',
-        cover: '/images/project3.jpg',
+        cover: '/images/music-team-project3-cover.png',
         external: 'https://stepbeats.io/'
       }
     ],
@@ -151,25 +151,25 @@ const researches = {
       {
         id: 'glow',
         title: 'Glow Sans Open-Source Font Family',
-        cover: '/images/project-font.png',
+        cover: '/images/font-team-project1-cover.png',
         href: '/projects/font/glow'
       },
       {
         id: 'seal-create',
         title: 'Seal Create',
-        cover: '/images/project-font.png',
+        cover: '/images/font-team-project2-cover.png',
         external: 'https://apps.apple.com/us/app/seal-create/id1515121113'
       },
       {
         id: 'mix-font',
         title: 'Mix Font',
-        cover: '/images/project-font.png',
+        cover: '/images/font-team-project3-cover.png',
         external: 'http://next.zju.edu.cn/tencent-calligraphy/html/mixfont.html'
       },
       {
         id: 'ids2glyph',
         title: 'IDS2Glyph',
-        cover: '/images/project-font.png',
+        cover: '/images/font-team-project4-cover.png',
         external: 'http://next.zju.edu.cn/tencent-calligraphy/html/ids2Glyph.html'
       }
     ],
@@ -221,19 +221,19 @@ const researches = {
       {
         id: 'life-of-su-shi',
         title: '"Life of Su Shi" series',
-        cover: '/images/researches-design-cover.png',
+        cover: '/images/design-team-project1-cover.png',
         href: '/projects/design/life-of-su-shi'
       },
       {
         id: 'coastalbam-jar',
         title: 'CoastalBam Jar — Red Dot Winner 2024',
-        cover: '/images/CoastalBam Jar.jpg',
+        cover: '/images/design-team-project2-cover.jpg',
         href: '/gallery/coastalbam-jar'
       },
       {
         id: 'heritage-spark',
         title: 'Heritage Spark — Iron A\' Design Award 2025',
-        cover: '/images/Gallery-Heritage-Spark.png',
+        cover: '/images/design-team-project3-cover.png',
         href: '/gallery/heritage-spark'
       }
     ],
