@@ -166,9 +166,8 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
               />
             </div>
             
-            {/* Detail Images */}
-            {publication.detailImages && publication.detailImages.length > 0 ? (
-              // Use custom detail images if provided
+            {/* Detail Images - Only show if explicitly provided */}
+            {publication.detailImages && publication.detailImages.length > 0 && (
               publication.detailImages.map((imgSrc, index) => (
                 <div key={index} className="relative w-full rounded-[36px] overflow-hidden">
                   <PublicationImage
@@ -178,15 +177,6 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                   />
                 </div>
               ))
-            ) : (
-              // Use auto-generated detail image path
-              <div className="relative w-full rounded-[36px] overflow-hidden">
-                <PublicationImage
-                  src={getDetailImagePath(publication.image)}
-                  alt={`${publication.title} - Detail`}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
             )}
           </div>
           <div>
