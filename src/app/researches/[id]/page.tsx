@@ -344,20 +344,20 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
       {/* 顶部图片 - 优先显示详情图，否则显示封面图 */}
       {('detailImage' in research) ? (
         <div className="mb-8">
-          <div className="w-full max-w-[900px] relative rounded-[36px] overflow-hidden">
+          <div className="w-full relative overflow-hidden" style={{ borderRadius: '36px' }}>
             <Image 
               src={(research as any).detailImage} 
               alt={`${research.title} - Detail`} 
               width={1200}
               height={800}
-              className="w-full h-auto object-contain"
-              style={{ maxWidth: '100%', height: 'auto' }}
+              className="w-full h-auto"
+              style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
             />
           </div>
         </div>
       ) : (
         <div className="mb-8">
-          <div className="w-full max-w-[900px] aspect-[16/6] relative rounded-[36px] overflow-hidden">
+          <div className="w-full aspect-[16/6] relative overflow-hidden" style={{ borderRadius: '36px' }}>
             <Image src={research.image} alt={research.title} fill className="object-cover" />
           </div>
         </div>
