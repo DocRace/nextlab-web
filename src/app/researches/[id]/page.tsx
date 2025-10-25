@@ -51,7 +51,7 @@ const researches = {
       },
       {
         id: 'stepbeats',
-        title: 'StepBeats',
+        title: 'StepBeats: Run to create music!',
         cover: '/images/music-team-project3-cover.png',
         external: 'https://stepbeats.io/'
       }
