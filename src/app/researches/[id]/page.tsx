@@ -366,12 +366,12 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
               const avatar = tm?.avatar || "/images/next-lab-logo.png";
               const href = m.id ? `/team/${m.id}` : '#';
               return (
-                <Link key={name} href={href} className="group flex flex-col items-start text-left">
+                <Link key={name} href={href} className="group flex flex-col items-center text-center">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100">
                     <Image src={avatar} alt={name} fill className="object-cover" />
                   </div>
                   <div className="mt-2 text-sm font-medium group-hover:underline">{name}</div>
-                  <span className="mt-1 px-2 py-0.5 rounded-full bg-black text-white text-[10px] leading-none w-fit">Leader</span>
+                  <span className="mt-1 px-2 py-0.5 rounded-full bg-black text-white text-[10px] leading-none">Leader</span>
                 </Link>
               );
             })}
@@ -383,7 +383,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
               const avatar = tm?.avatar || "/images/next-lab-logo.png";
               const href = m.id ? `/team/${m.id}` : '#';
               return (
-                <Link key={name} href={href} className="group flex flex-col items-start text-left">
+                <Link key={name} href={href} className="group flex flex-col items-center text-center">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden bg-gray-100">
                     <Image src={avatar} alt={name} fill className="object-cover" />
                   </div>
