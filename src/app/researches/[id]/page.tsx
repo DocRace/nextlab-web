@@ -10,6 +10,7 @@ const researches = {
     date: "Updated",
     tags: ["Music Group"],
     image: "/images/research-music.png",
+    detailImage: "/images/research-music-detail.png",
     link: "/researches",
     overview: `
 <p>The NEXT + Music is at the forefront of intelligent music research, exploring the deep integration of artificial intelligence with musical creativity and experience. Our research is centered on several key areas, including automated music generation, where we develop models for lyric-to-melody synthesis and text-to-music generation. We are also deeply engaged in multimodal music applications, investigating the intricate relationships between music and other modalities such as text, images, and video to create novel interactive experiences. A significant part of our work is dedicated to affective computing in music, aiming to understand and model the emotional responses to music. Through these directions, we strive to build advanced computational systems that not only understand and process music but also collaborate with artists and users in the creative process, pushing the boundaries of music technology.</p>
@@ -344,6 +345,22 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
           <Image src={research.image} alt={research.title} fill className="object-cover" />
         </div>
       </div>
+
+      {/* 详情图 - 如果有的话 */}
+      {('detailImage' in research) && (
+        <div className="mb-8">
+          <div className="w-full max-w-[900px] relative rounded-[36px] overflow-hidden">
+            <Image 
+              src={(research as any).detailImage} 
+              alt={`${research.title} - Detail`} 
+              width={1200}
+              height={800}
+              className="w-full h-auto object-contain"
+              style={{ maxWidth: '100%', height: 'auto' }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* 标题 */}
       <h1 className="text-3xl font-bold mb-4">{research.title}</h1>
