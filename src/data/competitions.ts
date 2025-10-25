@@ -19,7 +19,7 @@ export const competitions: CompetitionEntry[] = [
     winners: "Jinhe Li, Yuhang Jin, Xiuqi Li, Songruoyao Wu, Xiaohui Chen",
     description: "Shihua Shijie——Amid the AIGC wave, Shihua Shijie (Poetry & Painting Vision) leverages three core innovations to bridge traditional poetry and modern short videos. It addresses industry pain points, injects vitality into traditional culture dissemination, and breaks AI's cultural aesthetic bias.",
     link: "https://cpipc.acge.org.cn/cw/hp/2c908018876ef068018774a9501a03fe",
-    image: "/images/placeholder.jpg"
+    image: "/images/content-placeholder.png"
   },
   {
     id: "sugar-blossom",
@@ -29,7 +29,7 @@ export const competitions: CompetitionEntry[] = [
     winners: "Jiangyu Pan, Liang Hou, Yilin Wei, Mengyue Yuan",
     description: "Sugar Blossom is a blood-glucose monitoring solution for kids. As childhooddiabetes grows and traditional methods fall short, we designed a flower-shapecmonitor. It reveals blood-glucose levels through petal and stamen changes. Thepaired apooncs date, amesfostcarionhiaren! weipbeing kids and parents to manage blood-glucose and fostering children's well-being.",
     link: "",
-    image: "/images/placeholder.jpg"
+    image: "/images/content-placeholder.png"
   },
   {
     id: "heritage-spark",

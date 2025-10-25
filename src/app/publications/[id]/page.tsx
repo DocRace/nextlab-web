@@ -200,14 +200,22 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                 </span>
               ))}
             </div>
-            <div className="mb-6">
+            {/* Venue Section */}
+            <div className="mb-8">
               <h3 className="text-xl font-semibold mb-2">Venue</h3>
               <p className="text-gray-600">{publication.venue}</p>
             </div>
-            
-            {/* 固定4个链接显示 */}
-            <div className="mb-6">
-              <div className="flex items-center gap-4 text-sm">
+
+            {/* Abstracts Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-2">Abstracts</h3>
+              <p className="text-gray-600 leading-relaxed">{publication.abstract || "No abstract available."}</p>
+            </div>
+
+            {/* Appendix Section */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-2">Appendix</h3>
+              <div className="flex items-center gap-4 text-gray-600 leading-relaxed">
                 <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                 </svg>
@@ -220,10 +228,10 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 underline"
                   >
-                    pdf
+                    PDF
                   </a>
                 ) : (
-                  <span className="text-gray-400">pdf</span>
+                  <span className="text-gray-400">PDF</span>
                 )}
                 
                 <span className="text-gray-400">|</span>
@@ -236,10 +244,10 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 underline"
                   >
-                    code
+                    Code
                   </a>
                 ) : (
-                  <span className="text-gray-400">code</span>
+                  <span className="text-gray-400">Code</span>
                 )}
                 
                 <span className="text-gray-400">|</span>
@@ -252,10 +260,10 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 underline"
                   >
-                    demo
+                    Demo
                   </a>
                 ) : (
-                  <span className="text-gray-400">demo</span>
+                  <span className="text-gray-400">Demo</span>
                 )}
                 
                 <span className="text-gray-400">|</span>
@@ -278,35 +286,41 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 underline"
                     >
-                      video
+                      Video
                     </a>
                   ) : (
-                    <span className="text-gray-400">video</span>
+                    <span className="text-gray-400">Video</span>
                   );
                 })()}
               </div>
             </div>
 
-            {publication.abstract && (
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-2">Abstract</h3>
-                <p className="text-gray-600 leading-relaxed">{publication.abstract}</p>
-              </div>
-            )}
-            <div className="mt-8">
+            {/* Buttons Section */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              {/* Button 1: View details (Chinese) - Optional */}
+              {publication.chineseLink && (
+                <Link 
+                  href={publication.chineseLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  View details (Chinese)
+                </Link>
+              )}
+
+              {/* Button 2: Back to Publications */}
               <Link 
                 href="/publications"
-                className="inline-flex items-center text-white px-4 py-2 rounded-full w-fit hover:bg-black/80 transition-colors"
-                style={{
-                  backgroundColor: '#000000',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                }}
+                className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 transition-colors font-medium"
               >
-                Back to Publications
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
+                Back to Publications
               </Link>
             </div>
           </div>

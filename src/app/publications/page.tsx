@@ -156,7 +156,7 @@ export default function Publications() {
           >
             <div className={`relative h-[300px] md:h-[400px] rounded-[36px] overflow-hidden ${idx % 2 === 1 ? 'md:order-2' : 'order-1'}`}>
               <Image
-                src={pub.image === "/images/placeholder.jpg" ? "/avatars/avatar-placeholder.png" : pub.image}
+                src={pub.image === "/images/content-placeholder.png" ? "/avatars/avatar-placeholder.png" : pub.image}
                 alt={pub.title}
                 fill
                 className="object-cover"
