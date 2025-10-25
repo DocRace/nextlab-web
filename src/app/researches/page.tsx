@@ -22,7 +22,7 @@ const researches = [
     date: "Updated",
     tags: ["Music Group"],
     image: "/images/research-music.png",
-    desc: "Our mission is to empower the innovation of music art and design by leveraging musical knowledge as our guide and artificial intelligence as our computational engine, building an ecosystem for creation and application that encompasses music generation, human-computer interaction in music, computational analysis of music and emotion, and multimodal music recommendation, to progressively address the challenges of intelligent music empowerment and production.",
+    desc: "The NEXT + Music group stands at the forefront of intelligent music research, pioneering the deep fusion of artificial intelligence with musical creativity, perception, and experience.",
   },
   {
     id: "font",
