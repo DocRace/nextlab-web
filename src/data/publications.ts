@@ -28,7 +28,7 @@ export const publications: Publication[] = [
     image: "/images/Poems as musical instruments cover.png",
     detailImages: [
       "/images/Poems as musical instruments image-2.png",
-      "/images/Poems as musical instruments image-3.png"
+      "/images/Poems as musical instruments  image-3.png"
     ],
     tags: ["Music"]
   },
