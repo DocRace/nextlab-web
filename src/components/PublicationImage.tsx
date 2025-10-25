@@ -20,8 +20,10 @@ export default function PublicationImage({ src, alt, className }: PublicationIma
     <Image
       src={imgSrc}
       alt={alt}
-      fill
+      width={1200}
+      height={800}
       className={className}
+      style={{ maxWidth: '100%', height: 'auto' }}
       onError={handleError}
     />
   );

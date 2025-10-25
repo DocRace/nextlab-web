@@ -155,21 +155,23 @@ export default async function PublicationDetail({ params }: PublicationDetailPro
           {/* Images Section */}
           <div className="space-y-4">
             {/* Cover Image */}
-            <div className="relative h-[300px] rounded-[36px] overflow-hidden">
+            <div className="relative w-full rounded-[36px] overflow-hidden">
               <Image
                 src={publication.image}
                 alt={`${publication.title} - Cover`}
-                fill
-                className="object-cover"
+                width={1200}
+                height={800}
+                className="w-full h-auto object-contain"
+                style={{ maxWidth: '100%', height: 'auto' }}
               />
             </div>
             
             {/* Detail Image */}
-            <div className="relative h-[300px] rounded-[36px] overflow-hidden">
+            <div className="relative w-full rounded-[36px] overflow-hidden">
               <PublicationImage
                 src={getDetailImagePath(publication.image)}
                 alt={`${publication.title} - Detail`}
-                className="object-cover"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
