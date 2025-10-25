@@ -436,7 +436,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
                   <div className="relative h-[120px] bg-gray-100">
                     <Image src={p.cover} alt={p.title} fill className="object-cover" />
                   </div>
-                  <div className="p-3 text-sm font-medium line-clamp-2">{p.title}</div>
+                  <div className="p-3 text-sm font-medium line-clamp-2 h-[3.5rem]">{p.title}</div>
                 </div>
               );
               if (p.external) {
