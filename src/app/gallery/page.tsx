@@ -4,14 +4,14 @@ import MemoryImage from "@/components/MemoryImage";
 import GalleryImage from "@/components/GalleryImage";
 import { competitions } from "@/data/competitions";
 
-const tabs = ["Codes", "Demos", "Competition Entries", "Memories", "More"] as const;
+const tabs = ["Codes", "Demos", "Competition Entries", "Memories"] as const;
 
 // Code data from CSV
 const codeData = [
   {
     title: "AI-Assisted Human-Pet Artistic Musical Co-Creation for Wellness Therapy",
     link: "https://github.com/CarlWangChina/SaMoye-SVC",
-    image: "/images/placeholder.jpg"
+    image: "/images/content-placeholder.png"
   },
   {
     title: "SongGLM: Lyric-to-Melody Generation with 2D Alignment Encoding and Multi-Task Pre-Training",
@@ -31,7 +31,7 @@ const codeData = [
   {
     title: "Glow Sans Open-Source Font Family",
     link: "https://github.com/welai/glow-sans",
-    image: "/images/placeholder.jpg"
+    image: "/images/content-placeholder.png"
   },
   {
     title: "WuYun: Exploring hierarchical skeleton-guided melody generation using knowledge-enhanced deep learning",
@@ -55,7 +55,7 @@ const demoData = [
   {
     title: "AI-Assisted Human-Pet Artistic Musical Co-Creation for Wellness Therapy",
     link: "https://github.com/CarlWangChina/SaMoye-SVC",
-    image: "/images/placeholder.jpg"
+    image: "/images/content-placeholder.png"
   },
   {
     title: "SongGLM: Lyric-to-Melody Generation with 2D Alignment Encoding and Multi-Task Pre-Training",
@@ -75,7 +75,7 @@ const demoData = [
   {
     title: "Glow Sans Open-Source Font Family",
     link: "https://welai.github.io/glow-sans/",
-    image: "/images/placeholder.jpg"
+    image: "/images/content-placeholder.png"
   },
   {
     title: "WuYun: Exploring hierarchical skeleton-guided melody generation using knowledge-enhanced deep learning",
@@ -264,26 +264,6 @@ export default function Gallery() {
           </div>
         </section>
 
-        {/* More Section */}
-        <section id="more" className="mb-24">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">More</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1,2,3].map((i) => (
-              <div key={i} className="rounded-[24px] overflow-hidden border border-gray-200">
-                <div className="relative h-[220px] bg-gray-100">
-                  <Image src="/images/next-lab-logo.png" alt="placeholder" fill className="object-cover" />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold mb-1">Coming Soon</h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">More content will be added here.</p>
-                  <div className="mt-3">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-300 text-gray-600 text-sm">Coming Soon</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
     </div>
   );

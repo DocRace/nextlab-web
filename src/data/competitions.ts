@@ -49,7 +49,7 @@ export const competitions: CompetitionEntry[] = [
     winners: "Jiaxing Yu, Wenqi Wu",
     description: "Traditional music education often leaves learners confused by abstract theory and aural skills, reducing their interest and creativity. Architone innovatively transforms abstract music theory into intuitive musical blocks and buildings to help learners naturally acquire knowledge through engaging interaction and ultimately empowering them to create beautiful music. Its dual-mode design, Learning Mode and Creation Mode, supports incremental skill development while fostering creativity. Architone uses the power of design to make every learner a musical architect.",
     link: "https://competition.adesignaward.com/ada-winner-design.php?ID=170188",
-    image: "/images/placeholder.jpg"
+    image: "/images/Architone.png"
   },
   {
     id: "nextsealer",
@@ -59,7 +59,7 @@ export const competitions: CompetitionEntry[] = [
     winners: "Wenqi Wu, Liang Hou, Hanshu Shen, Zizhen Hong",
     description: "NEXTSEALER addresses the decline of seal carving by making personalised seals accessible. It simplifies the creation process to text input, style selection, and layout adjustment. Each seal can be certified as an NFT, and users can carve them physically or apply digital seals to products like canvas bags and electronics. This innovation revitalises seal carving, one of the world's oldest arts.",
     link: "https://www.red-dot.org/zh/project/nextsealer-72110",
-    image: "/images/smart-seal-experience.png"
+    image: "/images/NEXT Sealer.jpg"
   },
   {
     id: "coastalbam-jar",
@@ -69,7 +69,7 @@ export const competitions: CompetitionEntry[] = [
     winners: "Liang Hou, Wenqi Wu, Hanshu Shen, Jiangyu Pan, Duola Jin",
     description: "CoastalBam Jar is modern salt jar inspired by the traditional method used by Chinese fishermen to turn coarse salt into brine. It combines a metal vessel and two bamboo sieves with hexagonal holes in the bamboo cross-weaving to prevent salt crystallisation and brine contamination The open design, while ensuring easy salt access, also allows for space purification in accordance with Feng Shui principles.",
     link: "https://www.red-dot.org/zh/project/coastalbam-jar-71913",
-    image: "/images/research-design.jpg"
+    image: "/images/CoastalBam Jar.jpg"
   }
 ];
 

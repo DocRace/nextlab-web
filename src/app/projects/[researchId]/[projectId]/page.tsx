@@ -104,7 +104,7 @@ const projects: ProjectsData = {
   "design": {
     "nextsealer": {
       title: "NEXTsealer — Red Dot Winner 2024",
-      cover: "/images/smart-seal-experience.png",
+      cover: "/images/NEXT Sealer.jpg",
       description: "An innovative personalized seal engraving machine that combines traditional craftsmanship with modern technology, earning the prestigious Red Dot Design Award in 2024.",
       details: "NEXTsealer represents a breakthrough in the digitization of traditional seal carving art. The machine uses advanced technology to create personalized seals while preserving the artistic integrity of traditional Chinese seal carving techniques.",
       features: [
@@ -119,7 +119,7 @@ const projects: ProjectsData = {
     },
     "coastalbam-jar": {
       title: "CoastalBam Jar — Red Dot Winner 2024",
-      cover: "/images/research-design.jpg",
+      cover: "/images/CoastalBam Jar.jpg",
       description: "A modern reinterpretation of traditional salt storage, combining functional design with aesthetic appeal, also earning the Red Dot Design Award in 2024.",
       details: "The CoastalBam Jar project reimagines traditional salt storage solutions for contemporary use. The design maintains the functional benefits of traditional methods while incorporating modern materials and aesthetic considerations.",
       features: [
