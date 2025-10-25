@@ -281,11 +281,9 @@ export default function Home() {
             </svg>
           </Link>
           <div className="flex flex-wrap gap-3 mt-4">
-            <Link href="/gallery#code" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">Code</Link>
+            <Link href="/gallery#codes" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">Codes</Link>
             <Link href="/gallery#demos" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">Demos</Link>
-            <Link href="/gallery#works" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">Works</Link>
             <Link href="/gallery#competition-entries" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">Competition Entries</Link>
-            <Link href="/gallery#news" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">News</Link>
             <Link href="/gallery#memories" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">Memories</Link>
             <Link href="/gallery#more" className="px-4 py-2 rounded-full bg-gray-100 text-black hover:bg-gray-200 transition-colors text-sm font-medium">More</Link>
           </div>

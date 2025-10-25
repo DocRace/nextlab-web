@@ -4,7 +4,7 @@ import MemoryImage from "@/components/MemoryImage";
 import GalleryImage from "@/components/GalleryImage";
 import { competitions } from "@/data/competitions";
 
-const tabs = ["Memories", "Code", "Demos", "Works", "Competition Entries", "News", "More"] as const;
+const tabs = ["Codes", "Demos", "Competition Entries", "Memories", "More"] as const;
 
 // Code data from CSV
 const codeData = [
@@ -131,46 +131,9 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* Memories Section */}
-        <section id="memories" className="mb-24">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Memories</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {(() => {
-              const memoryImages = [
-                "/images/memories-images/memories-1.jpg",
-                "/images/memories-images/memories-2.jpg", 
-                "/images/memories-images/memories-3.jpg",
-                "/images/memories-images/memories-4.jpg",
-                "/images/memories-images/memories-5.jpg",
-                "/images/memories-images/memories-6.jpg",
-                "/images/memories-images/memories-7.jpg",
-                "/images/memories-images/memories-8.jpg",
-                "/images/memories-images/memories-9.jpg",
-                "/images/memories-images/memories-10.jpg",
-                "/images/memories-images/memories-11.jpg",
-                "/images/memories-images/memories-12.jpg",
-                "/images/memories-images/memories-13.jpg"
-              ];
-              return memoryImages.map((src, idx) => (
-                <div key={idx} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
-                  <div className="relative h-[220px] bg-gray-100">
-                    <MemoryImage 
-                      src={src} 
-                      alt={`memory-${idx + 1}`} 
-                      className="object-cover"
-                      imageList={memoryImages}
-                      currentIndex={idx}
-                    />
-                  </div>
-                </div>
-              ));
-            })()}
-          </div>
-        </section>
-
-        {/* Code Section */}
-        <section id="code" className="mb-24">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Code</h2>
+        {/* Codes Section */}
+        <section id="codes" className="mb-24">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Codes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {codeData.map((item, index) => (
               <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
@@ -230,27 +193,6 @@ export default function Gallery() {
           </div>
         </section>
 
-        {/* Works Section */}
-        <section id="works" className="mb-24">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Works</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1,2,3].map((i) => (
-              <div key={i} className="rounded-[24px] overflow-hidden border border-gray-200">
-                <div className="relative h-[220px] bg-gray-100">
-                  <Image src="/images/next-lab-logo.png" alt="placeholder" fill className="object-cover" />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold mb-1">Coming Soon</h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">More works will be added here.</p>
-                  <div className="mt-3">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-300 text-gray-600 text-sm">Coming Soon</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Competition Entries Section */}
         <section id="competition-entries" className="mb-24">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Competition Entries</h2>
@@ -285,24 +227,40 @@ export default function Gallery() {
           </div>
         </section>
 
-        {/* News Section */}
-        <section id="news" className="mb-24">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">News</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1,2,3].map((i) => (
-              <div key={i} className="rounded-[24px] overflow-hidden border border-gray-200">
-                <div className="relative h-[220px] bg-gray-100">
-                  <Image src="/images/next-lab-logo.png" alt="placeholder" fill className="object-cover" />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold mb-1">Coming Soon</h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">Latest news will be posted here.</p>
-                  <div className="mt-3">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-300 text-gray-600 text-sm">Coming Soon</span>
+        {/* Memories Section */}
+        <section id="memories" className="mb-24">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">Memories</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {(() => {
+              const memoryImages = [
+                "/images/memories-images/memories-1.jpg",
+                "/images/memories-images/memories-2.jpg", 
+                "/images/memories-images/memories-3.jpg",
+                "/images/memories-images/memories-4.jpg",
+                "/images/memories-images/memories-5.jpg",
+                "/images/memories-images/memories-6.jpg",
+                "/images/memories-images/memories-7.jpg",
+                "/images/memories-images/memories-8.jpg",
+                "/images/memories-images/memories-9.jpg",
+                "/images/memories-images/memories-10.jpg",
+                "/images/memories-images/memories-11.jpg",
+                "/images/memories-images/memories-12.jpg",
+                "/images/memories-images/memories-13.jpg"
+              ];
+              return memoryImages.map((src, idx) => (
+                <div key={idx} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                  <div className="relative h-[220px] bg-gray-100">
+                    <MemoryImage 
+                      src={src} 
+                      alt={`memory-${idx + 1}`} 
+                      className="object-cover"
+                      imageList={memoryImages}
+                      currentIndex={idx}
+                    />
                   </div>
                 </div>
-              </div>
-            ))}
+              ));
+            })()}
           </div>
         </section>
 
