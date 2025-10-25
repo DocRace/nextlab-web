@@ -68,7 +68,7 @@ export const publications: Publication[] = [
     venue: "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems",
     abstract: "Due to the remarkable content generation capabilities, large language models (LLMs) have demonstrated potential in supporting early-stage conceptual design. However, current interaction paradigms often struggle to effectively facilitate multi-round idea exploration and selection, leading to random outputs, unclear iterations, and cognitive overload. To address these challenges, we propose a human-AI co-ideation framework aimed at tracking the evolution of design ideas. This framework leverages a structured idea representation, an analogy-based reasoning mechanism and interactive visualization techniques. It guides both designers and AI to systematically explore design spaces. We also develop a prototype system, IdeationWeb, which integrates an intuitive, mind map-like visual interface and interactive methods to support co-ideation. Our user study validates the framework's feasibility, demonstrating enhanced collaboration and creativity between humans and AI. Furthermore, we identified collaborative design patterns from user behaviors, providing valuable insights for future human-AI interaction design.",
     link: "https://dl.acm.org/doi/10.1145/3706598.3713375",
-    image: "/images/10-cover.png",
+    image: "/images/content-placeholder.png",
     tags: ["Design"]
   },
   {
