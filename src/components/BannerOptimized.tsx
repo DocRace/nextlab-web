@@ -10,11 +10,14 @@ export default function Banner() {
   const [windowWidth, setWindowWidth] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   
-  // 图片数据 - 使用本地图片而不是外部链接以提高性能
+  // 图片数据 - 使用团队照片，按倒序排列
   const images = [
-    '/images/banner-1.jpg',
-    '/images/banner-2.jpg',
-    '/images/banner-3.jpg'
+    '/images/2025-group-photo.jpeg',
+    '/images/2024-group-photo.jpg',
+    '/images/2023-group-photo.jpg',
+    '/images/scifi-summit-group-photo.jpg',
+    '/images/past-years-group-photo.jpg',
+    '/images/past-years-group-photo-2.jpg'
   ];
   
   // 动态计算胶囊尺寸和位置

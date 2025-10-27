@@ -10,6 +10,7 @@ export interface Publication {
   code?: string;
   additionalInfo?: string;
   chineseLink?: string;
+  wechatLink?: string; // WeChat article link
   image: string;
   detailImages?: string[]; // Optional array of detail images
   tags: string[];
@@ -25,6 +26,7 @@ export const publications: Publication[] = [
     venue: "Leonardo",
     abstract: "The author has designed a new interface of musical expression called Poem-Qin, which reveals the relationship between text and music, supporting self-accompanied singing and cross-media musical practices. Drawing inspiration from Chinese qin songs and movable-type printing, the author creatively integrates Chinese characters into the interface, controlling music with tone inflections and linguistic rhythms. Moreover, they have developed an AI model for text-to-melody composing to assist in creating new music content. User and audience testing has demonstrated that it offers a positive experience and effective creative results.",
     link: "https://apps.apple.com/us/app/poem-qin/id6504380560",
+    wechatLink: "https://mp.weixin.qq.com/s/uUDMYKa1f50e0jzgXMYXtA",
     image: "/images/Poems as musical instruments cover.png",
     detailImages: [
       "/images/Poems as musical instruments image-2.png",
@@ -62,6 +64,7 @@ export const publications: Publication[] = [
     venue: "Proceedings of the 34th International Joint Conference on Artificial Intelligence",
     abstract: "This paper explores AI-mediated human-pet musical co-creation from an interdisciplinary perspective, leveraging recent advancements in animal-assisted therapy. These advancements have shown significant psychosocial benefits, especially in reducing anxiety and enhancing social engagement. Building on these findings, this study innovatively employs pet vocal timbres as 'digital avatars' to enhance emotional investment during the music creation process. We propose PetCoCre, a novel system that applies pet vocal timbres in three distinct character paradigms within AI music creation: (1) PetRhythm: using pet voices as rhythmic percussion through beat synchronization. (2) PetMelody: enabling pet voices to act as melodic instruments via pitch-shifting alignment. (3) PetVocalia: utilizing pet vocal timbres as the target timbre for SVC (Singing Voice Conversion), where the converted singing voice replaces the original singer's voice, thus preserving the original semantic content. Beyond these character paradigms, our technical innovation lies in proposing SaMoye, the first open-source, high-quality zero-shot SVC model that effectively overcomes existing methods' zero-shot limitations by employing mixed speaker embeddings for timbre enhancement and leveraging a large-scale singing voice dataset. In our experiments, we collected dog and cat vocalization data from pet stores and conducted experiments with 30 participants. Results demonstrate that the human-pet co-creation mode led to significant enhancements in pleasure and creative satisfaction compared to solo AI music generation, along with a significant reduction in participants' anxiety levels. Through collaborative art creation, this research pioneers new paradigms for animal-assisted therapeutic interventions and expands the boundaries of AI-assisted creative collaboration.",
     link: "https://www.ijcai.org/proceedings/2025/",
+    wechatLink: "https://mp.weixin.qq.com/s/-Zx29YORIDsOqYjYiLkH0g",
     image: "/images/paper4-ai-assisted.png",
     tags: ["Music"]
   },
@@ -73,6 +76,7 @@ export const publications: Publication[] = [
     venue: "Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems",
     abstract: "Due to the remarkable content generation capabilities, large language models (LLMs) have demonstrated potential in supporting early-stage conceptual design. However, current interaction paradigms often struggle to effectively facilitate multi-round idea exploration and selection, leading to random outputs, unclear iterations, and cognitive overload. To address these challenges, we propose a human-AI co-ideation framework aimed at tracking the evolution of design ideas. This framework leverages a structured idea representation, an analogy-based reasoning mechanism and interactive visualization techniques. It guides both designers and AI to systematically explore design spaces. We also develop a prototype system, IdeationWeb, which integrates an intuitive, mind map-like visual interface and interactive methods to support co-ideation. Our user study validates the framework's feasibility, demonstrating enhanced collaboration and creativity between humans and AI. Furthermore, we identified collaborative design patterns from user behaviors, providing valuable insights for future human-AI interaction design.",
     link: "https://dl.acm.org/doi/10.1145/3706598.3713375",
+    wechatLink: "https://mp.weixin.qq.com/s/ST5Egkcp7o0yVTr1atFcIg",
     image: "/images/content-placeholder.png",
     tags: ["Design"]
   },
@@ -84,6 +88,7 @@ export const publications: Publication[] = [
     venue: "The Design Journal",
     abstract: "As generative artificial intelligence (AI) is increasingly applied in product design, identifying the new competence designers need to adapt to industry changes has become a topic of high interest in the design community. This study aims to construct a new design competence framework to deepen the understanding of the competence dimensions required by designers in the era of generative AI. First, the initial framework was determined through a literature review. Then, through three rounds of empirical research—semi-structured interviews (N = 35), expert surveys (N = 36), and designer surveys (N = 109)—the specific content of the framework was repeatedly evaluated and refined. Finally, the framework was applied to design practice (N = 43) to explore its impact on design outcomes. The study concluded that design competence in the era of generative AI consists of four core aspects: design aesthetics competence, design thinking competence, design practice competence, and design resilience competence.",
     link: "https://www.tandfonline.com/doi/full/10.1080/14606925.2025.2462862",
+    wechatLink: "https://mp.weixin.qq.com/s/XnvDpCchmWD14cUveVBGLw",
     image: "/images/paper14-cover.png",
     tags: ["Design"]
   },
@@ -97,6 +102,7 @@ export const publications: Publication[] = [
     link: "https://ojs.aaai.org/index.php/AAAI/article/view/34766",
     demo: "https://nextlab-zju.github.io/songglm/",
     code: "https://github.com/nextlab-zju/songglm",
+    wechatLink: "https://mp.weixin.qq.com/s/BLI6_uhON-ZTwqhU0KrfqQ",
     image: "/images/7-cover.png",
     tags: ["Music"]
   },
@@ -108,6 +114,7 @@ export const publications: Publication[] = [
     venue: "Expert Systems with Applications",
     abstract: "In the era of artificial intelligence, although font generation technology has made continuous progress, it still faces challenges such as insufficient automation and high manual labor costs. Existing methods struggle to balance efficiency and design quality, and the efficiency issue is particularly prominent in large-scale Chinese font production. To enhance the efficiency of font production, two core problems must be addressed: (1) Accurate stroke generation: Current intelligent font generation methods often fail to accurately reconstruct stroke structures. Deviations in stroke details and design specifications affect overall consistency and aesthetic quality. (2) Efficient intelligent interaction: Traditional font design tools feature complex interaction processes. Adjusting strokes and styles is time-consuming and labor-intensive, lacking intuitive and intelligent editing mechanisms. This leads to high modification costs and cumbersome workflows. To address these issues, this paper proposes an intelligent font generation system based on stroke reasoning. By recognizing and matching font strokes, the system improves generation accuracy and optimizes the production process. A Chinese character information database is constructed to support efficient and precise stroke-level reasoning and generation. Furthermore, the system enables stroke-level interaction, allowing designers to directly adjust stroke details instead of modifying entire characters, thereby enhancing design flexibility and efficiency.",
     link: "https://www.sciencedirect.com/science/article/abs/pii/S0957417424025247",
+    wechatLink: "https://mp.weixin.qq.com/s/RZjWMBhYn6Z8Dto7CPH2Xw",
     image: "/images/8-cover.png",
     tags: ["Font"]
   },
@@ -123,6 +130,7 @@ export const publications: Publication[] = [
     link: "https://ieeexplore.ieee.org/document/10734159",
     demo: "https://github.com/CarlWangChina/REMAST-Real-time-Emotion-based-Music-Arrangement-with-Soft-Transition",
     code: "https://github.com/CarlWangChina/REMAST-Real-time-Emotion-based-Music-Arrangement-with-Soft-Transition",
+    wechatLink: "https://mp.weixin.qq.com/s/AkE-TaT2cqpFbanfZMLg7A",
     image: "/images/paper9-cover-remast.png",
     tags: ["Music"]
   },

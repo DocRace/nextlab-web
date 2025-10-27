@@ -206,13 +206,12 @@ const researches = {
 `,
     members: {
       leaders: [
-        // 请将姓名编辑于此处（中文亦可），暂以 Wenqi Wu 代为组长展示
-        { id: 'wu-wenqi', name: 'Wenqi Wu' }
+        { id: 'wu-wenqi', name: 'Wenqi Wu' },
+        { id: 'jin-yuhang', name: 'Yuhang Jin' }
       ],
       members: [
         { id: 'hou-liang', name: 'Liang Hou' },
         { id: 'li-jinhe', name: 'Jinhe Li' },
-        { id: 'jin-yuhang', name: 'Yuhang Jin' },
         { id: 'chen-xiaohui', name: 'Xiaohui Chen' },
         { id: 'li-xiuqi', name: 'Xiuqi Li' }
       ]
@@ -236,12 +235,6 @@ const researches = {
         cover: '/images/design-team-project3-cover.png',
         href: '/gallery/heritage-spark'
       }
-    ],
-    videos: [
-      { title: 'Drinking on the Lake First Clear Then Rain', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2001%20-%20Drinking%20on%20the%20Lake%20First%20Clear%20Then%20Rain.mp4?v=20250914' },
-      { title: 'Jiangchengzi', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2002%20-%20Jiangchengzi.mp4?v=20250914' },
-      { title: 'Niannujiao', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2003%20-%20Niannujiao.mp4?v=20250914' },
-      { title: 'Inscription on the West Forest Wall', src: 'https://osss.foo/nextlab/public/videos/Poetry%20Shorts%20-%20Su%20Shi%20Footprints%2004%20-%20Inscription%20on%20the%20West%20Forest%20Wall.mp4?v=20250914' }
     ],
     publications: [
       { 
@@ -432,7 +425,7 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {(research as any).projects.map((p: any) => {
               const content = (
-                <div className="rounded-2xl overflow-hidden border border-gray-200 hover:shadow-md transition-shadow">
+                <div className="rounded-2xl overflow-hidden border border-gray-200 hover:shadow-md hover:shadow-gray-200/30 transition-shadow">
                   <div className="relative h-[120px] bg-gray-100">
                     <Image src={p.cover} alt={p.title} fill className="object-cover" />
                   </div>
@@ -441,6 +434,9 @@ export default async function ResearchDetail({ params }: { params: Promise<{ id:
               );
               if (p.external) {
                 return <a key={p.id} href={p.external} target="_blank" rel="noreferrer">{content}</a>;
+              }
+              if (p.href) {
+                return <Link key={p.id} href={p.href}>{content}</Link>;
               }
               // Link to project detail page based on research group and project ID
               const projectHref = `/projects/${id}/${p.id}`;

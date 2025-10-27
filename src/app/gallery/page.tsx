@@ -136,7 +136,7 @@ export default function Gallery() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Codes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {codeData.map((item, index) => (
-              <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+              <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg hover:shadow-gray-200/30 transition-shadow flex flex-col">
                 <div className="relative h-[220px] bg-gray-100">
                   <GalleryImage 
                     src={item.image} 
@@ -144,9 +144,11 @@ export default function Gallery() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold mb-2 line-clamp-2">{item.title}</h3>
-                  <div className="mt-3">
+                <div className="p-4 flex flex-col flex-grow">
+                  <div className="flex-grow">
+                    <h3 className="font-semibold mb-2 line-clamp-2">{item.title}</h3>
+                  </div>
+                  <div className="mt-auto pt-3">
                     <Link 
                       href={item.link} 
                       target="_blank" 
@@ -167,7 +169,7 @@ export default function Gallery() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Demos</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {demoData.map((item, index) => (
-              <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+              <div key={index} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg hover:shadow-gray-200/30 transition-shadow flex flex-col">
                 <div className="relative h-[220px] bg-gray-100">
                   <GalleryImage 
                     src={item.image} 
@@ -175,9 +177,11 @@ export default function Gallery() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold mb-2 line-clamp-2">{item.title}</h3>
-                  <div className="mt-3">
+                <div className="p-4 flex flex-col flex-grow">
+                  <div className="flex-grow">
+                    <h3 className="font-semibold mb-2 line-clamp-2">{item.title}</h3>
+                  </div>
+                  <div className="mt-auto pt-3">
                     <Link 
                       href={item.link} 
                       target="_blank" 
@@ -203,7 +207,7 @@ export default function Gallery() {
                 href={`/gallery/${item.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow block"
+                className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg hover:shadow-gray-200/30 transition-shadow block flex flex-col"
               >
                 <div className="relative h-[220px] bg-gray-100">
                   <GalleryImage 
@@ -212,11 +216,13 @@ export default function Gallery() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="font-semibold mb-2 line-clamp-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{item.award} ({item.year})</p>
-                  <p className="text-xs text-gray-500 mb-3 line-clamp-2">{item.description}</p>
-                  <div className="mt-3">
+                <div className="p-4 flex flex-col flex-grow">
+                  <div className="flex-grow">
+                    <h3 className="font-semibold mb-2 line-clamp-2">{item.title}</h3>
+                    <p className="text-sm text-gray-600 mb-2">{item.award} ({item.year})</p>
+                    <p className="text-xs text-gray-500 mb-3 line-clamp-2">{item.description}</p>
+                  </div>
+                  <div className="mt-auto pt-3">
                     <span className="inline-flex items-center px-4 py-2 rounded-full bg-black text-white text-sm hover:bg-gray-800 transition-colors">
                       View Details
                     </span>
@@ -248,7 +254,7 @@ export default function Gallery() {
                 "/images/memories-images/memories-13.jpg"
               ];
               return memoryImages.map((src, idx) => (
-                <div key={idx} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                <div key={idx} className="rounded-[24px] overflow-hidden border border-gray-200 hover:shadow-lg hover:shadow-gray-200/30 transition-shadow">
                   <div className="relative h-[220px] bg-gray-100">
                     <MemoryImage 
                       src={src} 

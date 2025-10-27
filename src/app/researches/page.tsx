@@ -71,14 +71,22 @@ export default function Researches() {
       <div className="max-w-[1920px] mx-auto py-6 md:py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {researches.map((item) => {
           let bg = "";
-          if (item.id === "music") bg = "from-purple-50 to-purple-100";
-          else if (item.id === "font") bg = "from-orange-50 to-orange-100";
-          else if (item.id === "design") bg = "from-blue-50 to-blue-100";
+          let shadowColor = "";
+          if (item.id === "music") {
+            bg = "from-purple-50 to-purple-100";
+            shadowColor = "hover:shadow-purple-200/50";
+          } else if (item.id === "font") {
+            bg = "from-orange-50 to-orange-100";
+            shadowColor = "hover:shadow-orange-200/50";
+          } else if (item.id === "design") {
+            bg = "from-blue-50 to-blue-100";
+            shadowColor = "hover:shadow-blue-200/50";
+          }
           return (
             <Link
               key={item.id}
               href={`/researches/${item.id}`}
-              className={`block bg-gradient-to-br ${bg} rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl`}
+              className={`block bg-gradient-to-br ${bg} rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl ${shadowColor}`}
             >
               <div className="relative w-full h-[240px] md:h-[360px]">
                 <Image

@@ -30,15 +30,15 @@ export default function Home() {
             {/* 左上 - News: Poems as musical instruments */}
             <Link href="/publications/poems-as-musical-instruments" className="relative overflow-hidden group md:rounded-r-[36px] block">
               <div className="h-[588px] relative">
-                <ColorExtractor imageSrc="/images/Poems as musical instruments.jpeg">
+                <ColorExtractor imageSrc="/images/Poems as musical instruments cover.png">
                   <Image
-                    src="/images/Poems as musical instruments.jpeg"
+                    src="/images/Poems as musical instruments cover.png"
                     alt="Poems as musical instruments: an AI music performance interface"
                     fill
                     className="object-cover"
                   />
                 </ColorExtractor>
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-900/60 via-blue-900/20 to-transparent" />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-emerald-900/60 via-teal-900/20 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">
                     <span className="text-white text-sm font-medium opacity-90 mb-1 block">News</span>
@@ -69,9 +69,9 @@ export default function Home() {
             {/* 右上 - Publications: SongGLM */}
             <Link href="/publications/songglm" className="relative overflow-hidden group md:rounded-l-[36px] block">
               <div className="h-[588px] relative">
-                <ColorExtractor imageSrc="/images/Publications-SongGLM.jpg">
+                <ColorExtractor imageSrc="/images/7-cover.png">
                   <Image
-                    src="/images/Publications-SongGLM.jpg"
+                    src="/images/7-cover.png"
                     alt="SongGLM: Lyric-to-Melody Generation"
                     fill
                     className="object-cover"
@@ -147,15 +147,15 @@ export default function Home() {
             {/* 右下 - Gallery: Shihua Shijie */}
             <Link href="/gallery/shihua-shijie" className="relative overflow-hidden group md:rounded-l-[36px] block">
               <div className="h-[588px] relative">
-                <ColorExtractor imageSrc="/images/Gallery-Shihua-Shijie.png">
+                <ColorExtractor imageSrc="/images/Shihua Shijie.jpg">
                   <Image
-                    src="/images/Gallery-Shihua-Shijie.png"
+                    src="/images/Shihua Shijie.jpg"
                     alt="Shihua Shijie: Winner of the First Prize at the 2025 Beautiful China Innovative Design Competition"
                     fill
                     className="object-cover"
                   />
                 </ColorExtractor>
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-rose-900/60 via-red-900/25 to-transparent" />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-emerald-900/60 via-green-900/25 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end z-10">
                   <div className="max-w-[1920px] mx-auto w-full">
                     <div className="px-4 sm:px-6 lg:px-8 xl:px-8 mb-8">

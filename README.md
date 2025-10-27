@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZJU NEXT Lab Official Website
 
-## Getting Started
+Official website of Zhejiang University NEXT Lab. We are dedicated to forging a future—NEXT Lab, where technology transcends its role as a cold tool, becoming a **Narrative**-driven partner with deep **Empathetic** capacity. By exploring novel interaction design paradigms across **X-reality** boundaries, we aim to achieve a fundamental **Transformation** in the relationship between humans, society, and the digital realm.
 
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
-npm run dev
-# or
+# Install dependencies
+yarn install
+
+# Start development server
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+yarn build
+
+# Start production server
+yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Pages (`src/app/`)
+- **Home** (`page.tsx`) - Main page with banner and navigation
+- **Researches** (`researches/`) - Research groups list and detail pages
+- **Publications** (`publications/`) - Publications list and detail pages  
+- **Courses** (`courses/`) - Courses list and detail pages
+- **Gallery** (`gallery/`) - Works showcase and competition entries
+- **Team** (`team/`) - Team members list and detail pages
+- **Introduction** (`introduction/`) - Lab overview and mission
+- **Contact** (`contact/`) - Contact information
 
-## Learn More
+### Data Sources (`src/data/`)
+- `team.ts` - Team member information
+- `publications.ts` - Publication data
+- `competitions.ts` - Competition award entries
 
-To learn more about Next.js, take a look at the following resources:
+### Components (`src/components/`)
+- `BannerOptimized.tsx` - Homepage carousel banner
+- `Navbar.tsx` - Navigation bar
+- `Footer.tsx` - Footer
+- `TeamAvatar.tsx` - Team member avatars
+- `GalleryImage.tsx` - Gallery image components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Content Update Guide
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Team Members Update
+Edit `src/data/team.ts` file to add/modify member information:
+```typescript
+{
+  id: 'member-id',
+  name: 'Chinese Name',
+  englishName: 'English Name',
+  category: 'Researchers' | 'Staff' | 'PhD Students' | 'Master Students' | 'Undergraduates' | 'Alumni',
+  position: 'Position/Grade',
+  avatar: '/avatars/avatar.jpg',
+  email: 'email@zju.edu.cn'
+}
+```
 
-## Deploy on Vercel
+### Publications Update
+Edit `src/data/publications.ts` file to add/modify publication information:
+```typescript
+{
+  id: 'paper-id',
+  title: 'Paper Title',
+  authors: 'Author List',
+  venue: 'Journal/Conference',
+  year: 2024,
+  image: '/images/paper-cover.jpg',
+  wechatLink: 'https://mp.weixin.qq.com/s/...' // optional
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Competition Entries Update
+Edit `src/data/competitions.ts` file to add/modify award entries:
+```typescript
+{
+  id: 'work-id',
+  title: 'Work Title',
+  year: 2024,
+  winners: 'Winners',
+  award: 'Award Name',
+  description: 'Work Description',
+  image: '/images/work-cover.jpg',
+  externalLink: 'https://award-page.com'
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Image Resources
+- Team member avatars: `public/avatars/`
+- Publication covers: `public/images/`
+- Competition works: `public/images/`
+- Team photos: `public/images/`
+
+## 🎨 Tech Stack
+
+- **Next.js 15** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling framework
+- **Vercel** - Deployment platform
+
+## 📝 Lab Mission
+
+**"Design Driven, Technology Empowered"**
+
+Specializing in interaction design with three research directions:
+- **Auditory Intelligence (AI Group)** - Music and audio AI
+- **Visual Intelligence (VI Group)** - Font and visual design
+- **Emotional Intelligence (EI Group)** - Design and innovation
+
+## 🌐 Deployment
+
+Deploy using [Vercel Platform](https://vercel.com/new).
+
+Check out [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

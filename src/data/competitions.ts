@@ -19,7 +19,7 @@ export const competitions: CompetitionEntry[] = [
     winners: "Jinhe Li, Yuhang Jin, Xiuqi Li, Songruoyao Wu, Xiaohui Chen",
     description: "Shihua Shijie——Amid the AIGC wave, Shihua Shijie (Poetry & Painting Vision) leverages three core innovations to bridge traditional poetry and modern short videos. It addresses industry pain points, injects vitality into traditional culture dissemination, and breaks AI's cultural aesthetic bias.",
     link: "https://cpipc.acge.org.cn/cw/hp/2c908018876ef068018774a9501a03fe",
-    image: "/images/content-placeholder.png"
+    image: "/images/Shihua Shijie.jpg"
   },
   {
     id: "sugar-blossom",

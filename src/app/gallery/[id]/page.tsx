@@ -14,8 +14,11 @@ export default function CompetitionDetail({ params }: { params: Promise<{ id: st
     <div className="min-h-screen max-w-[1000px] mx-auto py-12 px-4">
       {/* Back to Gallery button */}
       <div className="mb-8">
-        <Link href="/gallery#competition-entries" className="text-gray-600 hover:text-gray-800 transition-colors">
-          ← Back to Gallery
+        <Link href="/gallery#competition-entries" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Gallery
         </Link>
       </div>
 

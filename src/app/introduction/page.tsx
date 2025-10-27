@@ -6,23 +6,26 @@ export default function Introduction() {
     <div className="min-h-screen max-w-[1000px] mx-auto py-12 px-4">
       {/* Back to Home button */}
       <div className="mb-8">
-        <Link href="/" className="text-gray-600 hover:text-gray-800 transition-colors">
-          ← Back to Home
+        <Link href="/" className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Home
         </Link>
       </div>
 
       {/* Header Image */}
-      <div className="mb-8 flex flex-col items-start gap-4">
+      <div className="mb-8 flex flex-col items-start gap-24">
         <div className="w-full max-w-[900px] aspect-[16/6] relative rounded-[36px] overflow-hidden">
           <Image 
-            src="/images/next-lab-logo.png" 
+            src="/avatars/logo-banner.png" 
             alt="NEXT Lab Introduction" 
             fill 
             className="object-cover" 
           />
         </div>
         
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4 mb-2">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
           Introduction of NEXT Lab
         </h1>
       </div>
@@ -42,7 +45,7 @@ export default function Introduction() {
         <h2 className="text-2xl font-bold mb-6">Research Groups</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Link href="/researches/music" className="group">
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl">
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl flex flex-col h-full">
               <div className="relative h-[200px]">
                 <Image
                   src="/images/research-music.png"
@@ -51,7 +54,7 @@ export default function Introduction() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
                   Auditory Intelligence (AI Group)
                 </h3>
@@ -63,7 +66,7 @@ export default function Introduction() {
           </Link>
 
           <Link href="/researches/font" className="group">
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl">
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl flex flex-col h-full">
               <div className="relative h-[200px]">
                 <Image
                   src="/images/researches-font-cover.png"
@@ -72,7 +75,7 @@ export default function Introduction() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors">
                   Visual Intelligence (VI Group)
                 </h3>
@@ -84,7 +87,7 @@ export default function Introduction() {
           </Link>
 
           <Link href="/researches/design" className="group">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-[36px] overflow-hidden transition-shadow hover:shadow-xl flex flex-col h-full">
               <div className="relative h-[200px]">
                 <Image
                   src="/images/researches-design-cover.png"
@@ -93,7 +96,7 @@ export default function Introduction() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
                   Emotional Intelligence (EI Group)
                 </h3>
