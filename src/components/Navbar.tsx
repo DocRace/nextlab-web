@@ -37,7 +37,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center m-0 p-0">
               <Image
                 src="/images/next-lab-logo.png"
-                alt="Next Lab Logo"
+                alt="NEXT Lab Logo"
                 width={120}
                 height={0}
                 style={{ height: 'auto' }}

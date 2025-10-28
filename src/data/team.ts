@@ -135,7 +135,7 @@ export const teamMembers: TeamMember[] = [
     id: 'liang-weiqi',
     name: '梁韦琪',
     englishName: 'LIANG Weiqi',
-    category: 'Researchers',
+    category: 'Staff',
     position: 'Teaching Assistant',
     avatar: '/avatars/liang-weiqi.jpg',
     email: 'lwq0922c29@zju.edu.cn',
@@ -223,6 +223,16 @@ export const teamMembers: TeamMember[] = [
     avatar: '/avatars/zhong-chongjun.jpg',
     email: 'zhong_chongjun@zju.edu.cn',
     englishBio: 'I am currently a PhD candidate in Design Science at Zhejiang University, where I also earned my Bachelor\'s degree in the same field. My research focuses on human-computer interaction, digital art, and human-AI co-creation.\nBeyond my academic pursuits, I am passionate about singing and painting, and I have over ten years of professional dance training. I have twice won the First Prize in the East China Division of the China Collegiate Computing Competition – Mobile Application Innovation Contest, as well as a National Second Prize. In addition, I have received several design awards, including the A\' Design Award and the K Design Award.'
+  },
+  {
+    id: 'yang-yiheng',
+    name: '杨怿恒',
+    englishName: 'YANG Yiheng',
+    category: 'PhD Students',
+    researchGroup: 'Music Group',
+    position: 'PhD student in Design Studies, 2021',
+    avatar: '/avatars/yang-yiheng.jpeg',
+    email: ''
   },
   {
     id: 'yu-jiaxing',
@@ -631,15 +641,6 @@ export const teamMembers: TeamMember[] = [
     category: 'Alumni',
     position: 'Master Student, 2022',
     avatar: '/avatars/shen-hanshu.jpg',
-    email: ''
-  },
-  {
-    id: 'yang-yiheng',
-    name: '杨怿恒',
-    englishName: 'YANG Yiheng',
-    category: 'Alumni',
-    position: 'PhD Student, 2021',
-    avatar: '/avatars/yang-yiheng.jpeg',
     email: ''
   },
   {

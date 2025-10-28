@@ -14,8 +14,8 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Next Lab",
-  description: "Official website of Next Lab",
+  title: "NEXT Lab",
+  description: "Official website of NEXT Lab",
 };
 
 export default function RootLayout({

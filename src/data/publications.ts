@@ -25,7 +25,7 @@ export const publications: Publication[] = [
     year: "2025",
     venue: "Leonardo",
     abstract: "The author has designed a new interface of musical expression called Poem-Qin, which reveals the relationship between text and music, supporting self-accompanied singing and cross-media musical practices. Drawing inspiration from Chinese qin songs and movable-type printing, the author creatively integrates Chinese characters into the interface, controlling music with tone inflections and linguistic rhythms. Moreover, they have developed an AI model for text-to-melody composing to assist in creating new music content. User and audience testing has demonstrated that it offers a positive experience and effective creative results.",
-    link: "https://apps.apple.com/us/app/poem-qin/id6504380560",
+    link: "https://nextlab-zju.github.io/data/poemqin/poem-qin.pdf",
     wechatLink: "https://mp.weixin.qq.com/s/uUDMYKa1f50e0jzgXMYXtA",
     image: "/images/Poems as musical instruments cover.png",
     detailImages: [
@@ -89,7 +89,7 @@ export const publications: Publication[] = [
     abstract: "As generative artificial intelligence (AI) is increasingly applied in product design, identifying the new competence designers need to adapt to industry changes has become a topic of high interest in the design community. This study aims to construct a new design competence framework to deepen the understanding of the competence dimensions required by designers in the era of generative AI. First, the initial framework was determined through a literature review. Then, through three rounds of empirical research—semi-structured interviews (N = 35), expert surveys (N = 36), and designer surveys (N = 109)—the specific content of the framework was repeatedly evaluated and refined. Finally, the framework was applied to design practice (N = 43) to explore its impact on design outcomes. The study concluded that design competence in the era of generative AI consists of four core aspects: design aesthetics competence, design thinking competence, design practice competence, and design resilience competence.",
     link: "https://www.tandfonline.com/doi/full/10.1080/14606925.2025.2462862",
     wechatLink: "https://mp.weixin.qq.com/s/XnvDpCchmWD14cUveVBGLw",
-    image: "/images/paper14-cover.png",
+    image: "/images/paper14-cover.jpeg",
     tags: ["Design"]
   },
   {
@@ -194,7 +194,10 @@ export const publications: Publication[] = [
     link: "https://dl.acm.org/doi/10.1145/3503161.3548368",
     demo: "https://github.com/CarlWangChina/SongDriver-Real-time-Music-Accompaniment-Generation-without-Logical-Latency-nor-Exposure-Bias",
     code: "https://github.com/CarlWangChina/SongDriver-Real-time-Music-Accompaniment-Generation-without-Logical-Latency-nor-Exposure-Bias",
-    image: "/images/SongDriver.jpeg",
+    image: "/images/SongDriver-cover.png",
+    detailImages: [
+      "/images/SongDriver-detail.png"
+    ],
     tags: ["Music"]
   },
   {

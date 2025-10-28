@@ -7,14 +7,14 @@ export default function Footer() {
         <div className="mb-4 md:mb-0">
           <Image
             src="/images/next-lab-logo.png"
-            alt="Next Lab Logo"
+            alt="NEXT Lab Logo"
             width={80}
             height={0}
             style={{ height: 'auto' }}
           />
         </div>
         <div className="text-gray-600 text-right">
-          ZJU Next Lab<br />
+          ZJU NEXT Lab<br />
           © 2025 All rights reserved
         </div>
       </div>
