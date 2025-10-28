@@ -180,7 +180,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'wu-songruoyao',
     name: '吴宋若瑶',
-    englishName: 'WUSONG Ruoyao',
+    englishName: 'WU Songruoyao',
     category: 'PhD Students',
     researchGroup: 'Music Group',
     position: 'PhD student in Artificial Intelligence, 2022',
