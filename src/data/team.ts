@@ -151,7 +151,6 @@ export const teamMembers: TeamMember[] = [
     email: 'yecha@zju.edu.cn',
     englishBio: ''
   },
-
   // PhD Students (按CSV类内排序)
   {
     id: 'wu-wenqi',
