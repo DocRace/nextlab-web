@@ -179,6 +179,8 @@ export const publications: Publication[] = [
     venue: "IEEE Transactions on Affective Computing",
     abstract: "Affective computing and natural human-computer interaction, which would be capable of interpreting and responding intelligently to the social cues of interaction in crowds, are more needed than ever as an individual's affective experience is often related to others in group activities. To develop the next-generation intelligent interactive systems, we require numerous human facial expressions with accurate annotations. However, existing databases usually consider nonspontaneous human behavior (posed or induced), individual or dyadic setting, and a single type of emotion annotation. To address this need, we created the Werewolf-XL database, which contains a total of 890 minutes of spontaneous audio-visual recordings of 129 subjects in a group interaction of nine individuals playing a conversational role-playing game called Werewolf. We provide 131,688 individual utterance-level video clips with internal self-assessment of 18 non-prototypical emotional categories and external assessment of pleasure, arousal, and dominance, including 14,632 speakers' samples and the rest of listeners' samples. Besides, the results of the annotation agreement analysis show fair reliability and validity. Role information and outcomes of the game are also recorded. Furthermore, we provided extensive benchmarks of unimodal and multimodal emotional recognition results. The database is made publicly available.",
     link: "https://ieeexplore.ieee.org/document/9506939",
+    code: "https://github.com/Xinda-Wu/Werewolf-XL-Baseline",
+    demo: "/Werewolf-XL-dataset",
     image: "/images/Werewolf-XL.png",
     tags: ["Music"]
   },

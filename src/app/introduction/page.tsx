@@ -56,7 +56,7 @@ export default function Introduction() {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
-                  Auditory Intelligence (AI Group)
+                  Auditory Intelligence (Music Group)
                 </h3>
                 <p className="text-gray-600 text-sm">
                   Engineering the Future of Music with AI
@@ -77,7 +77,7 @@ export default function Introduction() {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-orange-600 transition-colors">
-                  Visual Intelligence (VI Group)
+                  Visual Intelligence (Font Group)
                 </h3>
                 <p className="text-gray-600 text-sm">
                   Shaping the Future of Chinese Character
@@ -98,7 +98,7 @@ export default function Introduction() {
               </div>
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
-                  Emotional Intelligence (EI Group)
+                  Emotional Intelligence (Design Group)
                 </h3>
                 <p className="text-gray-600 text-sm">
                   Creating Design Innovations for the AI era

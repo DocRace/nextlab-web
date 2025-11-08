@@ -35,7 +35,7 @@ export const teamMembers: TeamMember[] = [
     englishName: 'Zhang Lekai',
     category: 'Researchers',
     position: 'Postdoctoral Researcher, Visiting Scholar',
-    avatar: '/avatars/zhang-lekai.jpg',
+    avatar: '/avatars/ZHANG_Lekai.jpg',
     email: '',
     englishBio: ''
   },
@@ -95,13 +95,13 @@ export const teamMembers: TeamMember[] = [
     englishName: 'Chen Pei',
     category: 'Researchers',
     position: 'Postdoctoral Researcher',
-    avatar: '/avatars/chen-pei.png',
+    avatar: '/avatars/CHEN_Pei.jpg',
     email: '',
     englishBio: ''
   },
   {
     id: 'zhang-hongbo',
-    name: '张洪博',
+    name: '张宏博',
     englishName: 'Zhang Hongbo',
     category: 'Researchers',
     position: 'Postdoctoral Researcher',
@@ -426,7 +426,7 @@ export const teamMembers: TeamMember[] = [
     category: 'Master Students',
     researchGroup: 'Music Group',
     position: 'Master student in Design Studies, 2024',
-    avatar: '/avatars/feng-yuowei.jpg',
+    avatar: '/avatars/FENG_Youwei.jpg',
     email: 'david88913@gmail.com',
     englishBio: 'I am currently a graduate student at the College of Computer Science, Zhejiang University, and a member of the Music Group at NEXTLab.\nMy research interests focus on the intersection of AI music generation, XR/AR creative interaction design, and practical DAW (Digital Audio Workstation) music editing, with the aim of applying cutting-edge large models to real-world scenarios in education, artistic creation, and immersive experiences.',
     achievements: 'Patent\nA Method for Generating Continuous Scene Background Music Integrated with Environmental Perception and Personalized Experience (Patent No.: 202410318748X).\nCompetitions & Awards\nFirst Prize (Provincial Level), China Collegiate Computing Contest — Mobile Application Innovation Contest.\nGold Award (Provincial Level), "Internet+" National Innovation and Entrepreneurship Competition — Industry Track & Higher Education Main Track.\nGold Award (Provincial Level), "Challenge Cup" National College Students\' Extracurricular Academic Science and Technology Competition — "AI+" Track.'
@@ -563,7 +563,7 @@ export const teamMembers: TeamMember[] = [
     englishName: 'MA Boyang',
     category: 'Undergraduates',
     position: 'Undergraduate in Computer Science and Technology, 2023',
-    avatar: '/avatars/ma-boyang.jpeg',
+    avatar: '/avatars/MA_Boyang.jpg',
     email: '1004483997@qq.com',
     englishBio: 'Ma Boyang, a junior AI major with a focus on AI-driven music design. Currently developing music visualization systems in the lab.',
     achievements: 'AI-driven music design and music visualization systems.',
