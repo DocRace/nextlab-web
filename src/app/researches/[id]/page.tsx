@@ -20,20 +20,28 @@ const researches = {
     members: {
       leaders: [
         { id: 'wu-songruoyao', name: 'Songruoyao Wu' },
-        { id: 'yu-jiaxing', name: 'Jiaxing Yu' },
+        { id: 'yu-jiaxing', name: 'Jiaxing Yu' }
       ],
       members: [
         { id: 'wang-zihao', name: 'Zihao Wang' },
         { id: 'zhong-chongjun', name: 'Chongjun Zhong' },
+        { id: 'yang-yiheng', name: 'Yiheng Yang' },
         { id: 'ma-le', name: 'Le Ma' },
         { id: 'zheng-zehui', name: 'Zehui Zheng' },
         { id: 'liu-haoxuan', name: 'Haoxuan Liu' },
-        { id: 'lu-xinye', name: 'Xinye Lu' },
+        { id: 'wang-jiaming', name: 'Jiaming Wang' },
+        { id: 'li-shuyu', name: 'Shuyu Li' },
         { id: 'liu-huaying', name: 'Huaying Liu' },
         { id: 'feng-youwei', name: 'Youwei Feng' },
-        { id: 'li-shuyu', name: 'Shuyu Li' },
-        { id: 'chen-yizhao', name: 'Yizhao Chen' },
         { id: 'huang-ziyi', name: 'Ziyi Huang' },
+        { id: 'ren-jingyan', name: 'Jingyan Ren' },
+        { id: 'jocelyn-jenica-jaya', name: 'JOCELYN JENICA JAYA' },
+        { id: 'wang-xinran', name: 'Xinran Wang' },
+        { id: 'shao-muchuan', name: 'Muchuan Shao' },
+        { id: 'zhu-xiandi', name: 'Xiandi Zhu' },
+        { id: 'lu-xinye', name: 'Xinye Lu' },
+        { id: 'chen-yizhao', name: 'Yizhao Chen' },
+        { id: 'ma-boyang', name: 'Boyang Ma' }
       ]
     },
     projects: [
@@ -139,10 +147,11 @@ const researches = {
 `,
     members: {
       leaders: [
-        { id: 'shen-xinyi', name: 'Xinyi Shen' }
+        { id: 'shen-xinyi', name: 'Xinyi Shen' },
+         { id: 'wang-bolin', name: 'Bolin Wang' }
       ],
       members: [
-        { id: 'wang-bolin', name: 'Bolin Wang' },
+        { id: 'ren-tianyu', name: 'Tianyu Ren' },
         { id: 'chen-xueyang', name: 'Xueyang Chen' },
         { id: 'lu-guanting', name: 'Guanting Lu' }
       ]
@@ -206,14 +215,19 @@ const researches = {
 `,
     members: {
       leaders: [
-        { id: 'wu-wenqi', name: 'Wenqi Wu' },
+        { id: 'zhong-chongjun', name: 'Chongjun Zhong' },
         { id: 'jin-yuhang', name: 'Yuhang Jin' }
       ],
       members: [
+        { id: 'wu-wenqi', name: 'Wenqi Wu' },
+        { id: 'cui-chuqiao', name: 'Chuqiao Cui' },
         { id: 'hou-liang', name: 'Liang Hou' },
         { id: 'li-jinhe', name: 'Jinhe Li' },
         { id: 'chen-xiaohui', name: 'Xiaohui Chen' },
-        { id: 'li-xiuqi', name: 'Xiuqi Li' }
+        { id: 'li-xiuqi', name: 'Xiuqi Li' },
+        { id: 'chen-longxuan', name: 'Longxuan Chen' },
+        { id: 'qian-kaihang', name: 'Kaihang Qian' },
+        { id: 'yuan-xinyue', name: 'Xinyue Yuan' }
       ]
     },
     projects: [
