@@ -97,7 +97,8 @@ Edit `src/data/competitions.ts` file to add/modify award entries:
 
 ## 🎨 Tech Stack
 
-- **Next.js 15** - React framework
+- **Next.js 16.0.7** - React framework
+- **React 19.2.1** - UI library
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Styling framework
 - **Vercel** - Deployment platform
